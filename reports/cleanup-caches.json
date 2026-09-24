@@ -1,0 +1,5 @@
+[
+  "llama.cpp\\conversion\\__pycache__",
+  "llama.cpp\\gguf-py\\gguf\\__pycache__",
+  "reports\\gpu-resident\\__pycache__"
+]
