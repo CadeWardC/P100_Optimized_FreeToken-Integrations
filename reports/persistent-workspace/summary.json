@@ -1,0 +1,41 @@
+{
+  "rows": [
+    {
+      "engine": "before",
+      "measured_requests": 6,
+      "median_decode_tps": 10.95178761758833,
+      "decode_range": [
+        9.744856933069853,
+        11.374798750029651
+      ],
+      "median_first_text_seconds": 3.487070949999975,
+      "median_wall_seconds": 14.919262449999906
+    },
+    {
+      "engine": "after",
+      "measured_requests": 6,
+      "median_decode_tps": 10.610143884529851,
+      "decode_range": [
+        10.488228870794096,
+        11.367987650104679
+      ],
+      "median_first_text_seconds": 3.4319282999999814,
+      "median_wall_seconds": 15.05361449999998
+    }
+  ],
+  "speed_ratio": 0.9688047517914056,
+  "matching_response_texts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "scope": "AB then BA: same model and launch settings; one warmup and three measured requests per session, six measured requests per executable. No concurrent builds/tests. Initial before-chat run overlapped compilation and is excluded.",
+  "conclusion": "No demonstrated speedup. Updated pooled median decode is slightly lower; observed ranges overlap. Workspace allocation reuse is verified independently.",
+  "executables": {
+    "before": "b2f7a0adf0b1b041a0e593cf8bf2bd96d022cdd67baec6f84f8755ff288857b6",
+    "after": "32ed15a2c5e6dc42dd22fb62f726a85cdfe81c08d50991ac1073eab9f37bd303"
+  }
+}

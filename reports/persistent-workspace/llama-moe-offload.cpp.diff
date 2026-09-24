@@ -1,0 +1,242 @@
+--- before/llama-moe-offload.cpp
++++ after/llama-moe-offload.cpp
+@@ -320,6 +320,25 @@
+     }
+ }
+ 
++struct expert_workspace {
++    context_ptr ctx{nullptr, ggml_free};
++    scheduler_ptr sched{nullptr, ggml_backend_sched_free};
++    allocator_ptr alloc{nullptr, ggml_gallocr_free};
++    ggml_tensor * x = nullptr;
++    ggml_tensor * route = nullptr;
++    ggml_tensor * out = nullptr;
++    ggml_cgraph * graph = nullptr;
++    size_t count = 0, compute_bytes = 0;
++    llama_moe_activation activation = llama_moe_activation::silu;
++    std::vector<float> packed;
++};
++
++struct expert_workspace_cache {
++    // One arena bounds retained memory independently of the number of layers and shapes.
++    std::unique_ptr<expert_workspace> workspace;
++    uint64_t builds = 0, reuses = 0;
++};
++
+ llama_moe_reference_result execute_ffn(
+         const llama_moe_host_bank & bank,
+         const std::vector<float> & input, size_t n_tokens, size_t top_k,
+@@ -328,7 +347,7 @@
+         ggml_moe_cache_storage * cache, ggml_backend_t cached_backend, uint32_t layer,
+         const std::shared_ptr<llama_moe_host_bank> & bank_owner,
+         const llama_moe_executor_options & options = {}, ggml_tensor * gelu_table = nullptr,
+-        const std::unordered_set<int32_t> * selected = nullptr) {
++        const std::unordered_set<int32_t> * selected = nullptr, expert_workspace_cache * workspaces = nullptr) {
+     const auto execution_start = moe_clock::now();
+     check_cancel(options);
+     if (activation != llama_moe_activation::silu && activation != llama_moe_activation::gelu) {
+@@ -462,63 +481,91 @@
+         result.weight_load_us += elapsed_us(load_start);
+         const size_t batch_limit = cpu ? tile.assignments.size() : 8;
+         for (size_t begin = 0; begin < tile.assignments.size(); begin += batch_limit) {
+-            auto ctx = make_context();
+             const size_t count = std::min(batch_limit, tile.assignments.size() - begin);
+-            auto * x = ggml_new_tensor_3d(ctx.get(), GGML_TYPE_F32, bank.n_embd(), 1, int64_t(count));
+-            auto * route = ggml_new_tensor_2d(ctx.get(), GGML_TYPE_I32, 1, int64_t(count));
+-            ggml_set_input(x);
+-            ggml_set_input(route);
+-            auto * gate = ggml_mul_mat_id(ctx.get(), compact[0], x, route);
+-            auto * up = ggml_mul_mat_id(ctx.get(), compact[1], x, route);
+-            if (!cpu && !options.fast) {
+-                // Keep projections materialized; fused CUDA FFNs are not validated for this eager boundary.
+-                ggml_set_output(gate);
+-                ggml_set_output(up);
+-            }
+-            auto * act = activation == llama_moe_activation::gelu ? ggml_geglu_split(ctx.get(), gate, up) :
+-                ggml_swiglu_split(ctx.get(), gate, up);
+-            if (!cpu && !options.fast && activation == llama_moe_activation::gelu) {
+-                if (!gelu_table) { throw std::runtime_error("MoE GPU GeGLU requires the compatibility table"); }
+-                act->src[2] = gelu_table;
+-            }
+-            auto * out = ggml_mul_mat_id(ctx.get(), compact[2], act, route);
+-            for (auto * projection : {gate, up, out}) {
++            expert_workspace_cache local;
++            auto & owner = workspaces && !cpu ? *workspaces : local;
++            const size_t table_bytes = gelu_table ? ggml_backend_buffer_get_size(gelu_table->buffer) : 0;
++            if (!owner.workspace || owner.workspace->count != count || owner.workspace->activation != activation) {
++                // Previous work is drained before reaching this point. Free the old arena before reserving another.
++                owner.workspace.reset();
++                auto replacement = std::make_unique<expert_workspace>();
++                auto & ws = *replacement;
++                ws.ctx = make_context();
++                ws.count = count;
++                ws.activation = activation;
++                auto & ctx = ws.ctx;
++                auto & sched = ws.sched;
++                auto & alloc = ws.alloc;
++                auto * x = ggml_new_tensor_3d(ctx.get(), GGML_TYPE_F32, bank.n_embd(), 1, int64_t(count));
++                auto * route = ggml_new_tensor_2d(ctx.get(), GGML_TYPE_I32, 1, int64_t(count));
++                ggml_set_input(x);
++                ggml_set_input(route);
++                auto * gate = ggml_mul_mat_id(ctx.get(), compact[0], x, route);
++                auto * up = ggml_mul_mat_id(ctx.get(), compact[1], x, route);
+                 if (!cpu && !options.fast) {
+-                    ggml_mul_mat_set_prec(projection, GGML_PREC_F32);
++                    // Keep projections materialized; fused CUDA FFNs are not validated for this eager boundary.
++                    ggml_set_output(gate);
++                    ggml_set_output(up);
+                 }
+-            }
+-            ggml_set_output(out);
+-            auto * graph = ggml_new_graph_custom(ctx.get(), 64, false);
+-            ggml_build_forward_expand(graph, out);
+-            scheduler_ptr sched(nullptr, ggml_backend_sched_free);
+-            allocator_ptr alloc(nullptr, ggml_gallocr_free);
+-            const size_t table_bytes = gelu_table ? ggml_backend_buffer_get_size(gelu_table->buffer) : 0;
+-            size_t compute_bytes = 0;
+-            if (cpu) {
+-                sched.reset(ggml_backend_sched_new(&backend, nullptr, 1, 64, false, false));
+-                if (!sched || !ggml_backend_sched_alloc_graph(sched.get(), graph)) { throw std::bad_alloc(); }
+-                compute_bytes = ggml_backend_sched_get_buffer_size(sched.get(), backend);
+-            } else {
+-                for (int i = 0; i < ggml_graph_n_nodes(graph); ++i) {
+-                    if (!ggml_backend_supports_op(backend, ggml_graph_node(graph, i))) {
+-                        throw std::invalid_argument("MoE device does not support the complete expert graph");
++                auto * act = activation == llama_moe_activation::gelu ? ggml_geglu_split(ctx.get(), gate, up) :
++                    ggml_swiglu_split(ctx.get(), gate, up);
++                if (!cpu && !options.fast && activation == llama_moe_activation::gelu) {
++                    if (!gelu_table) { throw std::runtime_error("MoE GPU GeGLU requires the compatibility table"); }
++                    act->src[2] = gelu_table;
++                }
++                auto * out = ggml_mul_mat_id(ctx.get(), compact[2], act, route);
++                for (auto * projection : {gate, up, out}) {
++                    if (!cpu && !options.fast) {
++                        ggml_mul_mat_set_prec(projection, GGML_PREC_F32);
+                     }
+                 }
+-                alloc.reset(ggml_gallocr_new(ggml_backend_get_default_buffer_type(backend)));
+-                if (!alloc) { throw std::bad_alloc(); }
+-                ggml_gallocr_reserve_n_size(alloc.get(), graph, nullptr, nullptr, &compute_bytes);
+-                if (checked_add(compute_bytes, table_bytes) > options.compute_bytes) {
+-                    throw std::runtime_error("MoE device compute budget exceeded");
++                ggml_set_output(out);
++                auto * graph = ggml_new_graph_custom(ctx.get(), 64, false);
++                ggml_build_forward_expand(graph, out);
++                auto & compute_bytes = ws.compute_bytes;
++                if (cpu) {
++                    sched.reset(ggml_backend_sched_new(&backend, nullptr, 1, 64, false, false));
++                    if (!sched || !ggml_backend_sched_alloc_graph(sched.get(), graph)) { throw std::bad_alloc(); }
++                    compute_bytes = ggml_backend_sched_get_buffer_size(sched.get(), backend);
++                } else {
++                    for (int i = 0; i < ggml_graph_n_nodes(graph); ++i) {
++                        if (!ggml_backend_supports_op(backend, ggml_graph_node(graph, i))) {
++                            throw std::invalid_argument("MoE device does not support the complete expert graph");
++                        }
++                    }
++                    alloc.reset(ggml_gallocr_new(ggml_backend_get_default_buffer_type(backend)));
++                    if (!alloc) { throw std::bad_alloc(); }
++                    ggml_gallocr_reserve_n_size(alloc.get(), graph, nullptr, nullptr, &compute_bytes);
++                    if (checked_add(compute_bytes, table_bytes) > options.compute_bytes) {
++                        throw std::runtime_error("MoE device compute budget exceeded");
++                    }
++                    if (!ggml_gallocr_reserve(alloc.get(), graph) || !ggml_gallocr_alloc_graph(alloc.get(), graph)) {
++                        throw std::bad_alloc();
++                    }
++                    compute_bytes = ggml_gallocr_get_buffer_size(alloc.get(), 0);
++                    if (checked_add(compute_bytes, table_bytes) > options.compute_bytes) { throw std::runtime_error("MoE device allocation exceeded budget"); }
+                 }
+-                if (!ggml_gallocr_reserve(alloc.get(), graph) || !ggml_gallocr_alloc_graph(alloc.get(), graph)) {
+-                    throw std::bad_alloc();
+-                }
+-                compute_bytes = ggml_gallocr_get_buffer_size(alloc.get(), 0);
+-                if (checked_add(compute_bytes, table_bytes) > options.compute_bytes) { throw std::runtime_error("MoE device allocation exceeded budget"); }
+-            }
+-            backend_drain drain{backend}; // Drain before graph allocations are destroyed on failure.
++                ws.x = x;
++                ws.route = route;
++                ws.out = out;
++                ws.graph = graph;
++                ws.packed.resize(checked_mul(count, embd));
++                owner.workspace = std::move(replacement);
++                ++owner.builds;
++            } else {
++                ++owner.reuses;
++            }
++            auto & ws = *owner.workspace;
++            auto & ctx = ws.ctx;
++            auto & sched = ws.sched;
++            auto * x = ws.x;
++            auto * route = ws.route;
++            auto * out = ws.out;
++            auto * graph = ws.graph;
++            const size_t compute_bytes = ws.compute_bytes;
++            backend_drain drain{backend};
+             result.peak_compute_bytes = std::max(result.peak_compute_bytes, checked_add(compute_bytes, table_bytes));
+-            std::vector<float> packed(checked_mul(count, embd));
++            auto & packed = ws.packed;
+             for (size_t a = 0; a < count; ++a) {
+                 const size_t token = tile.assignments[begin + a] / top_k;
+                 std::copy_n(input.data() + token * embd, embd, packed.data() + a * embd);
+@@ -607,6 +654,7 @@
+     context_ptr activation_ctx{nullptr, ggml_free};
+     buffer_ptr activation_buffer{nullptr, ggml_backend_buffer_free};
+     ggml_tensor * gelu_table = nullptr;
++    expert_workspace_cache workspaces;
+     double cpu_bw = 0, transfer_bw = 0;
+     int calibrated_threads = 0;
+     uint64_t calibration_loads = 0, calibration_evictions = 0, calibration_bytes = 0, calibration_wait_us = 0;
+@@ -666,7 +714,7 @@
+     const auto & bank = state->banks.at(layer);
+     if (!state->options.cpu_miss_percent) {
+         return execute_ffn(*bank, input, n_tokens, top_k, ids, weights, 0, n_threads, activation,
+-                state->cache.get(), state->backend.get(), uint32_t(layer), bank, state->options, state->gelu_table);
++                state->cache.get(), state->backend.get(), uint32_t(layer), bank, state->options, state->gelu_table, nullptr, &state->workspaces);
+     }
+     if (state->options.cpu_miss_percent < 0 && state->calibrated_threads != n_threads) {
+         if (n_threads <= 0) { throw std::invalid_argument("Invalid calibration thread count"); }
+@@ -741,7 +789,7 @@
+     }
+     if (state->options.cpu_miss_percent < 0 && n_tokens > 1) {
+         return execute_ffn(*bank, input, n_tokens, top_k, ids, weights, 0, n_threads, activation,
+-                state->cache.get(), state->backend.get(), uint32_t(layer), bank, state->options, state->gelu_table);
++                state->cache.get(), state->backend.get(), uint32_t(layer), bank, state->options, state->gelu_table, nullptr, &state->workspaces);
+     }
+     const auto start = moe_clock::now();
+     const auto plan = llama_moe_plan_routes(ids, bank->n_expert(), size_t(bank->n_expert()));
+@@ -761,7 +809,7 @@
+     }
+     if (cpu_experts.empty()) {
+         auto result = execute_ffn(*bank, input, n_tokens, top_k, ids, weights, 0, n_threads, activation,
+-                state->cache.get(), state->backend.get(), uint32_t(layer), bank, state->options, state->gelu_table);
++                state->cache.get(), state->backend.get(), uint32_t(layer), bank, state->options, state->gelu_table, nullptr, &state->workspaces);
+         return result;
+     }
+     check_cancel(state->options);
+@@ -778,7 +826,7 @@
+     llama_moe_reference_result cpu;
+     try {
+         result = execute_ffn(*bank, input, n_tokens, top_k, ids, weights, 0, n_threads, activation,
+-                state->cache.get(), state->backend.get(), uint32_t(layer), bank, state->options, state->gelu_table, &gpu_experts);
++                state->cache.get(), state->backend.get(), uint32_t(layer), bank, state->options, state->gelu_table, &gpu_experts, &state->workspaces);
+         while (worker.wait_for(std::chrono::milliseconds(1)) != std::future_status::ready) { check_cancel(state->options); }
+         cpu = worker.get();
+     } catch (...) {
+@@ -827,7 +875,9 @@
+             ggml_backend_is_cpu(state->backend.get()) ? ggml_backend_cpu_get_work_size(state->backend.get()) : 0,
+             stats.hits, stats.loads - state->calibration_loads, stats.evictions - state->calibration_evictions,
+             storage.copied_bytes - state->calibration_bytes, storage.load_wait_us - state->calibration_wait_us,
+-            state->cache->staging_bytes(), state->activation_buffer ? ggml_backend_buffer_get_size(state->activation_buffer.get()) : 0, state->cpu_bw, state->transfer_bw};
++            state->cache->staging_bytes(), state->activation_buffer ? ggml_backend_buffer_get_size(state->activation_buffer.get()) : 0, state->cpu_bw, state->transfer_bw,
++            state->workspaces.workspace ? state->workspaces.workspace->compute_bytes : 0,
++            state->workspaces.builds, state->workspaces.reuses};
+ }
+ 
+ void llama_moe_cached_executor::resize(size_t budget) {
+@@ -838,6 +888,7 @@
+             state->transfer_backend ? state->transfer_backend.get() : state->backend.get(), budget,
+             1, b.n_embd(), b.n_ff(), std::array<ggml_type, 3>{b.tensor(0)->type, b.tensor(1)->type, b.tensor(2)->type},
+             ggml_moe_transfer_options{o.device ? o.staging_bytes : 0, o.abort_callback, o.abort_data});
++    state->workspaces.workspace.reset();
+     state->cache.swap(replacement);
+     state->budget = budget;
+     state->calibration_loads = state->calibration_evictions = state->calibration_bytes = state->calibration_wait_us = 0;

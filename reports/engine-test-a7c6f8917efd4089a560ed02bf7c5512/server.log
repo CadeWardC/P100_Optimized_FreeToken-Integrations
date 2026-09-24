@@ -1,0 +1,17 @@
+0.00.143.802 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.239.801 W srv  llama_server: -----------------
+0.00.239.806 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.239.807 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.239.807 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.239.807 W srv  llama_server: -----------------
+0.00.249.061 I srv    load_model: loading model 'C:\Users\cadel\Documents\Coding_Projects\models\Gemma-4-26B-A4B-IT-QAT-Q4_0\gemma-4-26B_q4_0-it.gguf'
+0.00.860.151 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.860.641 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.914.179 W load: special_eog_ids contains '<|tool_response>', removing '</s>' token from EOG list
+0.05.019.385 W load_tensors: experimental host-bank MoE enabled, tile weights <= 5167382528 bytes; this is not a total memory limit
+0.05.032.226 E llama_init_from_model: failed to initialize the context: MoE cache + compute + reserve exceeds available VRAM
+0.05.032.239 E cmn  common_init_: failed to create context with model 'C:\Users\cadel\Documents\Coding_Projects\models\Gemma-4-26B-A4B-IT-QAT-Q4_0\gemma-4-26B_q4_0-it.gguf'
+0.05.032.241 E cmn  common_init_: failed to create context with model 'C:\Users\cadel\Documents\Coding_Projects\models\Gemma-4-26B-A4B-IT-QAT-Q4_0\gemma-4-26B_q4_0-it.gguf'
+0.05.032.244 E srv    load_model: failed to create_context with model 'C:\Users\cadel\Documents\Coding_Projects\models\Gemma-4-26B-A4B-IT-QAT-Q4_0\gemma-4-26B_q4_0-it.gguf'
+0.05.032.388 I srv   operator (): operator (): cleaning up before exit...
+0.05.034.297 E srv  llama_server: exiting due to model loading error

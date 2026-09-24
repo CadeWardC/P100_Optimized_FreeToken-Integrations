@@ -1,0 +1,12 @@
+test_file_hash_streaming (test_baseline.RecorderTests) ... ok
+test_invalid_json_is_failure (test_baseline.RecorderTests) ... ok
+test_missing_samples_are_failure (test_baseline.RecorderTests) ... ok
+test_missing_tool_is_reported (test_baseline.RecorderTests) ... ok
+test_nonzero_exit_preserves_evidence (test_baseline.RecorderTests) ... ok
+test_split_model_rejected_before_running (test_baseline.RecorderTests) ... ok
+test_success_and_no_overwrite (test_baseline.RecorderTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.105s
+
+OK

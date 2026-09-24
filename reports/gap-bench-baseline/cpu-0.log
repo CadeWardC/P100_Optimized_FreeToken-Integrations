@@ -1,0 +1,38 @@
+0.00.579.560 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.659.613 W srv  llama_server: -----------------
+0.00.659.619 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.659.620 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.659.620 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.659.621 W srv  llama_server: -----------------
+0.00.670.277 I srv    load_model: loading model 'C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\models\gemma-4-26B_q4_0-it.gguf'
+0.01.235.524 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.01.235.980 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.01.282.730 W load: special_eog_ids contains '<|tool_response>', removing '</s>' token from EOG list
+0.03.641.031 W load_tensors: experimental host-bank MoE enabled, tile weights <= 1073741824 bytes; this is not a total memory limit
+0.03.687.524 W llama_kv_cache: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to 2048
+0.03.690.245 W llama_kv_cache: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to 2048
+0.03.718.971 I cmn          init: llama threadpool init, n_threads = 8
+0.05.822.643 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 256, kv_unified = 'false'
+0.05.837.508 I srv  llama_server: model loaded
+0.05.837.514 I srv  llama_server: listening on http://127.0.0.1:51852
+0.06.812.409 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.06.812.529 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.23.852.639 I slot print_timing: id  0 | task 0 | prompt eval time =    5908.00 ms /     7 tokens (  844.00 ms per token,     1.18 tokens per second)
+0.23.852.646 I slot print_timing: id  0 | task 0 |        eval time =   11132.03 ms /    16 tokens (  742.14 ms per token,     1.35 tokens per second)
+0.23.852.646 I slot print_timing: id  0 | task 0 |       total time =   17040.03 ms /    23 tokens
+0.23.852.647 I slot print_timing: id  0 | task 0 |    graphs reused =         14
+0.23.853.151 I slot      release: id  0 | task 0 | stop processing: n_tokens = 22, truncated = 0
+0.23.856.844 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 0.318
+0.23.862.002 I slot launch_slot_: id  0 | task 18 | processing task, is_child = 0
+0.31.095.707 I slot print_timing: id  0 | task 18 | prompt eval time =    1913.33 ms /     7 tokens (  273.33 ms per token,     3.66 tokens per second)
+0.31.095.717 I slot print_timing: id  0 | task 18 |        eval time =    5320.35 ms /    16 tokens (  354.69 ms per token,     2.82 tokens per second)
+0.31.095.718 I slot print_timing: id  0 | task 18 |       total time =    7233.68 ms /    23 tokens
+0.31.095.719 I slot print_timing: id  0 | task 18 |    graphs reused =         31
+0.31.095.737 I slot      release: id  0 | task 18 | stop processing: n_tokens = 22, truncated = 0
+0.31.098.169 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 0.318
+0.31.098.584 I slot launch_slot_: id  0 | task 36 | processing task, is_child = 0
+0.37.851.602 I slot print_timing: id  0 | task 36 | prompt eval time =    1732.59 ms /     7 tokens (  247.51 ms per token,     4.04 tokens per second)
+0.37.851.612 I slot print_timing: id  0 | task 36 |        eval time =    5020.41 ms /    16 tokens (  334.69 ms per token,     2.99 tokens per second)
+0.37.851.613 I slot print_timing: id  0 | task 36 |       total time =    6752.99 ms /    23 tokens
+0.37.851.614 I slot print_timing: id  0 | task 36 |    graphs reused =         48
+0.37.851.633 I slot      release: id  0 | task 36 | stop processing: n_tokens = 22, truncated = 0

@@ -1,0 +1,17 @@
+[
+  {
+    "role": "user",
+    "content": "Say hello briefly."
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "reasoning": "*   User instruction: \"Say hello briefly.\"\n    *   Goal: Greet the user in a concise manner.\n\n    *   \"Hello!\"\n    *   \"Hi there!\"\n    *   \"Hello,",
+    "stats": {
+      "genTokens": 0,
+      "promptTokens": 0,
+      "ttftMs": 30845,
+      "stopReason": "cancelled"
+    }
+  }
+]

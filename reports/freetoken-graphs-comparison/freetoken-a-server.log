@@ -1,0 +1,67 @@
+[1m[2026-09-09|18:54:09][0m [32mINFO    [0m Parsed arguments:
+ServerArgs(model_path='C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf', tp_info=DistributedInfo(rank=0, size=1), dtype=torch.bfloat16, max_running_req=1, attention_backend='auto', moe_backend='auto', nvfp4_backend='triton', ple_backend='disk', expert_load='auto', moe_cache_size=959, moe_cache_rate=None, moe_cache_auto=False, kv_reserve_tokens=8192, moe_cache_policy='lru', moe_prefill_overlap=True, moe_prefill_hit_d2d=False, moe_collect_stats=False, moe_cpu_threads=0, moe_cpu_layers=None, moe_hybrid_max_fetch=-1, cuda_graph_bs=None, cuda_graph_max_bs=None, page_size=1, memory_ratio=0.9, linear_state_cache_ratio=2.0, swa_full_tokens_ratio=0.2, swa_num_pages_override=None, distributed_timeout=60.0, use_dummy_weight=False, use_pynccl=True, max_seq_len_override=None, num_page_override=None, num_token_override=8232, max_extend_tokens=8192, cache_type='radix', offline_mode=False, decode_log_interval=40, special_token_ckpt=False, _unique_suffix='.pid=65784', _ipc_base_port=64024, server_host='127.0.0.1', server_port=1920, num_tokenizer=0, silent_output=False, shell_mode=False, served_model_name='gemma-4-26B_q4_0-it.gguf', tool_call_parser='gemma4', reasoning_parser='gemma4', sampling_defaults='model', max_output_tokens=None, enable_cache_report=False, cors_origins='tauri://localhost,http://tauri.localhost,http://localhost:1420', gpu=(), gpu_assigned=None)
+[1m[2026-09-09|18:54:09|FrontendAPI][0m [32mINFO    [0m Default sampling config (source=model): temperature=1.0, top_k=64, top_p=0.949999988079071
+INFO:     Started server process [65784]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:1920 (Press CTRL+C to quit)
+C:\Users\cadel\AppData\Local\FreeToken\venv\Lib\site-packages\freetoken\server\launch.py:81: FutureWarning: torch.cuda._set_allocator_settings is deprecated. Use torch._C._accelerator_setAllocatorSettings instead.
+  scheduler = Scheduler(args)
+[1m[2026-09-09|18:54:18|core|rank=0][0m [32mINFO    [0m Enabled expandable_segments (override via PYTORCH_ALLOC_CONF)
+C:\Users\cadel\AppData\Local\FreeToken\venv\Lib\site-packages\freetoken\models\gguf\reader.py:112: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:219.)
+  return torch.from_numpy(self._raw)
+[1m[2026-09-09|18:54:32|core|rank=0][0m [32mINFO    [0m Auto-selected attention backend: triton
+[1m[2026-09-09|18:54:32|core|rank=0][0m [32mINFO    [0m Auto-selected MoE backend: offload
+[1m[2026-09-09|18:54:32|core|rank=0][0m [32mINFO    [0m Resolved config: moe_backend='offload', attention_backend='triton', cache_type='swa_radix', page_size=1
+[1m[2026-09-09|18:54:32|core|rank=0][0m [32mINFO    [0m Free memory before loading model: 6.93 GiB
+C:\Users\cadel\AppData\Local\FreeToken\venv\Lib\site-packages\torch\utils\_device.py:116: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:39.)
+  return func(*args, **kwargs)
+[1m[2026-09-09|18:54:34|core|rank=0][0m [32mINFO    [0m --moe-cpu-layers auto: banks 11.96 GiB > pin budget 6.08 GiB; locking 15 head+tail MoE layers for CPU decode ([0, 1, 2, 3, 4, 5, 6, 7, 23, 24, 25, 26, 27, 28, 29])
+[1m[2026-09-09|18:54:34|core|rank=0][0m [32mINFO    [0m --moe-cpu-layers split residency: disabling MoE prefill overlap (locked layers prefill via synchronous pageable copies)
+[1m[2026-09-09|18:54:34|core|rank=0][0m [32mINFO    [0m expert banks: slow path (serial build)
+[1m[2026-09-09|18:54:47|core|rank=0][0m [32mINFO    [0m torch intra-op threads: 8 -> 1 (cores reserved for the pinned CPU MoE pool)
+[1m[2026-09-09|18:54:47|core|rank=0][0m [32mINFO    [0m CPU MoE executor ready: threads=6 (pinned to cores 0..10) isa=avx512bf16+q4_0-w4a8 fmt=q4_0 H=2816 I=704 experts=128 layers=30 top_k=8 act=gelu_tanh max_tokens=1
+[1m[2026-09-09|18:54:47|core|rank=0][0m [32mINFO    [0m Allocating 8232 tokens for KV cache, K + V = 0.89 GiB
+[1m[2026-09-09|18:54:47|core|rank=0][0m [32mINFO    [0m Free memory after initialization: 1.00 GiB
+[1m[2026-09-09|18:54:47|core|rank=0][0m [32mINFO    [0m Start capturing CUDA graphs with sizes: [1]
+[1m[2026-09-09|18:54:47|core|rank=0][0m [32mINFO    [0m Free GPU memory before capturing CUDA graphs: 1.00 GiB
+Preparing for capturing CUDA graphs...:   0%|          | 0/1 [00:00<?, ?batch/s]Capturing graphs: bs = 1   | avail_mem = 1.00 GiB:   0%|          | 0/1 [00:00<?, ?batch/s]ninja: no work to do.
+Capturing graphs: bs = 1   | avail_mem = 1.00 GiB: 100%|██████████| 1/1 [00:07<00:00,  7.06s/batch]Capturing graphs: bs = 1   | avail_mem = 1.00 GiB: 100%|██████████| 1/1 [00:07<00:00,  7.07s/batch]
+[1m[2026-09-09|18:54:56|core|rank=0][0m [32mINFO    [0m Free GPU memory after capturing CUDA graphs: 0.98 GiB
+[1m[2026-09-09|18:55:03|core|rank=0][0m [32mINFO    [0m Prefill warmup complete for lengths [80, 128] in 7.400 s
+[1m[2026-09-09|18:55:11|core|rank=0][0m [32mINFO    [0m Scheduler is idle, waiting for new reqs...
+[1m[2026-09-09|18:55:11|FrontendAPI][0m [32mINFO    [0m API server is ready to serve on 127.0.0.1:1920
+C:\Users\cadel\AppData\Local\FreeToken\venv\Lib\site-packages\freetoken\models\gguf\reader.py:112: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:219.)
+  return torch.from_numpy(self._raw)
+[1m[2026-09-09|18:55:18][0m [32mINFO    [0m reasoning-effort profile: supported=['high', 'low', 'max', 'medium', 'minimal', 'none', 'xhigh'] default=None
+INFO:     127.0.0.1:64180 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64181 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[1m[2026-09-09|18:55:22|core|rank=0][0m [32mINFO    [0m Prefill batch, #new-seq: 1, #new-token: 19, #cached-token: 0, token usage: 0.00, #swa-token: 20/2194, swa usage: 0.01, #running-req: 1, #queue-req: 0, input throughput (token/s): 1.73
+[1m[2026-09-09|18:55:26|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 60, token usage: 0.01, #swa-token: 60/2194, swa usage: 0.03, gen throughput (token/s): 2.77, #queue-req: 0
+[1m[2026-09-09|18:55:27|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 100, token usage: 0.01, #swa-token: 100/2194, swa usage: 0.05, gen throughput (token/s): 35.46, #queue-req: 0
+[1m[2026-09-09|18:55:28|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 140, token usage: 0.02, #swa-token: 140/2194, swa usage: 0.06, gen throughput (token/s): 28.07, #queue-req: 0
+[1m[2026-09-09|18:55:29|core|rank=0][0m [32mINFO    [0m Scheduler is idle, waiting for new reqs...
+INFO:     127.0.0.1:64184 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[1m[2026-09-09|18:55:30|core|rank=0][0m [32mINFO    [0m Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 18, token usage: 0.00, #swa-token: 20/2194, swa usage: 0.01, #running-req: 1, #queue-req: 0, input throughput (token/s): 0.13
+[1m[2026-09-09|18:55:33|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 53, token usage: 0.01, #swa-token: 53/2194, swa usage: 0.02, gen throughput (token/s): 9.28, #queue-req: 0
+[1m[2026-09-09|18:55:35|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 93, token usage: 0.01, #swa-token: 93/2194, swa usage: 0.04, gen throughput (token/s): 17.87, #queue-req: 0
+[1m[2026-09-09|18:55:36|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 133, token usage: 0.02, #swa-token: 133/2194, swa usage: 0.06, gen throughput (token/s): 29.06, #queue-req: 0
+[1m[2026-09-09|18:55:37|core|rank=0][0m [32mINFO    [0m Scheduler is idle, waiting for new reqs...
+INFO:     127.0.0.1:61844 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[1m[2026-09-09|18:55:38|core|rank=0][0m [32mINFO    [0m Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 18, token usage: 0.00, #swa-token: 20/2194, swa usage: 0.01, #running-req: 1, #queue-req: 0, input throughput (token/s): 0.12
+[1m[2026-09-09|18:55:39|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 46, token usage: 0.01, #swa-token: 46/2194, swa usage: 0.02, gen throughput (token/s): 14.84, #queue-req: 0
+[1m[2026-09-09|18:55:41|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 86, token usage: 0.01, #swa-token: 86/2194, swa usage: 0.04, gen throughput (token/s): 18.63, #queue-req: 0
+[1m[2026-09-09|18:55:43|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 126, token usage: 0.02, #swa-token: 126/2194, swa usage: 0.06, gen throughput (token/s): 16.63, #queue-req: 0
+[1m[2026-09-09|18:55:45|core|rank=0][0m [32mINFO    [0m Scheduler is idle, waiting for new reqs...
+INFO:     127.0.0.1:64892 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[1m[2026-09-09|18:55:46|core|rank=0][0m [32mINFO    [0m Prefill batch, #new-seq: 1, #new-token: 1, #cached-token: 18, token usage: 0.00, #swa-token: 20/2194, swa usage: 0.01, #running-req: 1, #queue-req: 0, input throughput (token/s): 0.13
+[1m[2026-09-09|18:55:46|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 39, token usage: 0.00, #swa-token: 39/2194, swa usage: 0.02, gen throughput (token/s): 13.42, #queue-req: 0
+[1m[2026-09-09|18:55:48|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 79, token usage: 0.01, #swa-token: 79/2194, swa usage: 0.04, gen throughput (token/s): 32.46, #queue-req: 0
+[1m[2026-09-09|18:55:49|core|rank=0][0m [32mINFO    [0m Decode batch, #running-req: 1, #token: 119, token usage: 0.01, #swa-token: 119/2194, swa usage: 0.05, gen throughput (token/s): 33.46, #queue-req: 0
+[1m[2026-09-09|18:55:51|core|rank=0][0m [32mINFO    [0m Scheduler is idle, waiting for new reqs...
+SUCCESS: The process with PID 62816 (child process of PID 65784) has been terminated.
+SUCCESS: The process with PID 66216 (child process of PID 65784) has been terminated.
+SUCCESS: The process with PID 65784 (child process of PID 66424) has been terminated.
+SUCCESS: The process with PID 65104 (child process of PID 66016) has been terminated.
+SUCCESS: The process with PID 66424 (child process of PID 66016) has been terminated.
+SUCCESS: The process with PID 66016 (child process of PID 5376) has been terminated.

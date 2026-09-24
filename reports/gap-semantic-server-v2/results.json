@@ -1,0 +1,232 @@
+{
+  "command": [
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\llama-server.exe",
+    "-m",
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+    "-ngl",
+    "0",
+    "--no-op-offload",
+    "--no-kv-offload",
+    "-np",
+    "1",
+    "-c",
+    "512",
+    "-b",
+    "128",
+    "-ub",
+    "8",
+    "-t",
+    "8",
+    "-tb",
+    "8",
+    "--no-warmup",
+    "--no-repack",
+    "--fit",
+    "off",
+    "--moe-gpu-cache-mib",
+    "256",
+    "--moe-pipeline",
+    "--semantic-checkpoints",
+    "--checkpoint-min-step",
+    "0",
+    "--semantic-checkpoint-mib",
+    "128",
+    "--slots",
+    "--cache-ram",
+    "0",
+    "--slot-save-path",
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\reports\\gap-semantic-server-v2",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "56163"
+  ],
+  "requests": [
+    {
+      "label": "warm",
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Name two primary colors. Answer briefly."
+          },
+          {
+            "role": "assistant",
+            "content": "Red and blue."
+          },
+          {
+            "role": "user",
+            "content": "Now name two more colors, briefly."
+          }
+        ],
+        "temperature": 0,
+        "seed": 1234,
+        "max_tokens": 4,
+        "cache_prompt": true,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The"
+            }
+          }
+        ],
+        "created": 1788988525,
+        "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "system_fingerprint": "b1-bb4caa7",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 4,
+          "prompt_tokens": 44,
+          "total_tokens": 48,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-gBrf5e6lq4ikgqKrVwLog8lwkde0pvt5",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 44,
+          "prompt_ms": 24670.353,
+          "prompt_per_token_ms": 560.6898409090909,
+          "prompt_per_second": 1.783517244362089,
+          "predicted_n": 4,
+          "predicted_ms": 2532.027,
+          "predicted_per_token_ms": 844.009,
+          "predicted_per_second": 1.1848214888703794
+        }
+      }
+    },
+    {
+      "label": "edited",
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Name two primary colors. Answer briefly."
+          },
+          {
+            "role": "assistant",
+            "content": "Red and blue."
+          },
+          {
+            "role": "user",
+            "content": "Now name two more colors, briefly."
+          }
+        ],
+        "temperature": 0,
+        "seed": 1234,
+        "max_tokens": 4,
+        "cache_prompt": true,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "*"
+            }
+          }
+        ],
+        "created": 1788988532,
+        "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "system_fingerprint": "b1-bb4caa7",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 4,
+          "prompt_tokens": 46,
+          "total_tokens": 50,
+          "prompt_tokens_details": {
+            "cached_tokens": 32
+          }
+        },
+        "id": "chatcmpl-rhsu8GuNgq4n9kalhXFAe9pWeWcgdKMf",
+        "timings": {
+          "cache_n": 32,
+          "prompt_n": 14,
+          "prompt_ms": 5384.181,
+          "prompt_per_token_ms": 384.58435714285713,
+          "prompt_per_second": 2.6002097626361373,
+          "predicted_n": 4,
+          "predicted_ms": 1204.999,
+          "predicted_per_token_ms": 401.66633333333334,
+          "predicted_per_second": 2.489628622098442
+        }
+      }
+    },
+    {
+      "label": "fresh",
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Name two primary colors. Answer briefly."
+          },
+          {
+            "role": "assistant",
+            "content": "Red and blue."
+          },
+          {
+            "role": "user",
+            "content": "Now name two more colors, briefly."
+          }
+        ],
+        "temperature": 0,
+        "seed": 1234,
+        "max_tokens": 4,
+        "cache_prompt": true,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "*"
+            }
+          }
+        ],
+        "created": 1788988549,
+        "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "system_fingerprint": "b1-bb4caa7",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 4,
+          "prompt_tokens": 46,
+          "total_tokens": 50,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-yuVgmpwMvjMElQKyhIqbzhi55EkabyhI",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 46,
+          "prompt_ms": 15653.73,
+          "prompt_per_token_ms": 340.29847826086956,
+          "prompt_per_second": 2.938596743395983,
+          "predicted_n": 4,
+          "predicted_ms": 1149.543,
+          "predicted_per_token_ms": 383.181,
+          "predicted_per_second": 2.6097327372703765
+        }
+      }
+    }
+  ],
+  "status": "passed",
+  "saved": 15,
+  "restored": 1
+}

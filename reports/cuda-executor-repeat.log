@@ -1,0 +1,36 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8187 MiB):
+  Device 0: NVIDIA GeForce RTX 4060 Laptop GPU, compute capability 8.9, VMM: yes, VRAM: 8187 MiB
+device error L2=0.0120121 signal L2=0.00377259 first=-0.000688996 expected=0.000355891
+FAIL: device relative L2 error
+RUN f32 fused=0 capacity=1
+RUN f32 fused=0 capacity=2
+RUN f32 fused=0 capacity=7
+PASS device CUDA0 f32: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN f32 fused=1 capacity=1
+RUN f32 fused=1 capacity=2
+RUN f32 fused=1 capacity=7
+PASS device CUDA0 f32: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN f16 fused=0 capacity=1
+RUN f16 fused=0 capacity=2
+RUN f16 fused=0 capacity=7
+PASS device CUDA0 f16: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN f16 fused=1 capacity=1
+RUN f16 fused=1 capacity=2
+RUN f16 fused=1 capacity=7
+PASS device CUDA0 f16: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN q4_0 fused=0 capacity=1
+RUN q4_0 fused=0 capacity=2
+RUN q4_0 fused=0 capacity=7
+PASS device CUDA0 q4_0: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN q4_0 fused=1 capacity=1
+RUN q4_0 fused=1 capacity=2
+RUN q4_0 fused=1 capacity=7
+PASS device CUDA0 q4_0: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN q8_0 fused=0 capacity=1
+RUN q8_0 fused=0 capacity=2
+RUN q8_0 fused=0 capacity=7
+PASS device CUDA0 q8_0: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN q8_0 fused=1 capacity=1
+RUN q8_0 fused=1 capacity=2
+RUN q8_0 fused=1 capacity=7
+PASS device CUDA0 q8_0: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation

@@ -1,0 +1,36 @@
+{
+  "choices": [
+    {
+      "finish_reason": "length",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "To understand how a GPU runs a Large Language Model (LLM), you have to view the GPU not just as a calculator, but as a high-speed"
+      }
+    }
+  ],
+  "created": 1789339287,
+  "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\models\\Gemma-4-26B-A4B-IT-QAT-Q4_0\\gemma-4-26B_q4_0-it.gguf",
+  "system_fingerprint": "b1-bb4caa7",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 32,
+    "prompt_tokens": 163,
+    "total_tokens": 195,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-j7YUDL0YpH0oTQLoVyxZpgJUXytRfcF6",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 163,
+    "prompt_ms": 31489.991,
+    "prompt_per_token_ms": 193.19012883435585,
+    "prompt_per_second": 5.176247906834905,
+    "predicted_n": 32,
+    "predicted_ms": 6377.763,
+    "predicted_per_token_ms": 205.73429032258065,
+    "predicted_per_second": 4.86063844015527
+  }
+}

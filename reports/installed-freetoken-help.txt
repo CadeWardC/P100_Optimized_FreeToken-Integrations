@@ -1,0 +1,204 @@
+usage: ft serve [-h] --model-path MODEL_PATH
+                [--dtype {auto,float16,bfloat16,float32}]
+                [--tensor-parallel-size TENSOR_PARALLEL_SIZE] [--gpu GPU]
+                [--max-running-requests MAX_RUNNING_REQ]
+                [--max-seq-len-override MAX_SEQ_LEN_OVERRIDE]
+                [--max-output-tokens MAX_OUTPUT_TOKENS]
+                [--memory-ratio MEMORY_RATIO] [--dummy-weight]
+                [--disable-pynccl] [--host SERVER_HOST] [--port SERVER_PORT]
+                [--cuda-graph-max-bs CUDA_GRAPH_MAX_BS]
+                [--num-tokenizer NUM_TOKENIZER]
+                [--max-prefill-length MAX_EXTEND_TOKENS]
+                [--decode-log-interval DECODE_LOG_INTERVAL]
+                [--num-pages NUM_PAGE_OVERRIDE | --num-tokens NUM_TOKEN_OVERRIDE]
+                [--page-size PAGE_SIZE]
+                [--attention-backend ATTENTION_BACKEND]
+                [--model-source {huggingface,modelscope}]
+                [--cache-type {naive,radix}] [--enable-cache-report]
+                [--sampling-defaults {model,none}]
+                [--served-model-name SERVED_MODEL_NAME]
+                [--tool-call-parser {auto,llama3,qwen,qwen25,qwen3_coder,mistral,deepseekv32,gemma4,glm47,minimax,minimax_m3,muse_glimmer,gpt_oss,gpt-oss}]
+                [--reasoning-parser {auto,off,deepseekv32,gpt_oss,qwen3,glm,minimax,minimax_m3,muse_glimmer,gemma4}]
+                [--moe-backend {auto,fused,offload,cpu,hybrid}]
+                [--ple-backend {pinned,disk}]
+                [--nvfp4-backend {auto,marlin,flashinfer,triton}]
+                [--expert-load {auto,serial,parallel}]
+                [--moe-cache-size MOE_CACHE_SIZE | --moe-cache-rate MOE_CACHE_RATE | --moe-cache-auto]
+                [--kv-reserve-tokens KV_RESERVE_TOKENS]
+                [--moe-cache-policy {lru}] [--moe-cpu-threads MOE_CPU_THREADS]
+                [--moe-cpu-layers MOE_CPU_LAYERS]
+                [--moe-hybrid-max-fetch MOE_HYBRID_MAX_FETCH]
+                [--disable-moe-prefill-overlap] [--enable-special-token-ckpt]
+                [--moe-prefill-hit-d2d] [--shell-mode]
+                [--cors-origins CORS_ORIGINS]
+
+FreeToken Server Arguments
+
+options:
+  -h, --help            show this help message and exit
+  --model-path MODEL_PATH, --model MODEL_PATH
+                        The path of the model weights. This can be a local
+                        folder or a Hugging Face repo ID.
+  --dtype {auto,float16,bfloat16,float32}
+                        Data type for model weights and activations. 'auto'
+                        will use FP16 for FP32/FP16 models and BF16 for BF16
+                        models.
+  --tensor-parallel-size TENSOR_PARALLEL_SIZE, --tp-size TENSOR_PARALLEL_SIZE
+                        The tensor parallelism size.
+  --gpu GPU             GPU(s) to run on, comma-separated; entry i is TP rank
+                        i. Each entry is a GPU UUID (GPU-xxxx..., as nvidia-
+                        smi -L prints) or an nvidia-smi index
+  --max-running-requests MAX_RUNNING_REQ
+                        The maximum number of running requests.
+  --max-seq-len-override MAX_SEQ_LEN_OVERRIDE
+                        The maximum sequence length override.
+  --max-output-tokens MAX_OUTPUT_TOKENS
+                        Default max output tokens for requests that omit one
+                        (default 32k).
+  --memory-ratio MEMORY_RATIO
+                        Fraction of total GPU free memory the engine may use
+                        for weights + MoE cache + KV cache combined; the
+                        remainder is reserved runtime headroom.
+  --dummy-weight        Use dummy weights for testing.
+  --disable-pynccl      Disable PyNCCL for tensor parallelism.
+  --host SERVER_HOST    The host address for the server.
+  --port SERVER_PORT    The port number for the server to listen on.
+  --cuda-graph-max-bs CUDA_GRAPH_MAX_BS, --graph CUDA_GRAPH_MAX_BS
+                        The maximum batch size for CUDA graph capture. None
+                        means auto-tuning based on the GPU memory.
+  --num-tokenizer NUM_TOKENIZER, --tokenizer-count NUM_TOKENIZER
+                        The number of tokenizer processes to launch. 0 means
+                        the tokenizer is shared with the detokenizer.
+  --max-prefill-length MAX_EXTEND_TOKENS, --max-extend-length MAX_EXTEND_TOKENS
+                        Chunk Prefill maximum chunk size in tokens.
+  --decode-log-interval DECODE_LOG_INTERVAL
+                        Print one decode scheduler status line every N decode
+                        forwards.
+  --num-pages NUM_PAGE_OVERRIDE
+                        Set the maximum number of pages for KVCache.
+  --num-tokens NUM_TOKEN_OVERRIDE
+                        Total KV-cache capacity in tokens; must be a multiple
+                        of the resolved page size (DSV4: 128 window page,
+                        TRTLLM backend: 64). Mutually exclusive with --num-
+                        pages.
+  --page-size PAGE_SIZE
+                        Set the page size for system management.
+  --attention-backend ATTENTION_BACKEND, --attn ATTENTION_BACKEND
+                        The attention backend to use. If two backends are
+                        specified, the first one is used for prefill and the
+                        second one for decode.
+  --model-source {huggingface,modelscope}
+                        The source to download model from. Either
+                        'huggingface' or 'modelscope'.
+  --cache-type {naive,radix}
+                        KV cache strategy (naive | radix). For hybrid GDN
+                        models 'radix' is materialized as a GDN-aware radix
+                        (cross-request GDN-state prefix reuse); pass 'naive'
+                        to opt out.
+  --enable-cache-report
+                        Return the number of prefix-cached prompt tokens in
+                        each response's usage block (OpenAI
+                        usage.prompt_tokens_details.cached_tokens, Anthropic
+                        usage.cache_read_input_tokens, Responses
+                        usage.input_tokens_details.cached_tokens). On
+                        /v1/messages this also makes input_tokens EXCLUDE the
+                        cached prefix, matching Anthropic billing semantics.
+  --sampling-defaults {model,none}
+                        Source for unspecified request sampling params.
+                        'model' fills temperature/top_k/top_p from the
+                        checkpoint's generation_config.json (recommended for
+                        reasoning models to avoid greedy repetition loops);
+                        'none' uses framework defaults only.
+  --served-model-name SERVED_MODEL_NAME
+                        Model id returned by /v1/models. Defaults to the
+                        basename of --model.
+  --tool-call-parser {auto,llama3,qwen,qwen25,qwen3_coder,mistral,deepseekv32,gemma4,glm47,minimax,minimax_m3,muse_glimmer,gpt_oss,gpt-oss}
+                        Tool-call parser format for OpenAI-compatible tool
+                        responses.
+  --reasoning-parser {auto,off,deepseekv32,gpt_oss,qwen3,glm,minimax,minimax_m3,muse_glimmer,gemma4}
+                        Reasoning parser that splits chain-of-thought into
+                        reasoning_content for OpenAI responses. 'auto' selects
+                        per model family (gpt-oss Harmony, <think> for
+                        qwen3/glm/minimax, <mm:think> for minimax-m3, ATEM
+                        to=self channels for muse-glimmer, gemma thought,
+                        dsv4); 'off' disables it.
+  --moe-backend {auto,fused,offload,cpu,hybrid}
+                        The MoE backend to use. 'auto' resolves a MoE model to
+                        the offload family (offload, or hybrid when a `ft
+                        bench bw` profile recommends it); resident 'fused'
+                        experts must be requested explicitly.
+  --ple-backend {pinned,disk}
+                        Where a PLE n-gram table lives. 'disk' (default) reads
+                        rows straight from the checkpoint files; 'pinned'
+                        preloads the whole table into page-locked host RAM.
+  --nvfp4-backend {auto,marlin,flashinfer,triton}
+                        NVFP4 routed-expert GEMM backend (default: triton, the
+                        portable inline-dequant kernel). auto picks by GPU
+                        (marlin on sm80-99 + vLLM; flashinfer b12x on sm120+ &
+                        CUDA>=13; else triton). Force one to override; it
+                        fails loudly if it cannot run.
+  --expert-load {auto,serial,parallel}
+                        How MoE expert banks are read into host RAM. 'auto'
+                        (default) reads scattered experts in parallel (fast)
+                        but falls back to serial when free RAM can't cover the
+                        banks + the parallel reader's extra whole-shard
+                        buffer; 'serial' forces the low-memory reclaimable
+                        read (slower); 'parallel' forces the fast read.
+  --moe-cache-size MOE_CACHE_SIZE
+                        The number of unified MoE expert slots on GPU.
+  --moe-cache-rate MOE_CACHE_RATE
+                        The fraction of all MoE experts to keep in GPU cache.
+  --moe-cache-auto      Auto-pick --moe-cache-size from free VRAM and expert
+                        size, MoE-priority (KV gets --kv-reserve-tokens as a
+                        floor). Not supported for owned-KV models.
+  --kv-reserve-tokens KV_RESERVE_TOKENS
+                        KV-cache token floor reserved before --moe-cache-auto
+                        fills experts.
+  --moe-cache-policy {lru}
+                        The unified MoE cache eviction policy.
+  --moe-cpu-threads MOE_CPU_THREADS
+                        Number of CPU worker threads for --moe-backend cpu
+                        decode experts. 0 = auto (physical cores).
+  --moe-cpu-layers MOE_CPU_LAYERS
+                        With --moe-backend offload/hybrid: which MoE layers
+                        compute on the CPU executor instead of the GPU
+                        offload/PCIe path (where CUDA pinning is quota-capped,
+                        e.g. WSL, their banks are OS-locked instead of
+                        pinned). Explicit id list ('3,7,11'), a count ('8' = 8
+                        layers evenly strided), or a fraction ('0.5'). Unset =
+                        automatic where CUDA pinning is quota-capped, e.g. WSL
+                        (locks just enough head+tail layers when the banks
+                        exceed the pin budget, none otherwise); '0' forces all
+                        layers on GPU.
+  --moe-hybrid-max-fetch MOE_HYBRID_MAX_FETCH
+                        For --moe-backend hybrid: max experts fetched over
+                        PCIe per (layer, decode step); the rest of that step's
+                        misses are computed on the CPU, overlapped. -1
+                        (default) = auto: fetch the benched pcie/cpu bandwidth
+                        fraction of each step's misses (perfect overlap; needs
+                        an `ft bench bw` profile, else 1). 0 = never fetch
+                        (all misses on CPU); large = behaves like plain
+                        offload.
+  --disable-moe-prefill-overlap
+                        Disable two-buffer overlap for prefill MoE expert
+                        copies. By default, prefill overlap is enabled and
+                        requires --moe-cache-size >= 2 * num_experts.
+  --enable-special-token-ckpt
+                        Checkpoint decode state at special tokens (currently
+                        the tool-call opener). When a GDN-hybrid or SWA model
+                        samples its tool-call opener token, the scheduler
+                        preserves a reuse point just after it (GDN: a state
+                        snapshot donated to the prefix cache; SWA: the
+                        trailing window is kept resumable), so a client that
+                        rewrites the echoed tool call only invalidates the
+                        call body, not the turn.
+  --moe-prefill-hit-d2d
+                        During prefill prefetch, copy cache-resident experts
+                        device-side into the double buffer and stream only the
+                        misses over PCIe (cudaMemcpyBatchAsync, CUDA >= 13.0).
+                        Effective with --moe-cache-size > 2 * num_experts.
+  --shell-mode          Run the server in shell mode.
+  --cors-origins CORS_ORIGINS
+                        Comma-separated CORS allow-list for browser/webview
+                        clients (default: local Tauri/Vite dev origins). ''
+                        disables, '*' allows any.

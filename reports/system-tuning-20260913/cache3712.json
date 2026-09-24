@@ -1,0 +1,577 @@
+{
+  "label": "cache3712",
+  "settings": {
+    "gpu_cache": "3712",
+    "ubatch": "128",
+    "batch": "512",
+    "flash": "off",
+    "cache_k": "f16",
+    "cache_v": "f16",
+    "miss": "0",
+    "auto_settings": "0"
+  },
+  "samples": [
+    {
+      "kind": "warmup",
+      "wall_seconds": 21.34400000000005,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "To understand how a GPU (Graphics Processing Unit) works, it is best to compare it to a CPU (Central Processing Unit).\n\nIf a **CPU is a brilliant professor**, a **GPU is a thousand elementary school students.** The professor can solve any complex problem, but only one at a time. The thousand students"
+            }
+          }
+        ],
+        "created": 1789336004,
+        "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\models\\Gemma-4-26B-A4B-IT-QAT-Q4_0\\gemma-4-26B_q4_0-it.gguf",
+        "system_fingerprint": "b1-bb4caa7",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 64,
+          "prompt_tokens": 19,
+          "total_tokens": 83,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-eLdgg0jCgx3hEtRiMfvEABfKmSmLBNYP",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 19,
+          "prompt_ms": 10045.043,
+          "prompt_per_token_ms": 528.6864736842105,
+          "prompt_per_second": 1.891480205709423,
+          "predicted_n": 64,
+          "predicted_ms": 11272.98,
+          "predicted_per_token_ms": 178.93619047619046,
+          "predicted_per_second": 5.588584384962982
+        }
+      }
+    },
+    {
+      "kind": "short",
+      "wall_seconds": 5.609000000000378,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "To understand how a GPU (Graphics Processing Unit) works, it is best to compare it to a CPU (Central Processing Unit).\n\nIf a **CPU is a brilliant professor**, a **GPU is a thousand elementary school students.** The professor can solve any complex problem, but only one at a time. The thousand students"
+            }
+          }
+        ],
+        "created": 1789336010,
+        "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\models\\Gemma-4-26B-A4B-IT-QAT-Q4_0\\gemma-4-26B_q4_0-it.gguf",
+        "system_fingerprint": "b1-bb4caa7",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 64,
+          "prompt_tokens": 19,
+          "total_tokens": 83,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-EyYXFIDpTDsA9MfsFPv9rBI2LnivgUu6",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 19,
+          "prompt_ms": 1736.676,
+          "prompt_per_token_ms": 91.404,
+          "prompt_per_second": 10.94044024331539,
+          "predicted_n": 64,
+          "predicted_ms": 3136.396,
+          "predicted_per_token_ms": 49.784063492063495,
+          "predicted_per_second": 20.086749249775856
+        }
+      }
+    },
+    {
+      "kind": "long",
+      "wall_seconds": 20.234999999999673,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "### Summary\nGPUs are designed to perform many tasks simultaneously, but they can only work as fast as they receive data. If the data (weights) is too large to fit in the GPU's dedicated memory, it has to be moved from elsewhere, which slows things down. While having a larger cache can help by"
+            }
+          }
+        ],
+        "created": 1789336030,
+        "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\models\\Gemma-4-26B-A4B-IT-QAT-Q4_0\\gemma-4-26B_q4_0-it.gguf",
+        "system_fingerprint": "b1-bb4caa7",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 64,
+          "prompt_tokens": 277,
+          "total_tokens": 341,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-0gHROaV62dUUeNfOr928eGmtqxMTrFZv",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 277,
+          "prompt_ms": 15229.214,
+          "prompt_per_token_ms": 54.9791119133574,
+          "prompt_per_second": 18.188725957885943,
+          "predicted_n": 64,
+          "predicted_ms": 4960.655,
+          "predicted_per_token_ms": 78.74055555555555,
+          "predicted_per_second": 12.699935794769038
+        }
+      }
+    }
+  ],
+  "telemetry": [
+    {
+      "time": 1789335983.2462099,
+      "gpu_used_mib": 7211.0,
+      "gpu_free_mib": 746.0,
+      "gpu_util": 0.0,
+      "watts": 3.64,
+      "clock_mhz": 420.0,
+      "ram_available_mib": 5235.90234375,
+      "cpu_percent": 0.0
+    },
+    {
+      "time": 1789335984.3328555,
+      "gpu_used_mib": 7213.0,
+      "gpu_free_mib": 744.0,
+      "gpu_util": 19.0,
+      "watts": 3.21,
+      "clock_mhz": 390.0,
+      "ram_available_mib": 4893.09375,
+      "cpu_percent": 10.1
+    },
+    {
+      "time": 1789335985.4391456,
+      "gpu_used_mib": 7213.0,
+      "gpu_free_mib": 744.0,
+      "gpu_util": 15.0,
+      "watts": 3.3,
+      "clock_mhz": 420.0,
+      "ram_available_mib": 4586.9453125,
+      "cpu_percent": 11.3
+    },
+    {
+      "time": 1789335986.5200944,
+      "gpu_used_mib": 7213.0,
+      "gpu_free_mib": 744.0,
+      "gpu_util": 15.0,
+      "watts": 4.68,
+      "clock_mhz": 420.0,
+      "ram_available_mib": 4327.76171875,
+      "cpu_percent": 14.4
+    },
+    {
+      "time": 1789335987.6091247,
+      "gpu_used_mib": 7213.0,
+      "gpu_free_mib": 744.0,
+      "gpu_util": 19.0,
+      "watts": 4.08,
+      "clock_mhz": 285.0,
+      "ram_available_mib": 3955.5390625,
+      "cpu_percent": 13.3
+    },
+    {
+      "time": 1789335988.695914,
+      "gpu_used_mib": 7213.0,
+      "gpu_free_mib": 744.0,
+      "gpu_util": 52.0,
+      "watts": 5.18,
+      "clock_mhz": 630.0,
+      "ram_available_mib": 3257.375,
+      "cpu_percent": 11.5
+    },
+    {
+      "time": 1789335989.777601,
+      "gpu_used_mib": 7213.0,
+      "gpu_free_mib": 744.0,
+      "gpu_util": 12.0,
+      "watts": 4.88,
+      "clock_mhz": 660.0,
+      "ram_available_mib": 2887.58203125,
+      "cpu_percent": 8.7
+    },
+    {
+      "time": 1789335990.8666012,
+      "gpu_used_mib": 7213.0,
+      "gpu_free_mib": 744.0,
+      "gpu_util": 22.0,
+      "watts": 4.85,
+      "clock_mhz": 450.0,
+      "ram_available_mib": 2496.953125,
+      "cpu_percent": 10.5
+    },
+    {
+      "time": 1789335991.958446,
+      "gpu_used_mib": 7213.0,
+      "gpu_free_mib": 744.0,
+      "gpu_util": 13.0,
+      "watts": 4.49,
+      "clock_mhz": 420.0,
+      "ram_available_mib": 2147.66796875,
+      "cpu_percent": 10.7
+    },
+    {
+      "time": 1789335993.04802,
+      "gpu_used_mib": 7213.0,
+      "gpu_free_mib": 744.0,
+      "gpu_util": 13.0,
+      "watts": 4.7,
+      "clock_mhz": 420.0,
+      "ram_available_mib": 1763.125,
+      "cpu_percent": 11.8
+    },
+    {
+      "time": 1789335994.1259048,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 6.0,
+      "watts": 7.19,
+      "clock_mhz": 2010.0,
+      "ram_available_mib": 1427.54296875,
+      "cpu_percent": 11.3
+    },
+    {
+      "time": 1789335995.1973045,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 28.0,
+      "watts": 16.32,
+      "clock_mhz": 2010.0,
+      "ram_available_mib": 1064.28515625,
+      "cpu_percent": 14.0
+    },
+    {
+      "time": 1789335996.2746487,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 34.0,
+      "watts": 12.21,
+      "clock_mhz": 885.0,
+      "ram_available_mib": 811.78125,
+      "cpu_percent": 22.9
+    },
+    {
+      "time": 1789335997.3778195,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 22.0,
+      "watts": 10.42,
+      "clock_mhz": 720.0,
+      "ram_available_mib": 526.74609375,
+      "cpu_percent": 15.6
+    },
+    {
+      "time": 1789335998.4591053,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 29.0,
+      "watts": 10.82,
+      "clock_mhz": 630.0,
+      "ram_available_mib": 308.875,
+      "cpu_percent": 13.6
+    },
+    {
+      "time": 1789335999.5167897,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 21.0,
+      "watts": 10.82,
+      "clock_mhz": 585.0,
+      "ram_available_mib": 363.94140625,
+      "cpu_percent": 15.9
+    },
+    {
+      "time": 1789336000.6137471,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 39.0,
+      "watts": 11.39,
+      "clock_mhz": 735.0,
+      "ram_available_mib": 351.03125,
+      "cpu_percent": 10.8
+    },
+    {
+      "time": 1789336001.694679,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 29.0,
+      "watts": 10.8,
+      "clock_mhz": 825.0,
+      "ram_available_mib": 348.98046875,
+      "cpu_percent": 8.6
+    },
+    {
+      "time": 1789336002.7764356,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 16.0,
+      "watts": 10.59,
+      "clock_mhz": 915.0,
+      "ram_available_mib": 313.78515625,
+      "cpu_percent": 9.0
+    },
+    {
+      "time": 1789336003.85128,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 36.0,
+      "watts": 11.46,
+      "clock_mhz": 1110.0,
+      "ram_available_mib": 350.32421875,
+      "cpu_percent": 12.3
+    },
+    {
+      "time": 1789336004.943516,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 17.0,
+      "watts": 13.09,
+      "clock_mhz": 1110.0,
+      "ram_available_mib": 322.296875,
+      "cpu_percent": 15.3
+    },
+    {
+      "time": 1789336006.0250123,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 35.0,
+      "watts": 10.84,
+      "clock_mhz": 870.0,
+      "ram_available_mib": 199.6640625,
+      "cpu_percent": 15.1
+    },
+    {
+      "time": 1789336007.12245,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 42.0,
+      "watts": 10.27,
+      "clock_mhz": 1035.0,
+      "ram_available_mib": 252.21875,
+      "cpu_percent": 14.2
+    },
+    {
+      "time": 1789336008.2066026,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 59.0,
+      "watts": 18.21,
+      "clock_mhz": 2565.0,
+      "ram_available_mib": 259.8671875,
+      "cpu_percent": 15.9
+    },
+    {
+      "time": 1789336009.2881715,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 60.0,
+      "watts": 37.4,
+      "clock_mhz": 2565.0,
+      "ram_available_mib": 188.671875,
+      "cpu_percent": 20.2
+    },
+    {
+      "time": 1789336010.3773744,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 57.0,
+      "watts": 36.88,
+      "clock_mhz": 2565.0,
+      "ram_available_mib": 135.109375,
+      "cpu_percent": 17.4
+    },
+    {
+      "time": 1789336011.4589894,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 15.0,
+      "watts": 24.82,
+      "clock_mhz": 2565.0,
+      "ram_available_mib": 126.2734375,
+      "cpu_percent": 10.6
+    },
+    {
+      "time": 1789336012.550943,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 10.0,
+      "watts": 20.2,
+      "clock_mhz": 1560.0,
+      "ram_available_mib": 208.9375,
+      "cpu_percent": 15.7
+    },
+    {
+      "time": 1789336013.6281867,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 12.0,
+      "watts": 14.89,
+      "clock_mhz": 1245.0,
+      "ram_available_mib": 136.26953125,
+      "cpu_percent": 18.8
+    },
+    {
+      "time": 1789336014.707723,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 23.0,
+      "watts": 13.44,
+      "clock_mhz": 960.0,
+      "ram_available_mib": 137.57421875,
+      "cpu_percent": 30.5
+    },
+    {
+      "time": 1789336015.7911186,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 47.0,
+      "watts": 10.28,
+      "clock_mhz": 795.0,
+      "ram_available_mib": 140.15234375,
+      "cpu_percent": 14.6
+    },
+    {
+      "time": 1789336016.8701112,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 10.0,
+      "watts": 10.75,
+      "clock_mhz": 735.0,
+      "ram_available_mib": 130.6640625,
+      "cpu_percent": 17.3
+    },
+    {
+      "time": 1789336017.961267,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 7.0,
+      "watts": 9.51,
+      "clock_mhz": 555.0,
+      "ram_available_mib": 116.6875,
+      "cpu_percent": 12.9
+    },
+    {
+      "time": 1789336019.0414426,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 34.0,
+      "watts": 9.54,
+      "clock_mhz": 405.0,
+      "ram_available_mib": 115.78125,
+      "cpu_percent": 12.6
+    },
+    {
+      "time": 1789336020.1200264,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 10.0,
+      "watts": 9.9,
+      "clock_mhz": 2010.0,
+      "ram_available_mib": 114.65625,
+      "cpu_percent": 12.9
+    },
+    {
+      "time": 1789336021.213311,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 21.0,
+      "watts": 16.07,
+      "clock_mhz": 2010.0,
+      "ram_available_mib": 112.01171875,
+      "cpu_percent": 11.2
+    },
+    {
+      "time": 1789336022.2940683,
+      "gpu_used_mib": 7229.0,
+      "gpu_free_mib": 728.0,
+      "gpu_util": 27.0,
+      "watts": 15.44,
+      "clock_mhz": 1395.0,
+      "ram_available_mib": 97.125,
+      "cpu_percent": 16.7
+    },
+    {
+      "time": 1789336023.386546,
+      "gpu_used_mib": 7231.0,
+      "gpu_free_mib": 726.0,
+      "gpu_util": 32.0,
+      "watts": 14.6,
+      "clock_mhz": 1335.0,
+      "ram_available_mib": 114.40234375,
+      "cpu_percent": 12.5
+    },
+    {
+      "time": 1789336024.4674127,
+      "gpu_used_mib": 7231.0,
+      "gpu_free_mib": 726.0,
+      "gpu_util": 17.0,
+      "watts": 12.4,
+      "clock_mhz": 1020.0,
+      "ram_available_mib": 121.96875,
+      "cpu_percent": 13.0
+    },
+    {
+      "time": 1789336025.554135,
+      "gpu_used_mib": 7233.0,
+      "gpu_free_mib": 724.0,
+      "gpu_util": 42.0,
+      "watts": 13.04,
+      "clock_mhz": 1350.0,
+      "ram_available_mib": 118.76953125,
+      "cpu_percent": 11.7
+    },
+    {
+      "time": 1789336026.6387572,
+      "gpu_used_mib": 7235.0,
+      "gpu_free_mib": 722.0,
+      "gpu_util": 32.0,
+      "watts": 14.11,
+      "clock_mhz": 1350.0,
+      "ram_available_mib": 102.1796875,
+      "cpu_percent": 12.2
+    },
+    {
+      "time": 1789336027.72832,
+      "gpu_used_mib": 7235.0,
+      "gpu_free_mib": 722.0,
+      "gpu_util": 35.0,
+      "watts": 20.23,
+      "clock_mhz": 2250.0,
+      "ram_available_mib": 114.76171875,
+      "cpu_percent": 17.2
+    },
+    {
+      "time": 1789336028.7880845,
+      "gpu_used_mib": 7235.0,
+      "gpu_free_mib": 722.0,
+      "gpu_util": 56.0,
+      "watts": 22.84,
+      "clock_mhz": 2250.0,
+      "ram_available_mib": 96.546875,
+      "cpu_percent": 13.8
+    },
+    {
+      "time": 1789336029.8620315,
+      "gpu_used_mib": 7235.0,
+      "gpu_free_mib": 722.0,
+      "gpu_util": 33.0,
+      "watts": 30.47,
+      "clock_mhz": 2565.0,
+      "ram_available_mib": 112.17578125,
+      "cpu_percent": 15.8
+    }
+  ]
+}

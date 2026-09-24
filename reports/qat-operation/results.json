@@ -1,0 +1,3511 @@
+{
+  "model": {
+    "id": "gemma26b-qat-q4",
+    "repository": "google/gemma-4-26B-A4B-it-qat-q4_0-gguf",
+    "revision": "d1c082be9cf3c8a514acf63b8761f4b41935842e",
+    "filename": "gemma-4-26B_q4_0-it.gguf",
+    "size_bytes": 14439363584,
+    "publisher_sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+    "architecture": "gemma4",
+    "expert_type": "Q4_0",
+    "expert_layout": "fused gate/up plus down, 30 layers",
+    "header_report": "reports/gemma-qat-pretrained-header.json"
+  },
+  "settings": {
+    "model": "models\\gemma-4-26B_q4_0-it.gguf",
+    "bin": "build\\ft-windows-cuda-dev\\bin",
+    "output": "reports\\qat-operation",
+    "id": "gemma26b-qat-q4",
+    "tokens": 64,
+    "repeats": 2,
+    "cache_mib": 1024,
+    "pressure_cache_mib": 16,
+    "pressure_vram_mib": 2048,
+    "threads": 8,
+    "skip_cli": false
+  },
+  "runs": [
+    {
+      "mode": "off",
+      "surface": "cli",
+      "command": [
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\llama-cli.exe",
+        "-m",
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "-ngl",
+        "0",
+        "--no-op-offload",
+        "--no-kv-offload",
+        "-np",
+        "1",
+        "-c",
+        "256",
+        "-b",
+        "128",
+        "-ub",
+        "8",
+        "-t",
+        "8",
+        "-tb",
+        "8",
+        "-fa",
+        "off",
+        "--load-mode",
+        "mmap",
+        "--no-warmup",
+        "--no-repack",
+        "--fit",
+        "off",
+        "--single-turn",
+        "--no-conversation",
+        "-p",
+        "The capital of France is",
+        "-n",
+        "64",
+        "--seed",
+        "1234",
+        "--temp",
+        "0",
+        "--ignore-eos"
+      ],
+      "returncode": 0,
+      "seconds": 37.54700000000048,
+      "memory": {
+        "peak_rss": 8997498880,
+        "minimum_system_available": 105803776,
+        "samples": [
+          {
+            "time": 1788979665.6954758,
+            "rss": 1949696,
+            "vms": 2052096,
+            "system_available": 8836710400,
+            "gpu": "0, 7956, 0"
+          },
+          {
+            "time": 1788979668.6975424,
+            "rss": 445313024,
+            "vms": 514670592,
+            "system_available": 5985370112,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979670.2981296,
+            "rss": 445423616,
+            "vms": 514781184,
+            "system_available": 1897377792,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979672.085971,
+            "rss": 2346344448,
+            "vms": 1129558016,
+            "system_available": 6533017600,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979673.1792564,
+            "rss": 3434987520,
+            "vms": 1130209280,
+            "system_available": 5450338304,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979674.2811084,
+            "rss": 4740431872,
+            "vms": 1130209280,
+            "system_available": 4231770112,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979675.3742414,
+            "rss": 5592543232,
+            "vms": 1130209280,
+            "system_available": 3370016768,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979676.4598215,
+            "rss": 6201851904,
+            "vms": 1137299456,
+            "system_available": 2755268608,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979677.5578258,
+            "rss": 6844559360,
+            "vms": 1137299456,
+            "system_available": 2118324224,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979678.6605976,
+            "rss": 7510491136,
+            "vms": 1137299456,
+            "system_available": 1452150784,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979679.758524,
+            "rss": 7841927168,
+            "vms": 1143767040,
+            "system_available": 1133400064,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979680.8593678,
+            "rss": 8038842368,
+            "vms": 1150021632,
+            "system_available": 910204928,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979681.9576602,
+            "rss": 8350011392,
+            "vms": 1150021632,
+            "system_available": 635949056,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979683.0509968,
+            "rss": 8566050816,
+            "vms": 1150021632,
+            "system_available": 359948288,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979684.1422918,
+            "rss": 8534163456,
+            "vms": 1150029824,
+            "system_available": 348753920,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979685.2371767,
+            "rss": 8515817472,
+            "vms": 1150029824,
+            "system_available": 348938240,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979686.3300352,
+            "rss": 8500903936,
+            "vms": 1150029824,
+            "system_available": 348942336,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979687.426266,
+            "rss": 8526544896,
+            "vms": 1150029824,
+            "system_available": 347566080,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979688.524266,
+            "rss": 8529035264,
+            "vms": 1150029824,
+            "system_available": 349073408,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979689.6246502,
+            "rss": 8540934144,
+            "vms": 1150029824,
+            "system_available": 356601856,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979690.714201,
+            "rss": 8597352448,
+            "vms": 1150029824,
+            "system_available": 309039104,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979691.800922,
+            "rss": 8680771584,
+            "vms": 1150029824,
+            "system_available": 234565632,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979692.9017475,
+            "rss": 8812527616,
+            "vms": 1150029824,
+            "system_available": 167378944,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979693.987776,
+            "rss": 8870383616,
+            "vms": 1150029824,
+            "system_available": 124203008,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979695.084077,
+            "rss": 8893865984,
+            "vms": 1150029824,
+            "system_available": 127557632,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979696.1798463,
+            "rss": 8887549952,
+            "vms": 1150029824,
+            "system_available": 124497920,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979697.2790666,
+            "rss": 8892452864,
+            "vms": 1150029824,
+            "system_available": 145059840,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979698.3786056,
+            "rss": 8921804800,
+            "vms": 1150029824,
+            "system_available": 124198912,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979699.4770908,
+            "rss": 8931635200,
+            "vms": 1150029824,
+            "system_available": 127918080,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979700.5613592,
+            "rss": 8971821056,
+            "vms": 1150029824,
+            "system_available": 105803776,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979701.6526854,
+            "rss": 8997498880,
+            "vms": 1150029824,
+            "system_available": 106332160,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979702.7387803,
+            "rss": 1666093056,
+            "vms": 492834816,
+            "system_available": 7457021952,
+            "gpu": "83, 7874, 0"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "off",
+      "surface": "server",
+      "command": [
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\llama-server.exe",
+        "-m",
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "-ngl",
+        "0",
+        "--no-op-offload",
+        "--no-kv-offload",
+        "-np",
+        "1",
+        "-c",
+        "256",
+        "-b",
+        "128",
+        "-ub",
+        "8",
+        "-t",
+        "8",
+        "-tb",
+        "8",
+        "-fa",
+        "off",
+        "--load-mode",
+        "mmap",
+        "--no-warmup",
+        "--no-repack",
+        "--fit",
+        "off",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "58306",
+        "--metrics"
+      ],
+      "requests": [
+        {
+          "index": 0,
+          "content": " Paris.\nThe capital of the United Kingdom-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-",
+          "tokens": [
+            9079,
+            236761,
+            107,
+            818,
+            5279,
+            529,
+            506,
+            3640,
+            15305,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772
+          ],
+          "id_slot": 0,
+          "stop": true,
+          "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+          "tokens_predicted": 64,
+          "tokens_evaluated": 6,
+          "generation_settings": {
+            "seed": 1234,
+            "temperature": 0.0,
+            "dynatemp_range": 0.0,
+            "dynatemp_exponent": 1.0,
+            "top_k": 64,
+            "top_p": 0.949999988079071,
+            "min_p": 0.05000000074505806,
+            "top_n_sigma": -1.0,
+            "xtc_probability": 0.0,
+            "xtc_threshold": 0.10000000149011612,
+            "typical_p": 1.0,
+            "repeat_last_n": 64,
+            "repeat_penalty": 1.0,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "dry_multiplier": 0.0,
+            "dry_base": 1.75,
+            "dry_allowed_length": 2,
+            "dry_penalty_last_n": 64,
+            "dry_sequence_breakers": [
+              "\n",
+              ":",
+              "\"",
+              "*"
+            ],
+            "mirostat": 0,
+            "mirostat_tau": 5.0,
+            "mirostat_eta": 0.10000000149011612,
+            "adaptive_target": -1.0,
+            "adaptive_decay": 0.8999999761581421,
+            "stop": [],
+            "max_tokens": 64,
+            "n_predict": 64,
+            "n_keep": 0,
+            "n_discard": 0,
+            "ignore_eos": true,
+            "stream": false,
+            "logit_bias": [
+              {
+                "bias": null,
+                "token": 1
+              },
+              {
+                "bias": null,
+                "token": 50
+              },
+              {
+                "bias": null,
+                "token": 106
+              }
+            ],
+            "n_probs": 0,
+            "min_keep": 0,
+            "grammar": "",
+            "grammar_lazy": false,
+            "grammar_triggers": [],
+            "preserved_tokens": [],
+            "chat_format": "Content-only",
+            "reasoning_format": "deepseek",
+            "reasoning_in_content": false,
+            "generation_prompt": "",
+            "samplers": [
+              "penalties",
+              "dry",
+              "top_n_sigma",
+              "top_k",
+              "typ_p",
+              "top_p",
+              "min_p",
+              "xtc",
+              "temperature"
+            ],
+            "speculative.types": "none",
+            "timings_per_token": false,
+            "post_sampling_probs": false,
+            "backend_sampling": false,
+            "lora": []
+          },
+          "prompt": "<bos>The capital of France is",
+          "has_new_line": true,
+          "truncated": false,
+          "stop_type": "limit",
+          "stopping_word": "",
+          "tokens_cached": 69,
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 6,
+            "prompt_ms": 2431.939,
+            "prompt_per_token_ms": 405.3231666666666,
+            "prompt_per_second": 2.4671671452285606,
+            "predicted_n": 64,
+            "predicted_ms": 22928.775,
+            "predicted_per_token_ms": 363.94880952380953,
+            "predicted_per_second": 2.7476391564747784
+          }
+        },
+        {
+          "index": 0,
+          "content": " Paris.\nThe capital of the United Kingdom-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-thought-",
+          "tokens": [
+            9079,
+            236761,
+            107,
+            818,
+            5279,
+            529,
+            506,
+            3640,
+            15305,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772,
+            45518,
+            236772
+          ],
+          "id_slot": 0,
+          "stop": true,
+          "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+          "tokens_predicted": 64,
+          "tokens_evaluated": 6,
+          "generation_settings": {
+            "seed": 1234,
+            "temperature": 0.0,
+            "dynatemp_range": 0.0,
+            "dynatemp_exponent": 1.0,
+            "top_k": 64,
+            "top_p": 0.949999988079071,
+            "min_p": 0.05000000074505806,
+            "top_n_sigma": -1.0,
+            "xtc_probability": 0.0,
+            "xtc_threshold": 0.10000000149011612,
+            "typical_p": 1.0,
+            "repeat_last_n": 64,
+            "repeat_penalty": 1.0,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "dry_multiplier": 0.0,
+            "dry_base": 1.75,
+            "dry_allowed_length": 2,
+            "dry_penalty_last_n": 64,
+            "dry_sequence_breakers": [
+              "\n",
+              ":",
+              "\"",
+              "*"
+            ],
+            "mirostat": 0,
+            "mirostat_tau": 5.0,
+            "mirostat_eta": 0.10000000149011612,
+            "adaptive_target": -1.0,
+            "adaptive_decay": 0.8999999761581421,
+            "stop": [],
+            "max_tokens": 64,
+            "n_predict": 64,
+            "n_keep": 0,
+            "n_discard": 0,
+            "ignore_eos": true,
+            "stream": false,
+            "logit_bias": [
+              {
+                "bias": null,
+                "token": 1
+              },
+              {
+                "bias": null,
+                "token": 50
+              },
+              {
+                "bias": null,
+                "token": 106
+              }
+            ],
+            "n_probs": 0,
+            "min_keep": 0,
+            "grammar": "",
+            "grammar_lazy": false,
+            "grammar_triggers": [],
+            "preserved_tokens": [],
+            "chat_format": "Content-only",
+            "reasoning_format": "deepseek",
+            "reasoning_in_content": false,
+            "generation_prompt": "",
+            "samplers": [
+              "penalties",
+              "dry",
+              "top_n_sigma",
+              "top_k",
+              "typ_p",
+              "top_p",
+              "min_p",
+              "xtc",
+              "temperature"
+            ],
+            "speculative.types": "none",
+            "timings_per_token": false,
+            "post_sampling_probs": false,
+            "backend_sampling": false,
+            "lora": []
+          },
+          "prompt": "<bos>The capital of France is",
+          "has_new_line": true,
+          "truncated": false,
+          "stop_type": "limit",
+          "stopping_word": "",
+          "tokens_cached": 69,
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 6,
+            "prompt_ms": 1796.493,
+            "prompt_per_token_ms": 299.4155,
+            "prompt_per_second": 3.3398404558214256,
+            "predicted_n": 64,
+            "predicted_ms": 20151.727,
+            "predicted_per_token_ms": 319.86868253968254,
+            "predicted_per_second": 3.12628292354298
+          }
+        }
+      ],
+      "memory": {
+        "peak_rss": 8819245056,
+        "minimum_system_available": 287006720,
+        "samples": [
+          {
+            "time": 1788979703.2673888,
+            "rss": 1945600,
+            "vms": 2043904,
+            "system_available": 9279266816,
+            "gpu": "0, 7956, 0"
+          },
+          {
+            "time": 1788979704.5274544,
+            "rss": 443699200,
+            "vms": 509943808,
+            "system_available": 7694516224,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979708.051337,
+            "rss": 2388033536,
+            "vms": 1124499456,
+            "system_available": 6915633152,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979709.137372,
+            "rss": 3330760704,
+            "vms": 1126735872,
+            "system_available": 5972709376,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979710.2323618,
+            "rss": 4716097536,
+            "vms": 1131700224,
+            "system_available": 4591439872,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979711.3180032,
+            "rss": 5704400896,
+            "vms": 1131700224,
+            "system_available": 3587141632,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979712.413899,
+            "rss": 6293286912,
+            "vms": 1137954816,
+            "system_available": 2999595008,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979713.5072985,
+            "rss": 6747488256,
+            "vms": 1137954816,
+            "system_available": 2543595520,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979714.59498,
+            "rss": 7106801664,
+            "vms": 1137954816,
+            "system_available": 2177789952,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979715.6927,
+            "rss": 7430082560,
+            "vms": 1137954816,
+            "system_available": 1833406464,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979716.791156,
+            "rss": 7741607936,
+            "vms": 1137954816,
+            "system_available": 1514958848,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979717.8876276,
+            "rss": 7899971584,
+            "vms": 1137954816,
+            "system_available": 1649278976,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979718.9801683,
+            "rss": 8023748608,
+            "vms": 1137954816,
+            "system_available": 1516498944,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979720.081932,
+            "rss": 8174276608,
+            "vms": 1137954816,
+            "system_available": 1136193536,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979721.1686,
+            "rss": 8304734208,
+            "vms": 1137954816,
+            "system_available": 1000222720,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979722.266041,
+            "rss": 8415121408,
+            "vms": 1137954816,
+            "system_available": 887414784,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979723.362317,
+            "rss": 8559935488,
+            "vms": 1137954816,
+            "system_available": 747225088,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979724.4730072,
+            "rss": 8686071808,
+            "vms": 1137954816,
+            "system_available": 605679616,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979725.5724676,
+            "rss": 8605396992,
+            "vms": 1137954816,
+            "system_available": 611446784,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979726.6599894,
+            "rss": 8675594240,
+            "vms": 1137954816,
+            "system_available": 532492288,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979727.7562158,
+            "rss": 8682123264,
+            "vms": 1137954816,
+            "system_available": 437334016,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979728.8679135,
+            "rss": 8718917632,
+            "vms": 1137954816,
+            "system_available": 446955520,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979729.9572096,
+            "rss": 8755703808,
+            "vms": 1137954816,
+            "system_available": 414871552,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979731.0516417,
+            "rss": 8819245056,
+            "vms": 1137954816,
+            "system_available": 365817856,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979732.153102,
+            "rss": 8772780032,
+            "vms": 1137954816,
+            "system_available": 370421760,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979733.239621,
+            "rss": 8808177664,
+            "vms": 1137954816,
+            "system_available": 346034176,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979734.3265877,
+            "rss": 8591896576,
+            "vms": 1137954816,
+            "system_available": 538267648,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979735.4260354,
+            "rss": 8500985856,
+            "vms": 1152843776,
+            "system_available": 510574592,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979736.5237272,
+            "rss": 8352841728,
+            "vms": 1156001792,
+            "system_available": 376303616,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979737.620037,
+            "rss": 8390901760,
+            "vms": 1156001792,
+            "system_available": 327094272,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979738.7163908,
+            "rss": 8421412864,
+            "vms": 1156001792,
+            "system_available": 287006720,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979739.819873,
+            "rss": 8427020288,
+            "vms": 1156001792,
+            "system_available": 320135168,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979740.923893,
+            "rss": 8452034560,
+            "vms": 1156001792,
+            "system_available": 315162624,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979742.0137157,
+            "rss": 8452034560,
+            "vms": 1156001792,
+            "system_available": 308932608,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979743.1021755,
+            "rss": 8452034560,
+            "vms": 1156001792,
+            "system_available": 304668672,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979744.1892178,
+            "rss": 8452034560,
+            "vms": 1156001792,
+            "system_available": 310767616,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979745.2883794,
+            "rss": 8452034560,
+            "vms": 1156001792,
+            "system_available": 310083584,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979746.3877974,
+            "rss": 8452038656,
+            "vms": 1156001792,
+            "system_available": 307310592,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979747.4781194,
+            "rss": 8452038656,
+            "vms": 1156001792,
+            "system_available": 307687424,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979748.579266,
+            "rss": 8452046848,
+            "vms": 1156001792,
+            "system_available": 313630720,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979749.6654322,
+            "rss": 8452050944,
+            "vms": 1156001792,
+            "system_available": 301735936,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979750.7522118,
+            "rss": 8452050944,
+            "vms": 1156001792,
+            "system_available": 302821376,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979751.8398309,
+            "rss": 8452050944,
+            "vms": 1156001792,
+            "system_available": 300326912,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979752.9293573,
+            "rss": 8452050944,
+            "vms": 1156001792,
+            "system_available": 304734208,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979754.0196016,
+            "rss": 8452050944,
+            "vms": 1156001792,
+            "system_available": 309010432,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979755.108952,
+            "rss": 8452050944,
+            "vms": 1156001792,
+            "system_available": 315092992,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979756.2080312,
+            "rss": 8452050944,
+            "vms": 1156001792,
+            "system_available": 313098240,
+            "gpu": "83, 7874, 0"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "gpu",
+      "surface": "cli",
+      "command": [
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\llama-cli.exe",
+        "-m",
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "-ngl",
+        "0",
+        "--no-op-offload",
+        "--no-kv-offload",
+        "-np",
+        "1",
+        "-c",
+        "256",
+        "-b",
+        "128",
+        "-ub",
+        "8",
+        "-t",
+        "8",
+        "-tb",
+        "8",
+        "-fa",
+        "off",
+        "--load-mode",
+        "mmap",
+        "--no-warmup",
+        "--no-repack",
+        "--fit",
+        "off",
+        "--moe-gpu-cache-mib",
+        "1024",
+        "--moe-device",
+        "CUDA0",
+        "--moe-staging-mib",
+        "1",
+        "--moe-compute-mib",
+        "64",
+        "--moe-gpu-reserve-mib",
+        "512",
+        "--single-turn",
+        "--no-conversation",
+        "-p",
+        "The capital of France is",
+        "-n",
+        "64",
+        "--seed",
+        "1234",
+        "--temp",
+        "0",
+        "--ignore-eos"
+      ],
+      "returncode": 0,
+      "seconds": 47.48499999999876,
+      "memory": {
+        "peak_rss": 8792989696,
+        "minimum_system_available": 156995584,
+        "samples": [
+          {
+            "time": 1788979757.3183563,
+            "rss": 1949696,
+            "vms": 2052096,
+            "system_available": 8879570944,
+            "gpu": "0, 7956, 0"
+          },
+          {
+            "time": 1788979758.978777,
+            "rss": 444674048,
+            "vms": 511135744,
+            "system_available": 7751929856,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979760.364332,
+            "rss": 444768256,
+            "vms": 511229952,
+            "system_available": 4857626624,
+            "gpu": "1105, 6852, 7"
+          },
+          {
+            "time": 1788979762.4350247,
+            "rss": 2070966272,
+            "vms": 2281930752,
+            "system_available": 6886981632,
+            "gpu": "1117, 6840, 4"
+          },
+          {
+            "time": 1788979763.5174572,
+            "rss": 3040006144,
+            "vms": 2282143744,
+            "system_available": 5907927040,
+            "gpu": "1117, 6840, 0"
+          },
+          {
+            "time": 1788979764.6141968,
+            "rss": 3814625280,
+            "vms": 2284683264,
+            "system_available": 5129605120,
+            "gpu": "1117, 6840, 13"
+          },
+          {
+            "time": 1788979765.7131798,
+            "rss": 4830994432,
+            "vms": 2284683264,
+            "system_available": 4125712384,
+            "gpu": "1117, 6840, 6"
+          },
+          {
+            "time": 1788979766.8115668,
+            "rss": 5454872576,
+            "vms": 2284683264,
+            "system_available": 3490291712,
+            "gpu": "1117, 6840, 6"
+          },
+          {
+            "time": 1788979767.909638,
+            "rss": 5988167680,
+            "vms": 2315337728,
+            "system_available": 2958258176,
+            "gpu": "1119, 6838, 21"
+          },
+          {
+            "time": 1788979769.0079594,
+            "rss": 6413885440,
+            "vms": 2319429632,
+            "system_available": 2533572608,
+            "gpu": "1119, 6838, 21"
+          },
+          {
+            "time": 1788979770.09079,
+            "rss": 6802235392,
+            "vms": 2319429632,
+            "system_available": 2144047104,
+            "gpu": "1119, 6838, 39"
+          },
+          {
+            "time": 1788979771.176567,
+            "rss": 7180505088,
+            "vms": 2268999680,
+            "system_available": 1768722432,
+            "gpu": "1119, 6838, 25"
+          },
+          {
+            "time": 1788979772.2492993,
+            "rss": 7572189184,
+            "vms": 2268999680,
+            "system_available": 1391407104,
+            "gpu": "1119, 6838, 25"
+          },
+          {
+            "time": 1788979773.3476565,
+            "rss": 7775256576,
+            "vms": 2274594816,
+            "system_available": 1215528960,
+            "gpu": "1119, 6838, 32"
+          },
+          {
+            "time": 1788979774.4461348,
+            "rss": 7994986496,
+            "vms": 2274594816,
+            "system_available": 1001701376,
+            "gpu": "1119, 6838, 33"
+          },
+          {
+            "time": 1788979775.540078,
+            "rss": 8125263872,
+            "vms": 2279948288,
+            "system_available": 871702528,
+            "gpu": "1119, 6838, 9"
+          },
+          {
+            "time": 1788979776.6410563,
+            "rss": 8298250240,
+            "vms": 2279948288,
+            "system_available": 697794560,
+            "gpu": "1119, 6838, 6"
+          },
+          {
+            "time": 1788979777.738395,
+            "rss": 8597032960,
+            "vms": 2279948288,
+            "system_available": 454991872,
+            "gpu": "1119, 6838, 13"
+          },
+          {
+            "time": 1788979778.838811,
+            "rss": 8543420416,
+            "vms": 2279952384,
+            "system_available": 416317440,
+            "gpu": "1119, 6838, 38"
+          },
+          {
+            "time": 1788979779.9244719,
+            "rss": 8515170304,
+            "vms": 2279956480,
+            "system_available": 469884928,
+            "gpu": "1119, 6838, 1"
+          },
+          {
+            "time": 1788979781.0096445,
+            "rss": 8553857024,
+            "vms": 2279956480,
+            "system_available": 417046528,
+            "gpu": "1119, 6838, 40"
+          },
+          {
+            "time": 1788979782.122161,
+            "rss": 8512790528,
+            "vms": 2279956480,
+            "system_available": 402153472,
+            "gpu": "1119, 6838, 15"
+          },
+          {
+            "time": 1788979783.2150533,
+            "rss": 8534683648,
+            "vms": 2279956480,
+            "system_available": 409022464,
+            "gpu": "1119, 6838, 40"
+          },
+          {
+            "time": 1788979784.3077695,
+            "rss": 8552148992,
+            "vms": 2279956480,
+            "system_available": 416399360,
+            "gpu": "1119, 6838, 36"
+          },
+          {
+            "time": 1788979785.402005,
+            "rss": 8610902016,
+            "vms": 2279956480,
+            "system_available": 354308096,
+            "gpu": "1119, 6838, 10"
+          },
+          {
+            "time": 1788979786.518669,
+            "rss": 8664539136,
+            "vms": 2279960576,
+            "system_available": 279334912,
+            "gpu": "1119, 6838, 38"
+          },
+          {
+            "time": 1788979787.6347163,
+            "rss": 8715022336,
+            "vms": 2279960576,
+            "system_available": 227622912,
+            "gpu": "1119, 6838, 42"
+          },
+          {
+            "time": 1788979788.7439287,
+            "rss": 8736190464,
+            "vms": 2279960576,
+            "system_available": 221560832,
+            "gpu": "1119, 6838, 8"
+          },
+          {
+            "time": 1788979789.8582985,
+            "rss": 8770138112,
+            "vms": 2280054784,
+            "system_available": 185335808,
+            "gpu": "1119, 6838, 54"
+          },
+          {
+            "time": 1788979790.9571266,
+            "rss": 8789622784,
+            "vms": 2280054784,
+            "system_available": 169664512,
+            "gpu": "1119, 6838, 12"
+          },
+          {
+            "time": 1788979792.0556417,
+            "rss": 8792989696,
+            "vms": 2280148992,
+            "system_available": 159244288,
+            "gpu": "1119, 6838, 17"
+          },
+          {
+            "time": 1788979793.1467905,
+            "rss": 8775327744,
+            "vms": 2280148992,
+            "system_available": 184209408,
+            "gpu": "1119, 6838, 17"
+          },
+          {
+            "time": 1788979794.2412374,
+            "rss": 8791732224,
+            "vms": 2280148992,
+            "system_available": 159997952,
+            "gpu": "1119, 6838, 21"
+          },
+          {
+            "time": 1788979795.338857,
+            "rss": 8724811776,
+            "vms": 2280148992,
+            "system_available": 156995584,
+            "gpu": "1119, 6838, 17"
+          },
+          {
+            "time": 1788979796.4415994,
+            "rss": 8708829184,
+            "vms": 2280148992,
+            "system_available": 190173184,
+            "gpu": "1119, 6838, 53"
+          },
+          {
+            "time": 1788979797.5408146,
+            "rss": 8729485312,
+            "vms": 2280148992,
+            "system_available": 169922560,
+            "gpu": "1119, 6838, 7"
+          },
+          {
+            "time": 1788979798.6350782,
+            "rss": 8705105920,
+            "vms": 2280148992,
+            "system_available": 167522304,
+            "gpu": "1119, 6838, 42"
+          },
+          {
+            "time": 1788979799.7436836,
+            "rss": 8600506368,
+            "vms": 2280243200,
+            "system_available": 220323840,
+            "gpu": "1119, 6838, 41"
+          },
+          {
+            "time": 1788979800.8279552,
+            "rss": 8644186112,
+            "vms": 2280243200,
+            "system_available": 191758336,
+            "gpu": "1119, 6838, 34"
+          },
+          {
+            "time": 1788979801.9268095,
+            "rss": 8659677184,
+            "vms": 2280243200,
+            "system_available": 176209920,
+            "gpu": "1119, 6838, 12"
+          },
+          {
+            "time": 1788979803.0135534,
+            "rss": 8618893312,
+            "vms": 2280243200,
+            "system_available": 177745920,
+            "gpu": "1119, 6838, 55"
+          },
+          {
+            "time": 1788979804.1040158,
+            "rss": 4941443072,
+            "vms": 650457088,
+            "system_available": 3913568256,
+            "gpu": "93, 7864, 0"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "gpu",
+      "surface": "server",
+      "command": [
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\llama-server.exe",
+        "-m",
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "-ngl",
+        "0",
+        "--no-op-offload",
+        "--no-kv-offload",
+        "-np",
+        "1",
+        "-c",
+        "256",
+        "-b",
+        "128",
+        "-ub",
+        "8",
+        "-t",
+        "8",
+        "-tb",
+        "8",
+        "-fa",
+        "off",
+        "--load-mode",
+        "mmap",
+        "--no-warmup",
+        "--no-repack",
+        "--fit",
+        "off",
+        "--moe-gpu-cache-mib",
+        "1024",
+        "--moe-device",
+        "CUDA0",
+        "--moe-staging-mib",
+        "1",
+        "--moe-compute-mib",
+        "64",
+        "--moe-gpu-reserve-mib",
+        "512",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "50978",
+        "--metrics"
+      ],
+      "requests": [
+        {
+          "index": 0,
+          "content": " Paris.\n<|channel>333333333333333333333333333333333333333333333333333333333333",
+          "tokens": [
+            9079,
+            236761,
+            107,
+            100,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800
+          ],
+          "id_slot": 0,
+          "stop": true,
+          "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+          "tokens_predicted": 64,
+          "tokens_evaluated": 6,
+          "generation_settings": {
+            "seed": 1234,
+            "temperature": 0.0,
+            "dynatemp_range": 0.0,
+            "dynatemp_exponent": 1.0,
+            "top_k": 64,
+            "top_p": 0.949999988079071,
+            "min_p": 0.05000000074505806,
+            "top_n_sigma": -1.0,
+            "xtc_probability": 0.0,
+            "xtc_threshold": 0.10000000149011612,
+            "typical_p": 1.0,
+            "repeat_last_n": 64,
+            "repeat_penalty": 1.0,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "dry_multiplier": 0.0,
+            "dry_base": 1.75,
+            "dry_allowed_length": 2,
+            "dry_penalty_last_n": 64,
+            "dry_sequence_breakers": [
+              "\n",
+              ":",
+              "\"",
+              "*"
+            ],
+            "mirostat": 0,
+            "mirostat_tau": 5.0,
+            "mirostat_eta": 0.10000000149011612,
+            "adaptive_target": -1.0,
+            "adaptive_decay": 0.8999999761581421,
+            "stop": [],
+            "max_tokens": 64,
+            "n_predict": 64,
+            "n_keep": 0,
+            "n_discard": 0,
+            "ignore_eos": true,
+            "stream": false,
+            "logit_bias": [
+              {
+                "bias": null,
+                "token": 1
+              },
+              {
+                "bias": null,
+                "token": 50
+              },
+              {
+                "bias": null,
+                "token": 106
+              }
+            ],
+            "n_probs": 0,
+            "min_keep": 0,
+            "grammar": "",
+            "grammar_lazy": false,
+            "grammar_triggers": [],
+            "preserved_tokens": [],
+            "chat_format": "Content-only",
+            "reasoning_format": "deepseek",
+            "reasoning_in_content": false,
+            "generation_prompt": "",
+            "samplers": [
+              "penalties",
+              "dry",
+              "top_n_sigma",
+              "top_k",
+              "typ_p",
+              "top_p",
+              "min_p",
+              "xtc",
+              "temperature"
+            ],
+            "speculative.types": "none",
+            "timings_per_token": false,
+            "post_sampling_probs": false,
+            "backend_sampling": false,
+            "lora": []
+          },
+          "prompt": "<bos>The capital of France is",
+          "has_new_line": true,
+          "truncated": false,
+          "stop_type": "limit",
+          "stopping_word": "",
+          "tokens_cached": 69,
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 6,
+            "prompt_ms": 7153.067,
+            "prompt_per_token_ms": 1192.1778333333334,
+            "prompt_per_second": 0.8388010345771961,
+            "predicted_n": 64,
+            "predicted_ms": 28417.093,
+            "predicted_per_token_ms": 451.0649682539683,
+            "predicted_per_second": 2.2169755365195165
+          }
+        },
+        {
+          "index": 0,
+          "content": " Paris.\n<|channel>333333333333333333333333333333333333333333333333333333333333",
+          "tokens": [
+            9079,
+            236761,
+            107,
+            100,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800,
+            236800
+          ],
+          "id_slot": 0,
+          "stop": true,
+          "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+          "tokens_predicted": 64,
+          "tokens_evaluated": 6,
+          "generation_settings": {
+            "seed": 1234,
+            "temperature": 0.0,
+            "dynatemp_range": 0.0,
+            "dynatemp_exponent": 1.0,
+            "top_k": 64,
+            "top_p": 0.949999988079071,
+            "min_p": 0.05000000074505806,
+            "top_n_sigma": -1.0,
+            "xtc_probability": 0.0,
+            "xtc_threshold": 0.10000000149011612,
+            "typical_p": 1.0,
+            "repeat_last_n": 64,
+            "repeat_penalty": 1.0,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "dry_multiplier": 0.0,
+            "dry_base": 1.75,
+            "dry_allowed_length": 2,
+            "dry_penalty_last_n": 64,
+            "dry_sequence_breakers": [
+              "\n",
+              ":",
+              "\"",
+              "*"
+            ],
+            "mirostat": 0,
+            "mirostat_tau": 5.0,
+            "mirostat_eta": 0.10000000149011612,
+            "adaptive_target": -1.0,
+            "adaptive_decay": 0.8999999761581421,
+            "stop": [],
+            "max_tokens": 64,
+            "n_predict": 64,
+            "n_keep": 0,
+            "n_discard": 0,
+            "ignore_eos": true,
+            "stream": false,
+            "logit_bias": [
+              {
+                "bias": null,
+                "token": 1
+              },
+              {
+                "bias": null,
+                "token": 50
+              },
+              {
+                "bias": null,
+                "token": 106
+              }
+            ],
+            "n_probs": 0,
+            "min_keep": 0,
+            "grammar": "",
+            "grammar_lazy": false,
+            "grammar_triggers": [],
+            "preserved_tokens": [],
+            "chat_format": "Content-only",
+            "reasoning_format": "deepseek",
+            "reasoning_in_content": false,
+            "generation_prompt": "",
+            "samplers": [
+              "penalties",
+              "dry",
+              "top_n_sigma",
+              "top_k",
+              "typ_p",
+              "top_p",
+              "min_p",
+              "xtc",
+              "temperature"
+            ],
+            "speculative.types": "none",
+            "timings_per_token": false,
+            "post_sampling_probs": false,
+            "backend_sampling": false,
+            "lora": []
+          },
+          "prompt": "<bos>The capital of France is",
+          "has_new_line": true,
+          "truncated": false,
+          "stop_type": "limit",
+          "stopping_word": "",
+          "tokens_cached": 69,
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 6,
+            "prompt_ms": 1850.978,
+            "prompt_per_token_ms": 308.4963333333333,
+            "prompt_per_second": 3.241529612993779,
+            "predicted_n": 64,
+            "predicted_ms": 19635.152,
+            "predicted_per_token_ms": 311.6690793650793,
+            "predicted_per_second": 3.2085313115987084
+          }
+        }
+      ],
+      "memory": {
+        "peak_rss": 8673304576,
+        "minimum_system_available": 240238592,
+        "samples": [
+          {
+            "time": 1788979804.817409,
+            "rss": 1945600,
+            "vms": 2043904,
+            "system_available": 8969314304,
+            "gpu": "0, 7956, 0"
+          },
+          {
+            "time": 1788979805.910756,
+            "rss": 443928576,
+            "vms": 482025472,
+            "system_available": 8589713408,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979806.9788146,
+            "rss": 443985920,
+            "vms": 510304256,
+            "system_available": 4428857344,
+            "gpu": "83, 7874, 0"
+          },
+          {
+            "time": 1788979808.4815495,
+            "rss": 784793600,
+            "vms": 2280456192,
+            "system_available": 8174780416,
+            "gpu": "1117, 6840, 4"
+          },
+          {
+            "time": 1788979809.577908,
+            "rss": 1804374016,
+            "vms": 2280656896,
+            "system_available": 7204790272,
+            "gpu": "1117, 6840, 5"
+          },
+          {
+            "time": 1788979810.649465,
+            "rss": 3039137792,
+            "vms": 2280706048,
+            "system_available": 5964201984,
+            "gpu": "1117, 6840, 0"
+          },
+          {
+            "time": 1788979811.7212262,
+            "rss": 3173064704,
+            "vms": 2282094592,
+            "system_available": 5837258752,
+            "gpu": "1117, 6840, 0"
+          },
+          {
+            "time": 1788979812.820401,
+            "rss": 3744563200,
+            "vms": 2282278912,
+            "system_available": 5266280448,
+            "gpu": "1117, 6840, 19"
+          },
+          {
+            "time": 1788979813.9069986,
+            "rss": 4223135744,
+            "vms": 2282278912,
+            "system_available": 4790059008,
+            "gpu": "1117, 6840, 40"
+          },
+          {
+            "time": 1788979815.0039306,
+            "rss": 4578652160,
+            "vms": 2286764032,
+            "system_available": 4429881344,
+            "gpu": "1117, 6840, 28"
+          },
+          {
+            "time": 1788979816.0994835,
+            "rss": 4918198272,
+            "vms": 2286764032,
+            "system_available": 4095827968,
+            "gpu": "1117, 6840, 33"
+          },
+          {
+            "time": 1788979817.1823606,
+            "rss": 5273260032,
+            "vms": 2286764032,
+            "system_available": 3739947008,
+            "gpu": "1119, 6838, 31"
+          },
+          {
+            "time": 1788979818.2740364,
+            "rss": 5642805248,
+            "vms": 2286764032,
+            "system_available": 3368747008,
+            "gpu": "1117, 6840, 29"
+          },
+          {
+            "time": 1788979819.3726418,
+            "rss": 5854892032,
+            "vms": 2322386944,
+            "system_available": 3166867456,
+            "gpu": "1119, 6838, 46"
+          },
+          {
+            "time": 1788979820.4731863,
+            "rss": 6156226560,
+            "vms": 2322386944,
+            "system_available": 2872745984,
+            "gpu": "1119, 6838, 29"
+          },
+          {
+            "time": 1788979821.5674133,
+            "rss": 6467452928,
+            "vms": 2271961088,
+            "system_available": 2563022848,
+            "gpu": "1119, 6838, 46"
+          },
+          {
+            "time": 1788979822.6620467,
+            "rss": 6738669568,
+            "vms": 2271961088,
+            "system_available": 2343260160,
+            "gpu": "1119, 6838, 22"
+          },
+          {
+            "time": 1788979823.7491121,
+            "rss": 7046594560,
+            "vms": 2271961088,
+            "system_available": 2033057792,
+            "gpu": "1119, 6838, 36"
+          },
+          {
+            "time": 1788979824.8310976,
+            "rss": 7240765440,
+            "vms": 2271961088,
+            "system_available": 1836474368,
+            "gpu": "1119, 6838, 43"
+          },
+          {
+            "time": 1788979825.9218733,
+            "rss": 7361269760,
+            "vms": 2271961088,
+            "system_available": 1709568000,
+            "gpu": "1119, 6838, 23"
+          },
+          {
+            "time": 1788979827.0164537,
+            "rss": 7532933120,
+            "vms": 2271961088,
+            "system_available": 1542561792,
+            "gpu": "1119, 6838, 15"
+          },
+          {
+            "time": 1788979828.1177442,
+            "rss": 7649054720,
+            "vms": 2271961088,
+            "system_available": 1426497536,
+            "gpu": "1119, 6838, 38"
+          },
+          {
+            "time": 1788979829.215777,
+            "rss": 7822999552,
+            "vms": 2271961088,
+            "system_available": 1250439168,
+            "gpu": "1119, 6838, 34"
+          },
+          {
+            "time": 1788979830.3140392,
+            "rss": 7916683264,
+            "vms": 2271961088,
+            "system_available": 1164771328,
+            "gpu": "1119, 6838, 34"
+          },
+          {
+            "time": 1788979831.4129314,
+            "rss": 8057376768,
+            "vms": 2271961088,
+            "system_available": 1025855488,
+            "gpu": "1119, 6838, 3"
+          },
+          {
+            "time": 1788979832.5215452,
+            "rss": 8204980224,
+            "vms": 2271961088,
+            "system_available": 837869568,
+            "gpu": "1119, 6838, 38"
+          },
+          {
+            "time": 1788979833.6173847,
+            "rss": 8291446784,
+            "vms": 2272059392,
+            "system_available": 744914944,
+            "gpu": "1119, 6838, 21"
+          },
+          {
+            "time": 1788979834.7333813,
+            "rss": 8472092672,
+            "vms": 2272059392,
+            "system_available": 567218176,
+            "gpu": "1119, 6838, 12"
+          },
+          {
+            "time": 1788979835.8326352,
+            "rss": 8532279296,
+            "vms": 2272059392,
+            "system_available": 530202624,
+            "gpu": "1119, 6838, 3"
+          },
+          {
+            "time": 1788979836.9431133,
+            "rss": 8583471104,
+            "vms": 2272153600,
+            "system_available": 456450048,
+            "gpu": "1119, 6838, 2"
+          },
+          {
+            "time": 1788979838.030513,
+            "rss": 8534667264,
+            "vms": 2272247808,
+            "system_available": 405045248,
+            "gpu": "1119, 6838, 33"
+          },
+          {
+            "time": 1788979839.1152658,
+            "rss": 8526450688,
+            "vms": 2272247808,
+            "system_available": 442572800,
+            "gpu": "1119, 6838, 4"
+          },
+          {
+            "time": 1788979840.2138546,
+            "rss": 8552878080,
+            "vms": 2272247808,
+            "system_available": 416014336,
+            "gpu": "1119, 6838, 7"
+          },
+          {
+            "time": 1788979841.2923474,
+            "rss": 8483205120,
+            "vms": 2272247808,
+            "system_available": 445382656,
+            "gpu": "1119, 6838, 53"
+          },
+          {
+            "time": 1788979842.399841,
+            "rss": 8502571008,
+            "vms": 2272247808,
+            "system_available": 439549952,
+            "gpu": "1119, 6838, 3"
+          },
+          {
+            "time": 1788979843.4971917,
+            "rss": 8532680704,
+            "vms": 2272247808,
+            "system_available": 408084480,
+            "gpu": "1119, 6838, 3"
+          },
+          {
+            "time": 1788979844.5830655,
+            "rss": 8566099968,
+            "vms": 2272247808,
+            "system_available": 372277248,
+            "gpu": "1119, 6838, 36"
+          },
+          {
+            "time": 1788979845.6763806,
+            "rss": 8602873856,
+            "vms": 2272247808,
+            "system_available": 330432512,
+            "gpu": "1119, 6838, 2"
+          },
+          {
+            "time": 1788979846.7620988,
+            "rss": 8643014656,
+            "vms": 2272247808,
+            "system_available": 291307520,
+            "gpu": "1119, 6838, 5"
+          },
+          {
+            "time": 1788979847.8603153,
+            "rss": 8673304576,
+            "vms": 2286530560,
+            "system_available": 245944320,
+            "gpu": "1119, 6838, 24"
+          },
+          {
+            "time": 1788979848.9739716,
+            "rss": 8662941696,
+            "vms": 2290307072,
+            "system_available": 245035008,
+            "gpu": "1119, 6838, 21"
+          },
+          {
+            "time": 1788979850.0706003,
+            "rss": 8662941696,
+            "vms": 2290307072,
+            "system_available": 254545920,
+            "gpu": "1119, 6838, 51"
+          },
+          {
+            "time": 1788979851.170246,
+            "rss": 8662941696,
+            "vms": 2290307072,
+            "system_available": 254873600,
+            "gpu": "1119, 6838, 16"
+          },
+          {
+            "time": 1788979852.2682598,
+            "rss": 8662941696,
+            "vms": 2290307072,
+            "system_available": 251768832,
+            "gpu": "1119, 6838, 19"
+          },
+          {
+            "time": 1788979853.3635926,
+            "rss": 8662941696,
+            "vms": 2290307072,
+            "system_available": 254271488,
+            "gpu": "1119, 6838, 23"
+          },
+          {
+            "time": 1788979854.4544103,
+            "rss": 8662941696,
+            "vms": 2290307072,
+            "system_available": 240238592,
+            "gpu": "1119, 6838, 24"
+          },
+          {
+            "time": 1788979855.5452845,
+            "rss": 8481476608,
+            "vms": 2290307072,
+            "system_available": 376156160,
+            "gpu": "1119, 6838, 26"
+          },
+          {
+            "time": 1788979856.6434402,
+            "rss": 8481476608,
+            "vms": 2290307072,
+            "system_available": 364101632,
+            "gpu": "1119, 6838, 6"
+          },
+          {
+            "time": 1788979857.741898,
+            "rss": 8481476608,
+            "vms": 2290307072,
+            "system_available": 367353856,
+            "gpu": "1119, 6838, 57"
+          },
+          {
+            "time": 1788979858.835859,
+            "rss": 8481476608,
+            "vms": 2290307072,
+            "system_available": 372158464,
+            "gpu": "1119, 6838, 17"
+          },
+          {
+            "time": 1788979859.9335332,
+            "rss": 8481476608,
+            "vms": 2290307072,
+            "system_available": 375676928,
+            "gpu": "1119, 6838, 27"
+          },
+          {
+            "time": 1788979861.0308144,
+            "rss": 8481476608,
+            "vms": 2290307072,
+            "system_available": 375431168,
+            "gpu": "1119, 6838, 2"
+          },
+          {
+            "time": 1788979862.1274712,
+            "rss": 8481476608,
+            "vms": 2290307072,
+            "system_available": 365932544,
+            "gpu": "1119, 6838, 21"
+          },
+          {
+            "time": 1788979863.2235613,
+            "rss": 8481476608,
+            "vms": 2290307072,
+            "system_available": 375169024,
+            "gpu": "1119, 6838, 9"
+          },
+          {
+            "time": 1788979864.3243153,
+            "rss": 8481476608,
+            "vms": 2290307072,
+            "system_available": 371482624,
+            "gpu": "1119, 6838, 23"
+          },
+          {
+            "time": 1788979865.4173336,
+            "rss": 8481501184,
+            "vms": 2290208768,
+            "system_available": 348835840,
+            "gpu": "1119, 6838, 53"
+          },
+          {
+            "time": 1788979866.5173385,
+            "rss": 8373833728,
+            "vms": 2290208768,
+            "system_available": 412999680,
+            "gpu": "1119, 6838, 3"
+          },
+          {
+            "time": 1788979867.6185334,
+            "rss": 8373833728,
+            "vms": 2290208768,
+            "system_available": 412774400,
+            "gpu": "1119, 6838, 1"
+          },
+          {
+            "time": 1788979868.711449,
+            "rss": 6954885120,
+            "vms": 549646336,
+            "system_available": 1955356672,
+            "gpu": "0, 7956, 11"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "pressure",
+      "surface": "cli",
+      "command": [
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\llama-cli.exe",
+        "-m",
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "-ngl",
+        "0",
+        "--no-op-offload",
+        "--no-kv-offload",
+        "-np",
+        "1",
+        "-c",
+        "256",
+        "-b",
+        "128",
+        "-ub",
+        "8",
+        "-t",
+        "8",
+        "-tb",
+        "8",
+        "-fa",
+        "off",
+        "--load-mode",
+        "mmap",
+        "--no-warmup",
+        "--no-repack",
+        "--fit",
+        "off",
+        "--moe-gpu-cache-mib",
+        "16",
+        "--moe-device",
+        "CUDA0",
+        "--moe-staging-mib",
+        "1",
+        "--moe-compute-mib",
+        "64",
+        "--moe-gpu-reserve-mib",
+        "512",
+        "--single-turn",
+        "--no-conversation",
+        "-p",
+        "The capital of France is",
+        "-n",
+        "64",
+        "--seed",
+        "1234",
+        "--temp",
+        "0",
+        "--ignore-eos"
+      ],
+      "returncode": 0,
+      "seconds": 48.53199999999924,
+      "memory": {
+        "peak_rss": 8503169024,
+        "minimum_system_available": 265854976,
+        "samples": [
+          {
+            "time": 1788979870.2058182,
+            "rss": 1949696,
+            "vms": 2048000,
+            "system_available": 8841158656,
+            "gpu": "2131, 5826, 0"
+          },
+          {
+            "time": 1788979871.3020172,
+            "rss": 444649472,
+            "vms": 512458752,
+            "system_available": 6767337472,
+            "gpu": "2244, 5713, 0"
+          },
+          {
+            "time": 1788979874.7043839,
+            "rss": 2154582016,
+            "vms": 1256542208,
+            "system_available": 6751510528,
+            "gpu": "2244, 5713, 5"
+          },
+          {
+            "time": 1788979875.787009,
+            "rss": 3125841920,
+            "vms": 1258258432,
+            "system_available": 5781393408,
+            "gpu": "2244, 5713, 0"
+          },
+          {
+            "time": 1788979876.859277,
+            "rss": 3836440576,
+            "vms": 1209327616,
+            "system_available": 4986155008,
+            "gpu": "2244, 5713, 4"
+          },
+          {
+            "time": 1788979877.9567988,
+            "rss": 4854304768,
+            "vms": 1209327616,
+            "system_available": 3971047424,
+            "gpu": "2244, 5713, 5"
+          },
+          {
+            "time": 1788979879.051834,
+            "rss": 5504684032,
+            "vms": 1209327616,
+            "system_available": 3331141632,
+            "gpu": "2244, 5713, 8"
+          },
+          {
+            "time": 1788979880.1430397,
+            "rss": 6009241600,
+            "vms": 1211564032,
+            "system_available": 2815938560,
+            "gpu": "2244, 5713, 21"
+          },
+          {
+            "time": 1788979881.239407,
+            "rss": 6407561216,
+            "vms": 1214877696,
+            "system_available": 2413219840,
+            "gpu": "2244, 5713, 8"
+          },
+          {
+            "time": 1788979882.3308465,
+            "rss": 6800261120,
+            "vms": 1214877696,
+            "system_available": 2022686720,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979883.4424603,
+            "rss": 7204151296,
+            "vms": 1214877696,
+            "system_available": 1620717568,
+            "gpu": "2244, 5713, 19"
+          },
+          {
+            "time": 1788979884.5394638,
+            "rss": 7599120384,
+            "vms": 1214877696,
+            "system_available": 1253945344,
+            "gpu": "2244, 5713, 23"
+          },
+          {
+            "time": 1788979885.6367204,
+            "rss": 7748599808,
+            "vms": 1220472832,
+            "system_available": 1077628928,
+            "gpu": "2244, 5713, 35"
+          },
+          {
+            "time": 1788979886.7349555,
+            "rss": 7935795200,
+            "vms": 1220472832,
+            "system_available": 854056960,
+            "gpu": "2244, 5713, 33"
+          },
+          {
+            "time": 1788979887.8395312,
+            "rss": 8041549824,
+            "vms": 1225728000,
+            "system_available": 750505984,
+            "gpu": "2244, 5713, 16"
+          },
+          {
+            "time": 1788979888.951959,
+            "rss": 8162033664,
+            "vms": 1225732096,
+            "system_available": 635342848,
+            "gpu": "2244, 5713, 41"
+          },
+          {
+            "time": 1788979890.0534127,
+            "rss": 8220991488,
+            "vms": 1225732096,
+            "system_available": 533774336,
+            "gpu": "2244, 5713, 41"
+          },
+          {
+            "time": 1788979891.1478586,
+            "rss": 8247099392,
+            "vms": 1225789440,
+            "system_available": 517771264,
+            "gpu": "2244, 5713, 13"
+          },
+          {
+            "time": 1788979892.247351,
+            "rss": 8232943616,
+            "vms": 1225789440,
+            "system_available": 518864896,
+            "gpu": "2244, 5713, 16"
+          },
+          {
+            "time": 1788979893.341977,
+            "rss": 8187969536,
+            "vms": 1225793536,
+            "system_available": 520511488,
+            "gpu": "2244, 5713, 44"
+          },
+          {
+            "time": 1788979894.4503872,
+            "rss": 8203456512,
+            "vms": 1225793536,
+            "system_available": 519237632,
+            "gpu": "2244, 5713, 39"
+          },
+          {
+            "time": 1788979895.5468433,
+            "rss": 8206045184,
+            "vms": 1225793536,
+            "system_available": 518717440,
+            "gpu": "2244, 5713, 24"
+          },
+          {
+            "time": 1788979896.6421645,
+            "rss": 8281321472,
+            "vms": 1225793536,
+            "system_available": 439975936,
+            "gpu": "2244, 5713, 25"
+          },
+          {
+            "time": 1788979897.7387853,
+            "rss": 8306855936,
+            "vms": 1225793536,
+            "system_available": 390541312,
+            "gpu": "2244, 5713, 37"
+          },
+          {
+            "time": 1788979898.8326895,
+            "rss": 8387506176,
+            "vms": 1225793536,
+            "system_available": 293584896,
+            "gpu": "2244, 5713, 25"
+          },
+          {
+            "time": 1788979899.941975,
+            "rss": 8363884544,
+            "vms": 1225793536,
+            "system_available": 295321600,
+            "gpu": "2244, 5713, 25"
+          },
+          {
+            "time": 1788979901.0402882,
+            "rss": 8358928384,
+            "vms": 1225793536,
+            "system_available": 300195840,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979902.139137,
+            "rss": 8370028544,
+            "vms": 1225793536,
+            "system_available": 272089088,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979903.2481334,
+            "rss": 8261705728,
+            "vms": 1225793536,
+            "system_available": 301277184,
+            "gpu": "2244, 5713, 50"
+          },
+          {
+            "time": 1788979904.3470569,
+            "rss": 8335257600,
+            "vms": 1225793536,
+            "system_available": 317829120,
+            "gpu": "2244, 5713, 7"
+          },
+          {
+            "time": 1788979905.4457188,
+            "rss": 8379928576,
+            "vms": 1225793536,
+            "system_available": 272609280,
+            "gpu": "2244, 5713, 32"
+          },
+          {
+            "time": 1788979906.557231,
+            "rss": 8398897152,
+            "vms": 1225793536,
+            "system_available": 273297408,
+            "gpu": "2244, 5713, 19"
+          },
+          {
+            "time": 1788979907.650499,
+            "rss": 8406618112,
+            "vms": 1225793536,
+            "system_available": 267689984,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979908.7396038,
+            "rss": 8417165312,
+            "vms": 1225793536,
+            "system_available": 273821696,
+            "gpu": "2244, 5713, 41"
+          },
+          {
+            "time": 1788979909.837682,
+            "rss": 8414642176,
+            "vms": 1225797632,
+            "system_available": 265854976,
+            "gpu": "2244, 5713, 22"
+          },
+          {
+            "time": 1788979910.9356647,
+            "rss": 8441667584,
+            "vms": 1225797632,
+            "system_available": 278953984,
+            "gpu": "2244, 5713, 24"
+          },
+          {
+            "time": 1788979912.0340574,
+            "rss": 8457498624,
+            "vms": 1225801728,
+            "system_available": 274796544,
+            "gpu": "2244, 5713, 14"
+          },
+          {
+            "time": 1788979913.1334581,
+            "rss": 8467308544,
+            "vms": 1225801728,
+            "system_available": 281972736,
+            "gpu": "2244, 5713, 52"
+          },
+          {
+            "time": 1788979914.2429163,
+            "rss": 8474517504,
+            "vms": 1225859072,
+            "system_available": 272392192,
+            "gpu": "2244, 5713, 14"
+          },
+          {
+            "time": 1788979915.3574557,
+            "rss": 8484311040,
+            "vms": 1225859072,
+            "system_available": 282234880,
+            "gpu": "2244, 5713, 20"
+          },
+          {
+            "time": 1788979916.469522,
+            "rss": 8503169024,
+            "vms": 1225859072,
+            "system_available": 272949248,
+            "gpu": "2244, 5713, 26"
+          },
+          {
+            "time": 1788979917.5570087,
+            "rss": 8432914432,
+            "vms": 511152128,
+            "system_available": 349749248,
+            "gpu": "2224, 5733, 0"
+          },
+          {
+            "time": 1788979918.6364465,
+            "rss": 28016640,
+            "vms": 425422848,
+            "system_available": 8809111552,
+            "gpu": "2224, 5733, 0"
+          }
+        ]
+      }
+    },
+    {
+      "mode": "pressure",
+      "surface": "server",
+      "command": [
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\llama-server.exe",
+        "-m",
+        "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "-ngl",
+        "0",
+        "--no-op-offload",
+        "--no-kv-offload",
+        "-np",
+        "1",
+        "-c",
+        "256",
+        "-b",
+        "128",
+        "-ub",
+        "8",
+        "-t",
+        "8",
+        "-tb",
+        "8",
+        "-fa",
+        "off",
+        "--load-mode",
+        "mmap",
+        "--no-warmup",
+        "--no-repack",
+        "--fit",
+        "off",
+        "--moe-gpu-cache-mib",
+        "16",
+        "--moe-device",
+        "CUDA0",
+        "--moe-staging-mib",
+        "1",
+        "--moe-compute-mib",
+        "64",
+        "--moe-gpu-reserve-mib",
+        "512",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "51023",
+        "--metrics"
+      ],
+      "requests": [
+        {
+          "index": 0,
+          "content": " Paris.\n<|channel>3/2/2025 3/2/2025 3/2/2025 3/2/2025 3/2/2025 3/2/2025 3/2/20",
+          "tokens": [
+            9079,
+            236761,
+            107,
+            100,
+            236800,
+            236786,
+            236778,
+            236786,
+            236778,
+            236771,
+            236778,
+            236810,
+            236743,
+            236800,
+            236786,
+            236778,
+            236786,
+            236778,
+            236771,
+            236778,
+            236810,
+            236743,
+            236800,
+            236786,
+            236778,
+            236786,
+            236778,
+            236771,
+            236778,
+            236810,
+            236743,
+            236800,
+            236786,
+            236778,
+            236786,
+            236778,
+            236771,
+            236778,
+            236810,
+            236743,
+            236800,
+            236786,
+            236778,
+            236786,
+            236778,
+            236771,
+            236778,
+            236810,
+            236743,
+            236800,
+            236786,
+            236778,
+            236786,
+            236778,
+            236771,
+            236778,
+            236810,
+            236743,
+            236800,
+            236786,
+            236778,
+            236786,
+            236778,
+            236771
+          ],
+          "id_slot": 0,
+          "stop": true,
+          "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+          "tokens_predicted": 64,
+          "tokens_evaluated": 6,
+          "generation_settings": {
+            "seed": 1234,
+            "temperature": 0.0,
+            "dynatemp_range": 0.0,
+            "dynatemp_exponent": 1.0,
+            "top_k": 64,
+            "top_p": 0.949999988079071,
+            "min_p": 0.05000000074505806,
+            "top_n_sigma": -1.0,
+            "xtc_probability": 0.0,
+            "xtc_threshold": 0.10000000149011612,
+            "typical_p": 1.0,
+            "repeat_last_n": 64,
+            "repeat_penalty": 1.0,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "dry_multiplier": 0.0,
+            "dry_base": 1.75,
+            "dry_allowed_length": 2,
+            "dry_penalty_last_n": 64,
+            "dry_sequence_breakers": [
+              "\n",
+              ":",
+              "\"",
+              "*"
+            ],
+            "mirostat": 0,
+            "mirostat_tau": 5.0,
+            "mirostat_eta": 0.10000000149011612,
+            "adaptive_target": -1.0,
+            "adaptive_decay": 0.8999999761581421,
+            "stop": [],
+            "max_tokens": 64,
+            "n_predict": 64,
+            "n_keep": 0,
+            "n_discard": 0,
+            "ignore_eos": true,
+            "stream": false,
+            "logit_bias": [
+              {
+                "bias": null,
+                "token": 1
+              },
+              {
+                "bias": null,
+                "token": 50
+              },
+              {
+                "bias": null,
+                "token": 106
+              }
+            ],
+            "n_probs": 0,
+            "min_keep": 0,
+            "grammar": "",
+            "grammar_lazy": false,
+            "grammar_triggers": [],
+            "preserved_tokens": [],
+            "chat_format": "Content-only",
+            "reasoning_format": "deepseek",
+            "reasoning_in_content": false,
+            "generation_prompt": "",
+            "samplers": [
+              "penalties",
+              "dry",
+              "top_n_sigma",
+              "top_k",
+              "typ_p",
+              "top_p",
+              "min_p",
+              "xtc",
+              "temperature"
+            ],
+            "speculative.types": "none",
+            "timings_per_token": false,
+            "post_sampling_probs": false,
+            "backend_sampling": false,
+            "lora": []
+          },
+          "prompt": "<bos>The capital of France is",
+          "has_new_line": true,
+          "truncated": false,
+          "stop_type": "limit",
+          "stopping_word": "",
+          "tokens_cached": 69,
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 6,
+            "prompt_ms": 4916.011,
+            "prompt_per_token_ms": 819.3351666666667,
+            "prompt_per_second": 1.2205017441987007,
+            "predicted_n": 64,
+            "predicted_ms": 34940.112,
+            "predicted_per_token_ms": 554.6049523809523,
+            "predicted_per_second": 1.8030852333844836
+          }
+        },
+        {
+          "index": 0,
+          "content": " Paris.\n<|channel>thought\n5.  **Output 2: \"The capital of France is Paris.\"**\n\n---\n\n### **Step 2: Implement the Logic (Python)**\n\nNow, let's write the code to perform this task.\n\n```python\ndef extract_capital(sentence):\n",
+          "tokens": [
+            9079,
+            236761,
+            107,
+            100,
+            45518,
+            107,
+            236810,
+            236761,
+            138,
+            1018,
+            8433,
+            236743,
+            236778,
+            236787,
+            623,
+            818,
+            5279,
+            529,
+            7001,
+            563,
+            9079,
+            1781,
+            1018,
+            108,
+            7243,
+            108,
+            10354,
+            5213,
+            5471,
+            236743,
+            236778,
+            236787,
+            41276,
+            506,
+            47223,
+            568,
+            32651,
+            62902,
+            108,
+            6445,
+            236764,
+            1531,
+            236789,
+            236751,
+            4903,
+            506,
+            3393,
+            531,
+            2121,
+            672,
+            4209,
+            236761,
+            108,
+            2717,
+            6719,
+            107,
+            2063,
+            8430,
+            236779,
+            41626,
+            236769,
+            54554,
+            1473,
+            107
+          ],
+          "id_slot": 0,
+          "stop": true,
+          "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+          "tokens_predicted": 64,
+          "tokens_evaluated": 6,
+          "generation_settings": {
+            "seed": 1234,
+            "temperature": 0.0,
+            "dynatemp_range": 0.0,
+            "dynatemp_exponent": 1.0,
+            "top_k": 64,
+            "top_p": 0.949999988079071,
+            "min_p": 0.05000000074505806,
+            "top_n_sigma": -1.0,
+            "xtc_probability": 0.0,
+            "xtc_threshold": 0.10000000149011612,
+            "typical_p": 1.0,
+            "repeat_last_n": 64,
+            "repeat_penalty": 1.0,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0,
+            "dry_multiplier": 0.0,
+            "dry_base": 1.75,
+            "dry_allowed_length": 2,
+            "dry_penalty_last_n": 64,
+            "dry_sequence_breakers": [
+              "\n",
+              ":",
+              "\"",
+              "*"
+            ],
+            "mirostat": 0,
+            "mirostat_tau": 5.0,
+            "mirostat_eta": 0.10000000149011612,
+            "adaptive_target": -1.0,
+            "adaptive_decay": 0.8999999761581421,
+            "stop": [],
+            "max_tokens": 64,
+            "n_predict": 64,
+            "n_keep": 0,
+            "n_discard": 0,
+            "ignore_eos": true,
+            "stream": false,
+            "logit_bias": [
+              {
+                "bias": null,
+                "token": 1
+              },
+              {
+                "bias": null,
+                "token": 50
+              },
+              {
+                "bias": null,
+                "token": 106
+              }
+            ],
+            "n_probs": 0,
+            "min_keep": 0,
+            "grammar": "",
+            "grammar_lazy": false,
+            "grammar_triggers": [],
+            "preserved_tokens": [],
+            "chat_format": "Content-only",
+            "reasoning_format": "deepseek",
+            "reasoning_in_content": false,
+            "generation_prompt": "",
+            "samplers": [
+              "penalties",
+              "dry",
+              "top_n_sigma",
+              "top_k",
+              "typ_p",
+              "top_p",
+              "min_p",
+              "xtc",
+              "temperature"
+            ],
+            "speculative.types": "none",
+            "timings_per_token": false,
+            "post_sampling_probs": false,
+            "backend_sampling": false,
+            "lora": []
+          },
+          "prompt": "<bos>The capital of France is",
+          "has_new_line": true,
+          "truncated": false,
+          "stop_type": "limit",
+          "stopping_word": "",
+          "tokens_cached": 69,
+          "timings": {
+            "cache_n": 0,
+            "prompt_n": 6,
+            "prompt_ms": 4091.226,
+            "prompt_per_token_ms": 681.871,
+            "prompt_per_second": 1.4665530576897976,
+            "predicted_n": 64,
+            "predicted_ms": 37063.586,
+            "predicted_per_token_ms": 588.3108888888889,
+            "predicted_per_second": 1.699781559183183
+          }
+        }
+      ],
+      "memory": {
+        "peak_rss": 8840613888,
+        "minimum_system_available": 30806016,
+        "samples": [
+          {
+            "time": 1788979918.7450042,
+            "rss": 2048000,
+            "vms": 2039808,
+            "system_available": 8922169344,
+            "gpu": "2131, 5826, 0"
+          },
+          {
+            "time": 1788979919.8360476,
+            "rss": 442986496,
+            "vms": 482148352,
+            "system_available": 8340959232,
+            "gpu": "2230, 5727, 0"
+          },
+          {
+            "time": 1788979923.406398,
+            "rss": 2052337664,
+            "vms": 1253986304,
+            "system_available": 6673731584,
+            "gpu": "2244, 5713, 4"
+          },
+          {
+            "time": 1788979924.507745,
+            "rss": 3085864960,
+            "vms": 1254084608,
+            "system_available": 5638356992,
+            "gpu": "2244, 5713, 0"
+          },
+          {
+            "time": 1788979925.5783753,
+            "rss": 3193823232,
+            "vms": 1206939648,
+            "system_available": 5520236544,
+            "gpu": "2244, 5713, 5"
+          },
+          {
+            "time": 1788979926.6521719,
+            "rss": 4058976256,
+            "vms": 1206939648,
+            "system_available": 4650704896,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979927.7496996,
+            "rss": 4525842432,
+            "vms": 1211056128,
+            "system_available": 4187795456,
+            "gpu": "2244, 5713, 15"
+          },
+          {
+            "time": 1788979928.8507268,
+            "rss": 5174411264,
+            "vms": 1211056128,
+            "system_available": 3534958592,
+            "gpu": "2244, 5713, 29"
+          },
+          {
+            "time": 1788979929.950256,
+            "rss": 5649387520,
+            "vms": 1211056128,
+            "system_available": 3058221056,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979931.043033,
+            "rss": 5848170496,
+            "vms": 1217073152,
+            "system_available": 2590380032,
+            "gpu": "2244, 5713, 26"
+          },
+          {
+            "time": 1788979932.1356094,
+            "rss": 6139293696,
+            "vms": 1217073152,
+            "system_available": 2344579072,
+            "gpu": "2244, 5713, 30"
+          },
+          {
+            "time": 1788979933.2303798,
+            "rss": 6429401088,
+            "vms": 1217073152,
+            "system_available": 1962016768,
+            "gpu": "2244, 5713, 30"
+          },
+          {
+            "time": 1788979934.343324,
+            "rss": 6667575296,
+            "vms": 1217073152,
+            "system_available": 1661685760,
+            "gpu": "2244, 5713, 20"
+          },
+          {
+            "time": 1788979935.4417472,
+            "rss": 7023144960,
+            "vms": 1217073152,
+            "system_available": 1308889088,
+            "gpu": "2244, 5713, 23"
+          },
+          {
+            "time": 1788979936.5397892,
+            "rss": 7248400384,
+            "vms": 1217073152,
+            "system_available": 1292406784,
+            "gpu": "2244, 5713, 37"
+          },
+          {
+            "time": 1788979937.64014,
+            "rss": 7461527552,
+            "vms": 1217073152,
+            "system_available": 1073315840,
+            "gpu": "2244, 5713, 39"
+          },
+          {
+            "time": 1788979938.7427661,
+            "rss": 7592120320,
+            "vms": 1217110016,
+            "system_available": 936230912,
+            "gpu": "2244, 5713, 35"
+          },
+          {
+            "time": 1788979939.838218,
+            "rss": 7713632256,
+            "vms": 1217110016,
+            "system_available": 916910080,
+            "gpu": "2244, 5713, 12"
+          },
+          {
+            "time": 1788979940.9372234,
+            "rss": 7886585856,
+            "vms": 1217110016,
+            "system_available": 747876352,
+            "gpu": "2244, 5713, 36"
+          },
+          {
+            "time": 1788979942.0380783,
+            "rss": 7912103936,
+            "vms": 1217110016,
+            "system_available": 705343488,
+            "gpu": "2244, 5713, 34"
+          },
+          {
+            "time": 1788979943.1325264,
+            "rss": 7999107072,
+            "vms": 1217110016,
+            "system_available": 623972352,
+            "gpu": "2244, 5713, 10"
+          },
+          {
+            "time": 1788979944.2181003,
+            "rss": 8045678592,
+            "vms": 1217110016,
+            "system_available": 518848512,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979945.3103878,
+            "rss": 8010076160,
+            "vms": 1217110016,
+            "system_available": 522133504,
+            "gpu": "2244, 5713, 45"
+          },
+          {
+            "time": 1788979946.4046986,
+            "rss": 7969267712,
+            "vms": 1217110016,
+            "system_available": 521330688,
+            "gpu": "2244, 5713, 15"
+          },
+          {
+            "time": 1788979947.4974582,
+            "rss": 8011341824,
+            "vms": 1217110016,
+            "system_available": 542973952,
+            "gpu": "2244, 5713, 22"
+          },
+          {
+            "time": 1788979948.597825,
+            "rss": 8050126848,
+            "vms": 1217110016,
+            "system_available": 510693376,
+            "gpu": "2244, 5713, 22"
+          },
+          {
+            "time": 1788979949.6972656,
+            "rss": 8012341248,
+            "vms": 1217110016,
+            "system_available": 545132544,
+            "gpu": "2244, 5713, 20"
+          },
+          {
+            "time": 1788979950.7834291,
+            "rss": 8067739648,
+            "vms": 1217110016,
+            "system_available": 492527616,
+            "gpu": "2244, 5713, 41"
+          },
+          {
+            "time": 1788979951.8801973,
+            "rss": 8135450624,
+            "vms": 1217110016,
+            "system_available": 417157120,
+            "gpu": "2244, 5713, 40"
+          },
+          {
+            "time": 1788979952.9958408,
+            "rss": 8223993856,
+            "vms": 1217245184,
+            "system_available": 337657856,
+            "gpu": "2244, 5713, 13"
+          },
+          {
+            "time": 1788979954.081257,
+            "rss": 8193785856,
+            "vms": 1217245184,
+            "system_available": 355909632,
+            "gpu": "2244, 5713, 16"
+          },
+          {
+            "time": 1788979955.1768284,
+            "rss": 8235069440,
+            "vms": 1217245184,
+            "system_available": 312487936,
+            "gpu": "2244, 5713, 22"
+          },
+          {
+            "time": 1788979956.28719,
+            "rss": 8282271744,
+            "vms": 1217245184,
+            "system_available": 284016640,
+            "gpu": "2244, 5713, 7"
+          },
+          {
+            "time": 1788979957.3683634,
+            "rss": 8280010752,
+            "vms": 1217245184,
+            "system_available": 272822272,
+            "gpu": "2244, 5713, 36"
+          },
+          {
+            "time": 1788979958.4651027,
+            "rss": 8245506048,
+            "vms": 1217245184,
+            "system_available": 280825856,
+            "gpu": "2244, 5713, 14"
+          },
+          {
+            "time": 1788979959.5636818,
+            "rss": 8253280256,
+            "vms": 1217245184,
+            "system_available": 284024832,
+            "gpu": "2244, 5713, 55"
+          },
+          {
+            "time": 1788979960.6619873,
+            "rss": 8221614080,
+            "vms": 1217245184,
+            "system_available": 311873536,
+            "gpu": "2244, 5713, 15"
+          },
+          {
+            "time": 1788979961.778079,
+            "rss": 8225095680,
+            "vms": 1217245184,
+            "system_available": 290402304,
+            "gpu": "2244, 5713, 18"
+          },
+          {
+            "time": 1788979962.878433,
+            "rss": 8241614848,
+            "vms": 1217245184,
+            "system_available": 278364160,
+            "gpu": "2244, 5713, 56"
+          },
+          {
+            "time": 1788979963.9866314,
+            "rss": 8216391680,
+            "vms": 1217245184,
+            "system_available": 303001600,
+            "gpu": "2244, 5713, 19"
+          },
+          {
+            "time": 1788979965.081385,
+            "rss": 8256995328,
+            "vms": 1217245184,
+            "system_available": 276140032,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979966.189717,
+            "rss": 8263258112,
+            "vms": 1232019456,
+            "system_available": 274784256,
+            "gpu": "2244, 5713, 9"
+          },
+          {
+            "time": 1788979967.2982137,
+            "rss": 8266575872,
+            "vms": 1232019456,
+            "system_available": 274300928,
+            "gpu": "2244, 5713, 22"
+          },
+          {
+            "time": 1788979968.3914535,
+            "rss": 8289824768,
+            "vms": 1232019456,
+            "system_available": 265269248,
+            "gpu": "2244, 5713, 52"
+          },
+          {
+            "time": 1788979969.483433,
+            "rss": 8472797184,
+            "vms": 1235173376,
+            "system_available": 100810752,
+            "gpu": "2244, 5713, 28"
+          },
+          {
+            "time": 1788979970.5805488,
+            "rss": 8620056576,
+            "vms": 1235173376,
+            "system_available": 36433920,
+            "gpu": "2244, 5713, 34"
+          },
+          {
+            "time": 1788979971.676332,
+            "rss": 8783933440,
+            "vms": 1235173376,
+            "system_available": 38440960,
+            "gpu": "2244, 5713, 41"
+          },
+          {
+            "time": 1788979972.776864,
+            "rss": 8840613888,
+            "vms": 1235173376,
+            "system_available": 30806016,
+            "gpu": "2244, 5713, 25"
+          },
+          {
+            "time": 1788979973.8772535,
+            "rss": 8760692736,
+            "vms": 1235173376,
+            "system_available": 121544704,
+            "gpu": "2244, 5713, 10"
+          },
+          {
+            "time": 1788979974.9783616,
+            "rss": 8716943360,
+            "vms": 1235173376,
+            "system_available": 188522496,
+            "gpu": "2244, 5713, 47"
+          },
+          {
+            "time": 1788979976.075355,
+            "rss": 8644603904,
+            "vms": 1235173376,
+            "system_available": 281972736,
+            "gpu": "2244, 5713, 21"
+          },
+          {
+            "time": 1788979977.1663606,
+            "rss": 8617209856,
+            "vms": 1235173376,
+            "system_available": 298192896,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979978.2674112,
+            "rss": 8582500352,
+            "vms": 1235173376,
+            "system_available": 312893440,
+            "gpu": "2244, 5713, 24"
+          },
+          {
+            "time": 1788979979.3528101,
+            "rss": 8652959744,
+            "vms": 1235070976,
+            "system_available": 266973184,
+            "gpu": "2244, 5713, 33"
+          },
+          {
+            "time": 1788979980.4654992,
+            "rss": 8652832768,
+            "vms": 1235070976,
+            "system_available": 275341312,
+            "gpu": "2244, 5713, 50"
+          },
+          {
+            "time": 1788979981.567401,
+            "rss": 8661221376,
+            "vms": 1235070976,
+            "system_available": 276152320,
+            "gpu": "2244, 5713, 41"
+          },
+          {
+            "time": 1788979982.6675076,
+            "rss": 8691511296,
+            "vms": 1235070976,
+            "system_available": 275394560,
+            "gpu": "2244, 5713, 20"
+          },
+          {
+            "time": 1788979983.7532892,
+            "rss": 8700825600,
+            "vms": 1235070976,
+            "system_available": 275369984,
+            "gpu": "2244, 5713, 11"
+          },
+          {
+            "time": 1788979984.8524787,
+            "rss": 8725909504,
+            "vms": 1235070976,
+            "system_available": 275361792,
+            "gpu": "2244, 5713, 20"
+          },
+          {
+            "time": 1788979985.959955,
+            "rss": 8663531520,
+            "vms": 1235070976,
+            "system_available": 309264384,
+            "gpu": "2244, 5713, 35"
+          },
+          {
+            "time": 1788979987.0769463,
+            "rss": 8690077696,
+            "vms": 1235070976,
+            "system_available": 274665472,
+            "gpu": "2244, 5713, 43"
+          },
+          {
+            "time": 1788979988.1753933,
+            "rss": 8686690304,
+            "vms": 1235070976,
+            "system_available": 275275776,
+            "gpu": "2244, 5713, 23"
+          },
+          {
+            "time": 1788979989.2726884,
+            "rss": 8683638784,
+            "vms": 1235070976,
+            "system_available": 270635008,
+            "gpu": "2244, 5713, 33"
+          },
+          {
+            "time": 1788979990.3608723,
+            "rss": 8682418176,
+            "vms": 1235070976,
+            "system_available": 266846208,
+            "gpu": "2244, 5713, 45"
+          },
+          {
+            "time": 1788979991.457405,
+            "rss": 8686690304,
+            "vms": 1235070976,
+            "system_available": 275238912,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979992.550642,
+            "rss": 8678027264,
+            "vms": 1235070976,
+            "system_available": 275279872,
+            "gpu": "2244, 5713, 25"
+          },
+          {
+            "time": 1788979993.6473184,
+            "rss": 8624771072,
+            "vms": 1235070976,
+            "system_available": 296132608,
+            "gpu": "2244, 5713, 53"
+          },
+          {
+            "time": 1788979994.7620966,
+            "rss": 8634949632,
+            "vms": 1235070976,
+            "system_available": 292462592,
+            "gpu": "2244, 5713, 14"
+          },
+          {
+            "time": 1788979995.8601682,
+            "rss": 8635113472,
+            "vms": 1235070976,
+            "system_available": 281403392,
+            "gpu": "2244, 5713, 36"
+          },
+          {
+            "time": 1788979996.956663,
+            "rss": 8649777152,
+            "vms": 1235070976,
+            "system_available": 261509120,
+            "gpu": "2244, 5713, 37"
+          },
+          {
+            "time": 1788979998.05343,
+            "rss": 8631185408,
+            "vms": 1235070976,
+            "system_available": 296361984,
+            "gpu": "2244, 5713, 17"
+          },
+          {
+            "time": 1788979999.1846557,
+            "rss": 8638676992,
+            "vms": 1235070976,
+            "system_available": 273797120,
+            "gpu": "2244, 5713, 22"
+          },
+          {
+            "time": 1788980000.2890291,
+            "rss": 8656023552,
+            "vms": 1235070976,
+            "system_available": 275247104,
+            "gpu": "2244, 5713, 23"
+          },
+          {
+            "time": 1788980001.383988,
+            "rss": 8668237824,
+            "vms": 1235070976,
+            "system_available": 273006592,
+            "gpu": "2244, 5713, 26"
+          },
+          {
+            "time": 1788980002.482803,
+            "rss": 8702078976,
+            "vms": 1235070976,
+            "system_available": 272441344,
+            "gpu": "2244, 5713, 22"
+          },
+          {
+            "time": 1788980003.5821192,
+            "rss": 8712708096,
+            "vms": 1235070976,
+            "system_available": 275730432,
+            "gpu": "2244, 5713, 15"
+          },
+          {
+            "time": 1788980004.677814,
+            "rss": 8709054464,
+            "vms": 1235070976,
+            "system_available": 279334912,
+            "gpu": "2244, 5713, 8"
+          },
+          {
+            "time": 1788980005.7783844,
+            "rss": 8772407296,
+            "vms": 1235070976,
+            "system_available": 278081536,
+            "gpu": "2244, 5713, 45"
+          },
+          {
+            "time": 1788980006.8701901,
+            "rss": 4932308992,
+            "vms": 549728256,
+            "system_available": 4345765888,
+            "gpu": "2131, 5826, 0"
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "CPU attention/shared layers; GPU experts; global VRAM includes other processes",
+  "binaries": {
+    "llama-cli": "a2fbb130d49c0c6617a1052c2100b38d3b700f2b51e986217fca7d501ce2abf9",
+    "llama-server": "78a8e0ba38382aae7e0ba04b0c171fa51bc1e43b12645d10d021b54b49cd07d2"
+  },
+  "system_ram": 16309932032,
+  "identical_tokens": false,
+  "status": "token-divergence"
+}

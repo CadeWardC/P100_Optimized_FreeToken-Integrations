@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "general.architecture": "k2-horizon",
+    "general.type": "model",
+    "general.name": "Checkpoint_0002500",
+    "general.size_label": "9.0B",
+    "k2-horizon.block_count": 36,
+    "k2-horizon.context_length": 524288,
+    "k2-horizon.embedding_length": 4096,
+    "k2-horizon.feed_forward_length": 12288,
+    "k2-horizon.attention.head_count": 32,
+    "k2-horizon.attention.head_count_kv": 8,
+    "k2-horizon.rope.freq_base": 10000000.0,
+    "k2-horizon.attention.layer_norm_rms_epsilon": 9.999999974752427e-07,
+    "k2-horizon.expert_count": 0,
+    "k2-horizon.expert_used_count": 0,
+    "k2-horizon.attention.key_length": 128,
+    "k2-horizon.attention.value_length": 128,
+    "k2-horizon.attention.group_norm_groups": 4,
+    "k2-horizon.rope.dimension_count": 128,
+    "general.quantization_version": 2,
+    "general.file_type": 15
+  },
+  "tensor_count": 327,
+  "header_bytes": 11458925,
+  "tensor_types": {
+    "Q6_K": 37,
+    "F32": 73,
+    "Q4_K": 217
+  },
+  "expert_types": {},
+  "experts": [],
+  "header_sha256": "e8387a715dc3854f8e2218871663eb4b59246a6b3e52c0ca2c3e5da6685b4589",
+  "validation": "header only; full file hash and pretrained outputs not verified",
+  "source": "C:\\Users\\cadel\\Documents\\Coding_Projects\\models\\K2 7B\\K2-Horizon-7B-Q4_K_M.gguf"
+}

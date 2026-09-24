@@ -1,0 +1,35 @@
+Test project C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev
+    Start 1: test-moe-cache
+Could not find executable C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/test-moe-cache.exe
+Looked in the following places:
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/test-moe-cache.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/test-moe-cache.exe.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/Release/test-moe-cache.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/Release/test-moe-cache.exe.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/Debug/test-moe-cache.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/Debug/test-moe-cache.exe.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/MinSizeRel/test-moe-cache.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/MinSizeRel/test-moe-cache.exe.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/RelWithDebInfo/test-moe-cache.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/RelWithDebInfo/test-moe-cache.exe.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/Deployment/test-moe-cache.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/Deployment/test-moe-cache.exe.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/Development/test-moe-cache.exe
+C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/Development/test-moe-cache.exe.exe
+Unable to find executable: C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev/bin/test-moe-cache.exe
+1/3 Test #1: test-moe-cache ...................***Not Run   0.00 sec
+    Start 2: test-moe-integration
+2/3 Test #2: test-moe-integration .............   Passed    8.23 sec
+    Start 3: test-moe-offload
+3/3 Test #3: test-moe-offload .................   Passed    0.30 sec
+
+67% tests passed, 1 tests failed out of 3
+
+Label Time Summary:
+main    =   8.53 sec*proc (3 tests)
+
+Total Test time (real) =   8.72 sec
+
+The following tests FAILED:
+	  1 - test-moe-cache (Not Run)                          main
+Errors while running CTest

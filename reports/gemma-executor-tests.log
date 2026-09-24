@@ -1,0 +1,10 @@
+Test project C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cpu
+    Start 3: test-moe-offload
+1/1 Test #3: test-moe-offload .................   Passed    0.15 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Label Time Summary:
+main    =   0.15 sec*proc (1 test)
+
+Total Test time (real) =   0.20 sec

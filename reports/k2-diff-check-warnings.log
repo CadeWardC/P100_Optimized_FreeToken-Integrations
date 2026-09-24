@@ -1,0 +1,5 @@
+warning: in the working copy of 'gguf-py/gguf/constants.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/llama-arch.cpp', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/llama-model-saver.cpp', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/llama-model.cpp', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test-unicode.cpp', LF will be replaced by CRLF the next time Git touches it

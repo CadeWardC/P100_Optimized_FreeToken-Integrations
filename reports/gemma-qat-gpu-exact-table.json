@@ -1,0 +1,29 @@
+{
+  "status": "failed",
+  "scope": "CUDA0 cache pretrained parity; not P100 acceptance",
+  "model": {
+    "id": "gemma26b-qat-q4",
+    "repository": "google/gemma-4-26B-A4B-it-qat-q4_0-gguf",
+    "revision": "d1c082be9cf3c8a514acf63b8761f4b41935842e",
+    "filename": "gemma-4-26B_q4_0-it.gguf",
+    "size_bytes": 14439363584,
+    "publisher_sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+    "architecture": "gemma4",
+    "expert_type": "Q4_0",
+    "expert_layout": "fused gate/up plus down, 30 layers",
+    "header_report": "reports/gemma-qat-pretrained-header.json"
+  },
+  "local_sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+  "executable_sha256": "e6f348cc31de542e44138f6767db9e0b5d3667eb3b0e1115c5abdc4f4cff5df6",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "command": [
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\test-moe-integration.exe",
+    "--device",
+    "CUDA0",
+    "--model",
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf"
+  ],
+  "returncode": 1,
+  "elapsed_seconds": 28.95372247695923,
+  "log": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\reports\\gemma-qat-gpu-exact-table.log"
+}

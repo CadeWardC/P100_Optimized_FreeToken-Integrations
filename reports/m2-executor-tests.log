@@ -1,0 +1,20 @@
+Test project C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cpu
+    Start  1: test-moe-cache
+1/6 Test  #1: test-moe-cache ...................   Passed    0.02 sec
+    Start  2: test-moe-integration
+2/6 Test  #2: test-moe-integration .............   Passed    8.48 sec
+    Start  3: test-moe-offload
+3/6 Test  #3: test-moe-offload .................   Passed    0.20 sec
+    Start 20: test-sampling
+4/6 Test #20: test-sampling ....................   Passed    4.13 sec
+    Start 22: test-grammar-parser
+5/6 Test #22: test-grammar-parser ..............   Passed    0.01 sec
+    Start 52: test-quantize-fns
+6/6 Test #52: test-quantize-fns ................   Passed    3.10 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Label Time Summary:
+main    =  15.96 sec*proc (6 tests)
+
+Total Test time (real) =  16.02 sec

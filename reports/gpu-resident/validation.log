@@ -1,0 +1,17 @@
+RUN graphs-cpu
+graphs-cpu 0
+RUN graphs-cache
+graphs-cache 0
+RUN graphs-device
+graphs-device 0
+RUN graphs-memcheck
+graphs-memcheck 0
+RUN graphs-integration
+graphs-integration 0
+RUN graphs-integration-native
+graphs-integration-native 0
+RUN graphs-pretrained-native
+graphs-pretrained-native 0
+RUN graphs-pretrained-compatibility
+graphs-pretrained-compatibility 0
+PASS all graph validation

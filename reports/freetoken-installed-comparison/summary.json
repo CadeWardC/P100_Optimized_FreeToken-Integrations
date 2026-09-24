@@ -1,0 +1,44 @@
+{
+  "rows": [
+    {
+      "engine": "Installed FreeToken",
+      "cache_mib": 3059.6220703125,
+      "decode_median_tps": 36.250111267703716,
+      "decode_min_tps": 36.2404064309809,
+      "decode_max_tps": 37.318832617157696,
+      "wall_median_seconds": 4.613079799999923,
+      "end_to_end_median_tps": 27.530414713398653
+    },
+    {
+      "engine": "project-native",
+      "cache_mib": 1024,
+      "policy": 0,
+      "label": "cpu-0",
+      "decode_median_tps": 7.7966429251727325,
+      "decode_min_tps": 7.70669180545033,
+      "decode_max_tps": 7.805944466421286,
+      "prompt_median_tps": 4.88887243744513,
+      "wall_median_seconds": 17.922000000000025,
+      "peak_rss_gib": 9.444625854492188,
+      "decode_change_percent": 0.0,
+      "end_to_end_median_tps": 7.1420600379421835
+    },
+    {
+      "engine": "project-native-3g",
+      "cache_mib": 3060,
+      "policy": 0,
+      "label": "cpu-0",
+      "decode_median_tps": 21.04981912072751,
+      "decode_min_tps": 20.671747141886804,
+      "decode_max_tps": 22.005993600934303,
+      "prompt_median_tps": 5.637101144895243,
+      "wall_median_seconds": 7.2970000000000255,
+      "peak_rss_gib": 9.364421844482422,
+      "decode_change_percent": 0.0,
+      "end_to_end_median_tps": 17.541455392627046
+    }
+  ],
+  "freetoken_vs_larger_project_cache_ratio": 1.7221103449772002,
+  "project_cache_speedup": 2.699856761782015,
+  "scope": "Raw completion diagnostic only: repetitive text, different tokenization and timing methods. See chat-summary.json for conversational comparison."
+}

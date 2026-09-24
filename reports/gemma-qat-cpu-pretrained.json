@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "scope": "CPU cache pretrained parity; not P100 acceptance",
+  "model": {
+    "id": "gemma26b-qat-q4",
+    "repository": "google/gemma-4-26B-A4B-it-qat-q4_0-gguf",
+    "revision": "d1c082be9cf3c8a514acf63b8761f4b41935842e",
+    "filename": "gemma-4-26B_q4_0-it.gguf",
+    "size_bytes": 14439363584,
+    "publisher_sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+    "architecture": "gemma4",
+    "expert_type": "Q4_0",
+    "expert_layout": "fused gate/up plus down, 30 layers",
+    "header_report": "reports/gemma-qat-pretrained-header.json"
+  },
+  "local_sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+  "executable_sha256": "34b32d84c050c7cbf000a04209d4e72eb1851cd3d27608efc4fce153d3be4cf6",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "command": [
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cpu\\bin\\Release\\test-moe-integration.exe",
+    "--model",
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf"
+  ],
+  "returncode": 0,
+  "elapsed_seconds": 403.03343081474304,
+  "log": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\reports\\gemma-qat-cpu-pretrained.log"
+}

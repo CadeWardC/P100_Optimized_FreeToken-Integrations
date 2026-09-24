@@ -1,0 +1,14 @@
+[
+  {
+    "path": "build\\linux-desktop-check\\llamacpp-p100",
+    "format": "ELF x86-64",
+    "bytes": 30268760,
+    "sha256": "dc81c6d252b9c95ce1235011a718948712b6553925ec2c90c63aae0e7569b0cd"
+  },
+  {
+    "path": "build\\linux-desktop-check\\desktop-tests",
+    "format": "ELF x86-64",
+    "bytes": 27391960,
+    "sha256": "e860aed9652f18975285f1f2a92676e0f893a03456bb4c38306f654cc68d04ed"
+  }
+]

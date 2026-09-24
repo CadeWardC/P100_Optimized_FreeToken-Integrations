@@ -1,0 +1,10 @@
+[
+  {
+    "role": "user",
+    "content": "Say hello briefly."
+  },
+  {
+    "role": "assistant",
+    "content": "Native stream verified."
+  }
+]

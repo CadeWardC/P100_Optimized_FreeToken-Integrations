@@ -1,0 +1,19 @@
+0.00.683.050 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.768.469 W srv  llama_server: -----------------
+0.00.768.476 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.768.477 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.768.478 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.768.478 W srv  llama_server: -----------------
+0.00.776.150 I srv    load_model: loading model 'C:\Users\cadel\Documents\Coding_Projects\models\MiniCPM5-2B\MiniCPM5-2B-F16.gguf'
+0.05.497.882 I cmn          init: llama threadpool init, n_threads = 8
+0.06.059.428 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.06.072.417 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.06.072.685 I srv  llama_server: model loaded
+0.06.072.693 I srv  llama_server: listening on http://127.0.0.1:49836
+0.06.626.135 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.06.626.485 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.08.173.792 I slot print_timing: id  0 | task 0 | prompt eval time =     974.34 ms /    28 tokens (   34.80 ms per token,    28.74 tokens per second)
+0.08.173.799 I slot print_timing: id  0 | task 0 |        eval time =     572.82 ms /    10 tokens (   63.65 ms per token,    15.71 tokens per second)
+0.08.173.800 I slot print_timing: id  0 | task 0 |       total time =    1547.16 ms /    38 tokens
+0.08.173.800 I slot print_timing: id  0 | task 0 |    graphs reused =          9
+0.08.174.687 I slot      release: id  0 | task 0 | stop processing: n_tokens = 37, truncated = 0

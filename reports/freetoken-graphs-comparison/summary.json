@@ -1,0 +1,121 @@
+{
+  "rows": [
+    {
+      "engine": "project",
+      "measured_requests": 6,
+      "median_decode_tps": 20.954922536643437,
+      "decode_range": [
+        18.7890070697731,
+        21.02439110797569
+      ],
+      "median_first_text_seconds": 2.3677844499998173,
+      "median_wall_seconds": 8.527321400000346,
+      "prompt_tokens": [
+        19,
+        19,
+        19,
+        19,
+        19,
+        19
+      ],
+      "completion_tokens": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128
+      ],
+      "per_session_median": [
+        20.953322037018314,
+        20.95652303626856
+      ],
+      "within_engine_matching_texts": true
+    },
+    {
+      "engine": "freetoken",
+      "measured_requests": 6,
+      "median_decode_tps": 19.127711701896644,
+      "decode_range": [
+        18.277383048356008,
+        22.516829319483456
+      ],
+      "median_first_text_seconds": 1.275387249999767,
+      "median_wall_seconds": 7.9908534000001055,
+      "prompt_tokens": [
+        19,
+        19,
+        19,
+        19,
+        19,
+        19
+      ],
+      "completion_tokens": [
+        127,
+        127,
+        127,
+        127,
+        127,
+        127
+      ],
+      "per_session_median": [
+        19.37742695544359,
+        18.429057955699967
+      ],
+      "within_engine_matching_texts": false
+    }
+  ],
+  "project_over_freetoken_decode_ratio": 1.0955268912049534,
+  "method": "AB/BA separate engines, one excluded warmup plus three measured requests per session. Same GGUF file, chat prompt, thinking disabled and 128-token request. FreeToken fixed at 959 expert slots and 8232 KV tokens; project expert budget 3060 MiB. Prefix reuse and generated text differ.",
+  "model": {
+    "path": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+    "sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+    "size_bytes": 14439363584,
+    "manifest_entry": {
+      "id": "gemma26b-qat-q4",
+      "repository": "google/gemma-4-26B-A4B-it-qat-q4_0-gguf",
+      "revision": "d1c082be9cf3c8a514acf63b8761f4b41935842e",
+      "filename": "gemma-4-26B_q4_0-it.gguf",
+      "size_bytes": 14439363584,
+      "publisher_sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+      "architecture": "gemma4",
+      "expert_type": "Q4_0",
+      "expert_layout": "fused gate/up plus down, 30 layers",
+      "header_report": "reports/gemma-qat-pretrained-header.json",
+      "local_verification": {
+        "path": "models/gemma-4-26B_q4_0-it.gguf",
+        "sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+        "size_bytes": 14439363584,
+        "cpu_report": "reports/gemma-qat-cpu-pretrained.json",
+        "gpu_status": "passed RTX 4060 compatibility path; see reports/gemma-qat-fix-final.json; P100 untested",
+        "gpu_report": "reports/gemma-qat-gpu-native-final.json",
+        "operation_report": "reports/qat-operation/results.json"
+      }
+    }
+  },
+  "project_server_sha256": "034f6c2e3886fcf91d4327fb537b4ba04c9141668835978f914d612f6a3caf8c",
+  "freetoken_health": [
+    {
+      "health": {
+        "status": "ok",
+        "model": "gemma-4-26B_q4_0-it.gguf",
+        "instance_id": "de4de234-fdbf-4686-a0d4-a3ea1f78c3d2",
+        "uptime_s": 0,
+        "maintenance": "serving",
+        "version": "0.1.2+g141c31a8d"
+      },
+      "startup_seconds": 91.76788409999972
+    },
+    {
+      "health": {
+        "status": "ok",
+        "model": "gemma-4-26B_q4_0-it.gguf",
+        "instance_id": "e32319c7-cb5f-4e77-a4c9-84c4a7436f27",
+        "uptime_s": 0,
+        "maintenance": "serving",
+        "version": "0.1.2+g141c31a8d"
+      },
+      "startup_seconds": 85.27967399999943
+    }
+  ]
+}

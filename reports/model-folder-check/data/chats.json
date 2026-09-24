@@ -1,0 +1,10 @@
+{
+  "active": "initial",
+  "chats": [
+    {
+      "id": "initial",
+      "title": "New chat",
+      "messages": []
+    }
+  ]
+}

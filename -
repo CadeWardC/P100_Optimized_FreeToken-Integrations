@@ -1,0 +1,73 @@
+# 1 "C:/Program Files/CMake/share/cmake-4.1/Modules/CXX-DetectStdlib.h"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 452 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "C:/Program Files/CMake/share/cmake-4.1/Modules/CXX-DetectStdlib.h" 2
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/version" 1 3
+# 247 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/version" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__assert" 1 3
+# 13 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__assert" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__assertion_handler" 1 3
+# 13 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__assertion_handler" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__config" 1 3
+# 17 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__config" 3
+# 517 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__config" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features.h" 1 3
+# 407 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features.h" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features-time64.h" 1 3
+# 20 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features-time64.h" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/bits/wordsize.h" 1 3
+# 21 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features-time64.h" 2 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/bits/timesize.h" 1 3
+# 19 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/bits/timesize.h" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/bits/wordsize.h" 1 3
+# 20 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/bits/timesize.h" 2 3
+# 22 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features-time64.h" 2 3
+# 408 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features.h" 2 3
+# 505 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features.h" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/stdc-predef.h" 1 3
+# 506 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features.h" 2 3
+# 519 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features.h" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/sys/cdefs.h" 1 3
+# 576 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/sys/cdefs.h" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/bits/wordsize.h" 1 3
+# 577 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/sys/cdefs.h" 2 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/bits/long-double.h" 1 3
+# 578 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/sys/cdefs.h" 2 3
+# 520 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features.h" 2 3
+# 543 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features.h" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/gnu/stubs.h" 1 3
+# 10 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/gnu/stubs.h" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/gnu/stubs-64.h" 1 3
+# 11 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\x86_64-linux-gnu/gnu/stubs.h" 2 3
+# 544 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libc\\include\\generic-glibc/features.h" 2 3
+# 518 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__config" 2 3
+# 14 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__assertion_handler" 2 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__verbose_abort" 1 3
+# 13 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__verbose_abort" 3
+# 1 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__availability" 1 3
+# 17 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__availability" 3
+# 14 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__verbose_abort" 2 3
+# 18 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__verbose_abort" 3
+
+
+namespace std { inline namespace __1 {
+
+
+
+[[noreturn]]
+    __attribute__((__format__(__printf__, 1, 2))) void __libcpp_verbose_abort(const char* __format, ...);
+# 51 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__verbose_abort" 3
+}}
+# 15 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__assertion_handler" 2 3
+# 18 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__assertion_handler" 3
+# 14 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__assert" 2 3
+# 18 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/__assert" 3
+# 248 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/version" 2 3
+# 253 "C:\\Users\\cadel\\AppData\\Local\\Temp\\freetoken-zig-check\\ziglang\\lib\\libcxx\\include/version" 3
+# 2 "C:/Program Files/CMake/share/cmake-4.1/Modules/CXX-DetectStdlib.h" 2
+
+
+CMAKE-STDLIB-DETECT: libc++

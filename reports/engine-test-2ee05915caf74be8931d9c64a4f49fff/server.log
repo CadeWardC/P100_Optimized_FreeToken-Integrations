@@ -1,0 +1,15 @@
+0.00.739.687 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.833.352 W srv  llama_server: -----------------
+0.00.833.361 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.833.362 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.833.363 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.833.363 W srv  llama_server: -----------------
+0.00.836.532 I srv    load_model: loading model 'C:\Users\cadel\Documents\Coding_Projects\models\Gemma-4-26B-A4B-IT-QAT-Q4_0\gemma-4-26B_q4_0-it.gguf'
+0.01.921.796 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.01.922.441 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.02.004.282 W load: special_eog_ids contains '<|tool_response>', removing '</s>' token from EOG list
+0.04.135.827 W load_tensors: experimental host-bank MoE enabled, tile weights <= 2780823552 bytes; this is not a total memory limit
+0.04.341.824 I cmn          init: llama threadpool init, n_threads = 8
+0.12.617.813 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 2048, kv_unified = 'false'
+0.12.656.592 I srv  llama_server: model loaded
+0.12.656.605 I srv  llama_server: listening on http://127.0.0.1:55312

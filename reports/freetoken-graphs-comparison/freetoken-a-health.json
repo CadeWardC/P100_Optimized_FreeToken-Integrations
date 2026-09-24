@@ -1,0 +1,11 @@
+{
+  "health": {
+    "status": "ok",
+    "model": "gemma-4-26B_q4_0-it.gguf",
+    "instance_id": "de4de234-fdbf-4686-a0d4-a3ea1f78c3d2",
+    "uptime_s": 0,
+    "maintenance": "serving",
+    "version": "0.1.2+g141c31a8d"
+  },
+  "startup_seconds": 91.76788409999972
+}

@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('reports/freetoken-graphs-comparison/run_comparison.py');s=p.read_text().replace("'--num-tokens','8232']", "'--num-tokens','8232','--max-running-requests','1']").replace("    print('START',label,flush=True)", "    if (folder/f'{label}-chat.json').exists():\n        print('SKIP completed',label,flush=True)\n        continue\n    print('START',label,flush=True)");p.write_text(s)

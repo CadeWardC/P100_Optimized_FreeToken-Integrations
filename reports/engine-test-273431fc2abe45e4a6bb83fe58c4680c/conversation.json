@@ -1,0 +1,16 @@
+[
+  {
+    "role": "user",
+    "content": "Reply with exactly: Hi."
+  },
+  {
+    "role": "assistant",
+    "content": "Hi.",
+    "stats": {
+      "genTokens": 6,
+      "promptTokens": 28,
+      "ttftMs": 33250,
+      "stopReason": "eos"
+    }
+  }
+]

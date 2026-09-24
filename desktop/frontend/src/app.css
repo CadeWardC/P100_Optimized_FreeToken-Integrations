@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-app: #07090e;
+    --bg-sidebar: #0b0f17;
+    --bg-panel: #101520;
+    --bg-card: #151c2b;
+    --bg-card-hover: #1a2336;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --border-highlight: rgba(255, 255, 255, 0.14);
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: #f1f5f9;
+    font-family: 'Segoe UI Variable Text', -apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.22);
+  }
+}
+
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.85rem 1rem;
+  background: #0d1117;
+  color: #c9d1d9;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.hljs-comment, .hljs-punctuation { color: #8b949e; font-style: italic; }
+.hljs-tag, .hljs-attribute { color: #7ee787; }
+.hljs-keyword, .hljs-selector-tag { color: #ff7b72; font-weight: 600; }
+.hljs-string, .hljs-meta .hljs-string { color: #a5d6ff; }
+.hljs-title, .hljs-section { color: #d2a8ff; font-weight: 600; }
+.hljs-variable, .hljs-template-variable { color: #ffa657; }
+.hljs-number, .hljs-literal { color: #79c0ff; }
+.hljs-built_in, .hljs-type { color: #ffa657; }
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.96); }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 1.8s ease-in-out infinite;
+}

@@ -1,0 +1,423 @@
+// LlamaCPP P100 — native UI (Slint)
+import { Button, CheckBox, ComboBox, LineEdit, ListView } from "std-widgets.slint";
+
+export struct MsgRow { role: int, content: string, reasoning: string, stats: string }
+export struct ModelRow { name: string, size: string, caps: string, selected: bool }
+export struct LogRow { text: string, level: int }
+export struct BudgetRow { label: string, value: string, kind: int }
+
+export global AppState {
+    in property <int> page;              // 0 chat, 1 models, 2 tune, 3 monitor
+    in property <int> engine-state;      // 0 stopped, 1 loading, 2 ready, 3 error
+    in property <string> status-text;
+    in property <int> status-level;      // 0 idle, 1 ok, 2 busy, 3 warn, 4 err
+    in property <string> load-stage;
+    in property <int> load-percent;
+    in property <bool> generating;
+    in property <bool> pending-reload;
+    in property <string> active-model;
+    in property <string> tok-sec-text;
+    in property <string> ttft-text;
+    in property <string> ctx-text;
+    in property <int> requests;
+    in property <string> chip-vram;
+    in property <string> chip-ram;
+    in property <int> vram-pct;
+    in property <int> ram-pct;
+    in property <int> model-count;
+    in property <bool> scanning;
+    in property <string> uptime-text;
+}
+
+component NavBtn inherits Rectangle {
+    in property <string> label;
+    in property <string> badge;
+    in property <bool> active;
+    callback activated;
+    height: 38px;
+    border-radius: 9px;
+    background: active ? #294a86 : #0d1117;
+    hover := TouchArea {
+        clicked => { parent.activated(); }
+    }
+    HorizontalLayout {
+        padding-left: 12px; padding-right: 12px; spacing: 10px;
+        Rectangle { width: 16px; height: 16px; y: 11px; border-radius: 5px;
+            background: active ? #4c8dff : #5f6a7e; }
+        Text { text: label; font-size: 13.5px; color: active ? #cfe0ff : #8f9bb0; font-weight: active ? 700 : 400; vertical-alignment: center; }
+        Rectangle { horizontal-stretch: 1; background: transparent; }
+        if badge != "": Rectangle { width: 26px; height: 18px; y: 10px; border-radius: 9px; background: #171c27;
+            Text { text: badge; font-size: 10.5px; color: #8f9bb0; vertical-alignment: center; horizontal-alignment: center; } }
+    }
+    Rectangle {
+        background: hover.has-hover ? #1b2231 : transparent;
+    }
+}
+
+component Gauge inherits Rectangle {
+    in property <string> label;
+    in property <int> pct;
+    in property <string> value-text;
+    height: 34px; background: transparent;
+    Rectangle {
+        y: 2px; height: 4px; width: parent.width; border-radius: 2px; background: #171c27;
+        Rectangle {
+            x: 0; height: 4px; border-radius: 2px; background: pct > 88 ? #f5b04d : #4c8dff;
+            width: parent.width * Math.min(100, Math.max(0, root.pct)) / 100;
+        }
+    }
+    Text {
+        y: 12px; text: label + "  " + root.value-text;
+        font-size: 10.5px; color: #8f9bb0;
+    }
+}
+
+component StatTile inherits VerticalLayout {
+    in property <string> label;
+    in property <string> value;
+    in property <string> unit;
+    spacing: 3px;
+    Text { text: label; font-size: 10.5px; color: #5f6a7e; }
+    HorizontalLayout { spacing: 5px;
+        Text { text: value; font-size: 20px; font-weight: 700; color: #e8edf6; vertical-alignment: center; }
+        Text { text: unit; font-size: 11px; color: #8f9bb0; vertical-alignment: center; } }
+}
+
+component SettingRow inherits HorizontalLayout {
+    in property <string> label;
+    in property <string> help;
+    in property <string> value;
+    in property <string> placeholder;
+    callback edited(string);
+    spacing: 16px; height: 54px;
+    VerticalLayout { width: 290px; spacing: 1px;
+        Text { text: label; font-size: 13px; color: #e8edf6; }
+        Text { text: help; font-size: 11px; color: #8f9bb0; wrap: word-wrap; } }
+    LineEdit { width: 170px; y: 13px; text: value; placeholder-text: placeholder;
+        edited(t) => { parent.edited(t); }
+        accepted(t) => { parent.edited(t); } }
+}
+
+component Card inherits Rectangle {
+    background: #12161f; border-radius: 12px; border-width: 1px; border-color: #232b3a;
+}
+
+export component AppWindow inherits Window {
+    title: "LlamaCPP P100";
+    background: #0a0d12;
+    preferred-width: 1280px;
+    preferred-height: 820px;
+    min-width: 1240px;
+    min-height: 660px;
+
+    in-out property <[MsgRow]> messages;
+    in-out property <[ModelRow]> models;
+    in-out property <[LogRow]> logs;
+    in-out property <[BudgetRow]> budget;
+    in-out property <[string]> warning-list;
+    in-out property <string> details;
+    in-out property <string> details-name;
+    in-out property <string> folder;
+    in-out property <string> server-path;
+    in-out property <string> endpoint;
+    in-out property <string> draft;
+    in-out property <string> proj-edit;
+    in-out property <string> add-edit;
+    in-out property <string> v-ctx; in-out property <string> v-gpu; in-out property <string> v-threads; in-out property <string> v-tbatch;
+    in-out property <string> v-batch; in-out property <string> v-ubatch;
+    in-out property <int> i-flash; in-out property <int> i-ck; in-out property <int> i-cv;
+    in-out property <string> v-temp; in-out property <string> v-maxtok; in-out property <string> v-topk; in-out property <string> v-topp;
+    in-out property <string> v-minp; in-out property <string> v-rep;
+    in-out property <string> v-system;
+    in-out property <bool> b-think; in-out property <bool> b-auto;
+    in-out property <string> v-gpucache; in-out property <string> v-cpucache; in-out property <string> v-reserve;
+
+    callback send(string);
+    callback cancel-chat();
+    callback new-chat();
+    callback load-engine();
+    callback unload-engine();
+    callback rescan(string);
+    callback use-model(int);
+    callback pair-projector(int, string);
+    callback add-model(string);
+    callback set-key(string, string);
+    callback restore-profile(bool);
+    callback goto-page(int);
+
+    HorizontalLayout {
+        // ---------------- sidebar ----------------
+        Rectangle {
+            width: 226px; background: #0d1117;
+            VerticalLayout {
+                padding-top: 14px; padding-bottom: 14px; padding-left: 10px; padding-right: 10px; spacing: 3px;
+                HorizontalLayout {
+                    spacing: 10px; padding-left: 6px; padding-bottom: 16px;
+                    Rectangle { width: 34px; height: 34px; border-radius: 9px;
+                        background: @linear-gradient(135deg, #4c8dff, #4dd6c1);
+                        Text { text: "k"; font-size: 17px; font-weight: 800; color: #0a0d12; vertical-alignment: center; horizontal-alignment: center; } }
+                    VerticalLayout { spacing: 0px;
+                        Text { text: "LlamaCPP P100"; font-size: 14px; font-weight: 700; color: #e8edf6; }
+                        Text { text: "Intelligence, on your terms."; font-size: 10px; color: #8f9bb0; } }
+                }
+                NavBtn { label: "Chat"; active: AppState.page == 0; activated => { root.goto-page(0); } }
+                NavBtn { label: "Models"; badge: AppState.model-count > 0 ? "" + AppState.model-count : ""; active: AppState.page == 1; activated => { root.goto-page(1); } }
+                NavBtn { label: "Tune"; active: AppState.page == 2; activated => { root.goto-page(2); } }
+                NavBtn { label: "Monitor"; active: AppState.page == 3; activated => { root.goto-page(3); } }
+                Rectangle { vertical-stretch: 1; background: transparent; }
+                Gauge { label: "VRAM"; pct: AppState.vram-pct; value-text: AppState.chip-vram; }
+                Gauge { label: "RAM"; pct: AppState.ram-pct; value-text: AppState.chip-ram; }
+                Text { text: "native · local · private"; font-size: 10px; color: #5f6a7e; }
+            }
+        }
+        // ---------------- main ----------------
+        VerticalLayout {
+            VerticalLayout {
+                // ============ CHAT ============
+                if AppState.page == 0 : VerticalLayout {
+                    padding-top: 16px; padding-bottom: 16px; padding-left: 28px; padding-right: 28px; spacing: 10px;
+                    if AppState.engine-state == 1 : Card {
+                        VerticalLayout {
+                            padding-top: 12px; padding-bottom: 12px; padding-left: 16px; padding-right: 16px; spacing: 7px;
+                            HorizontalLayout { spacing: 10px;
+                                Rectangle { width: 14px; height: 14px; y: 4px; border-radius: 7px; border-width: 2px; border-color: #4c8dff; }
+                                Text { text: "Loading your model — " + AppState.load-stage + " (" + AppState.load-percent + "%)"; font-size: 13px; font-weight: 600; color: #e8edf6; vertical-alignment: center; }
+                                Rectangle { horizontal-stretch: 1; background: transparent; }
+                                Button { text: "Cancel"; clicked => { root.unload-engine(); } } }
+                            Rectangle { height: 5px; border-radius: 3px; background: #171c27;
+                                Rectangle { x: 0; height: 5px; border-radius: 3px; background: #4c8dff;
+                                    width: parent.width * Math.max(2, AppState.load-percent) / 100; } } } }
+                    Rectangle { horizontal-stretch: 1; background: transparent;
+                        VerticalLayout {
+                            spacing: 14px; padding-right: 8px;
+                            for m in root.messages : HorizontalLayout {
+                                spacing: 12px;
+                                Rectangle { width: 28px; height: 28px; border-radius: 8px; background: m.role == 0 ? #294a86 : #171c27;
+                                    Text { text: m.role == 0 ? "You" : "k"; font-size: 10px; font-weight: 700; color: m.role == 0 ? #cfe0ff : #8f9bb0; vertical-alignment: center; horizontal-alignment: center; } }
+                                VerticalLayout {
+                                    Text { text: m.role == 0 ? "You" : "LlamaCPP P100"; font-size: 11.5px; font-weight: 600; color: #8f9bb0; }
+                                    if m.reasoning != "": Rectangle { border-radius: 9px; background: #171c27; border-width: 1px; border-color: #232b3a;
+                                        VerticalLayout { padding-top: 8px; padding-bottom: 8px; padding-left: 12px; padding-right: 12px; spacing: 3px;
+                                            Text { text: "Thought process"; font-size: 11px; color: #5f6a7e; }
+                                            Text { text: m.reasoning; font-size: 12px; color: #8f9bb0; wrap: word-wrap; } } }
+                                    Rectangle { border-radius: 11px; background: m.role == 0 ? #171c27 : #12161f; border-width: m.role == 0 ? 1px : 1px; border-color: #232b3a;
+                                        VerticalLayout { padding: 10px;
+                                            Text { text: m.content; font-size: 14px; color: #e8edf6; wrap: word-wrap; } } }
+                                    if m.stats != "": Text { text: m.stats; font-size: 11px; color: #5f6a7e; }
+                                }
+                            }
+                            if root.messages.length == 0 : VerticalLayout {
+                                spacing: 6px;
+                                Rectangle { height: 54px; background: transparent;
+                                    Rectangle { width: 54px; height: 54px; x: (parent.width - 54px) / 2; border-radius: 15px;
+                                        background: @linear-gradient(135deg, #4c8dff, #4dd6c1);
+                                        Text { text: "k"; font-size: 24px; font-weight: 800; color: #0a0d12; vertical-alignment: center; horizontal-alignment: center; } } }
+                                Text { text: "A little space for big ideas."; font-size: 18px; font-weight: 700; color: #e8edf6; horizontal-alignment: center; }
+                                Text { text: AppState.engine-state == 2 ? "Your model is loaded — start typing below." : "Load a model from the Models page, then start typing."; font-size: 12.5px; color: #8f9bb0; horizontal-alignment: center; }
+                            }
+                            Rectangle { height: 8px; background: transparent; }
+                        } }
+                    Rectangle { height: 1px; background: #232b3a; }
+                    HorizontalLayout {
+                        spacing: 9px; padding-top: 10px;
+                        line := LineEdit {
+                            horizontal-stretch: 1;
+                            placeholder-text: AppState.engine-state == 2 ? "Message LlamaCPP P100…" : "Load a model first (Models → Load)…";
+                            text <=> root.draft;
+                            accepted(t) => { root.send(t); }
+                        }
+                        Button { text: "New"; clicked => { root.new-chat(); } }
+                        Button { text: AppState.generating ? "Stop" : "Send"; primary: true;
+                            enabled: AppState.generating || (AppState.engine-state == 2 && root.draft != "");
+                            clicked => { if (AppState.generating) { root.cancel-chat(); } else { root.send(root.draft); } } }
+                    }
+                }
+                // ============ MODELS ============
+                if AppState.page == 1 : VerticalLayout {
+                    padding-top: 16px; padding-bottom: 16px; padding-left: 28px; padding-right: 28px; spacing: 12px;
+                    HorizontalLayout { spacing: 12px;
+                        VerticalLayout { horizontal-stretch: 1; spacing: 0px;
+                            Text { text: "Models"; font-size: 19px; font-weight: 700; color: #e8edf6; }
+                            Text { text: AppState.scanning ? "Scanning folder…" : "Manage your local models and vision projectors."; font-size: 12px; color: #8f9bb0; } }
+                        Button { text: "Load / reload model"; primary: true; clicked => { root.load-engine(); } }
+                        Button { text: "Unload"; enabled: AppState.engine-state == 1 || AppState.engine-state == 2; clicked => { root.unload-engine(); } } }
+                    Card {
+                        VerticalLayout { padding-top: 13px; padding-bottom: 13px; padding-left: 16px; padding-right: 16px; spacing: 9px;
+                            Text { text: "Model folder"; font-size: 13px; font-weight: 600; color: #e8edf6; }
+                            HorizontalLayout { spacing: 9px;
+                                LineEdit { horizontal-stretch: 1; height: 34px; text <=> root.folder; accepted(t) => { root.rescan(t); } }
+                                Button { text: AppState.scanning ? "Scanning…" : "Rescan"; clicked => { root.rescan(root.folder); } } } } }
+                    Card {
+                        VerticalLayout { padding: 0px; spacing: 0px;
+                            Rectangle { height: 34px; background: #171c27; border-radius: 12px;
+                                HorizontalLayout { padding-left: 16px; padding-right: 16px; spacing: 12px;
+                                    Text { width: 270px; text: "NAME"; font-size: 10.5px; color: #5f6a7e; vertical-alignment: center; }
+                                    Text { width: 90px; text: "SIZE"; font-size: 10.5px; color: #5f6a7e; vertical-alignment: center; }
+                                    Text { text: "CAPABILITIES"; font-size: 10.5px; color: #5f6a7e; vertical-alignment: center; } } }
+                            ListView {
+                                height: 190px;
+                                for m[i] in root.models : Rectangle {
+                                    height: 46px; background: m.selected ? #1c2740 : #12161f;
+                                    row := TouchArea { clicked => { root.use-model(i); } }
+                                    Rectangle { background: row.has-hover ? #1b2231 : transparent; }
+                                    HorizontalLayout { padding-left: 16px; padding-right: 16px; spacing: 12px;
+                                        Text { width: 270px; text: m.name; font-size: 13px; color: m.selected ? #cfe0ff : #e8edf6; overflow: elide; vertical-alignment: center; }
+                                        Text { width: 90px; text: m.size; font-size: 12px; color: #8f9bb0; vertical-alignment: center; }
+                                        Text { horizontal-stretch: 1; text: m.caps; font-size: 11.5px; color: #4dd6c1; overflow: elide; vertical-alignment: center; }
+                                        if m.selected : Rectangle { width: 70px; height: 20px; y: 13px; border-radius: 10px; background: rgba(61, 220, 151, 0.12);
+                                            Text { text: "selected"; font-size: 10.5px; color: #3ddc97; vertical-alignment: center; horizontal-alignment: center; } } } } } } }
+                    HorizontalLayout { spacing: 12px;
+                        Card { horizontal-stretch: 1;
+                            VerticalLayout { padding-top: 13px; padding-bottom: 13px; padding-left: 16px; padding-right: 16px; spacing: 8px;
+                                Text { text: root.details-name == "" ? "Select a model" : root.details-name; font-size: 14px; font-weight: 600; color: #e8edf6; }
+                                Text { text: root.details; font-size: 12px; color: #8f9bb0; wrap: word-wrap; vertical-stretch: 1; }
+                                HorizontalLayout { spacing: 8px;
+                                    pe := LineEdit { horizontal-stretch: 1; height: 34px; placeholder-text: "path to mmproj*.gguf (pair with selected)"; text <=> root.proj-edit; }
+                                    Button { text: "Pair projector"; clicked => { root.pair-projector(-1, root.proj-edit); } } } } }
+                        Card { width: 330px;
+                            VerticalLayout { padding-top: 13px; padding-bottom: 13px; padding-left: 16px; padding-right: 16px; spacing: 8px;
+                                Text { text: "Add a model manually"; font-size: 13px; font-weight: 600; color: #e8edf6; }
+                                HorizontalLayout { spacing: 8px;
+                                    ae := LineEdit { horizontal-stretch: 1; height: 34px; placeholder-text: "full path to .gguf"; text <=> root.add-edit; }
+                                    Button { text: "Add"; clicked => { root.add-model(root.add-edit); } } }
+                                Text { text: "Folder scans pick up new files automatically."; font-size: 11px; color: #8f9bb0; wrap: word-wrap; } } } }
+                }
+                // ============ TUNE ============
+                if AppState.page == 2 : HorizontalLayout {
+                    padding-top: 16px; padding-bottom: 16px; padding-left: 28px; padding-right: 28px; spacing: 12px;
+                    VerticalLayout { horizontal-stretch: 1; spacing: 12px;
+                        Card { VerticalLayout { padding-top: 13px; padding-bottom: 13px; padding-left: 16px; padding-right: 16px; spacing: 8px;
+                            HorizontalLayout { spacing: 10px;
+                                Text { text: "FreeToken Auto"; font-size: 14px; font-weight: 600; color: #e8edf6; vertical-alignment: center; }
+                                Rectangle { width: 82px; height: 18px; y: 3px; border-radius: 9px; background: rgba(76, 141, 255, 0.14);
+                                    Text { text: "Recommended"; font-size: 10px; color: #4c8dff; vertical-alignment: center; horizontal-alignment: center; } }
+                                Rectangle { horizontal-stretch: 1; background: transparent; }
+                                CheckBox { text: "Apply on model select"; checked <=> root.b-auto; toggled => { root.set-key("auto_settings", root.b-auto ? "1" : "0"); } } }
+                            Text { text: "Automatically configures a starting profile when you select a model."; font-size: 11.5px; color: #8f9bb0; } } }
+                        Card { VerticalLayout { padding-top: 8px; padding-bottom: 8px; padding-left: 16px; padding-right: 16px;
+                            Text { text: "Context and GPU offload"; font-size: 13.5px; font-weight: 600; color: #e8edf6; }
+                            SettingRow { label: "Context tokens"; help: "Requires reload"; value <=> root.v-ctx; edited(t) => { root.set-key("ctx", t); } }
+                            SettingRow { label: "GPU layers"; help: "0 keeps everything on CPU. Requires reload"; value <=> root.v-gpu; edited(t) => { root.set-key("gpu_layers", t); } }
+                            SettingRow { label: "Decode threads"; help: "Requires reload"; value <=> root.v-threads; edited(t) => { root.set-key("threads", t); } }
+                            SettingRow { label: "Prefill threads"; help: "Requires reload"; value <=> root.v-tbatch; edited(t) => { root.set-key("threads_batch", t); } }
+                            SettingRow { label: "Batch tokens"; help: "Requires reload"; value <=> root.v-batch; edited(t) => { root.set-key("batch", t); } }
+                            SettingRow { label: "Microbatch tokens"; help: "Requires reload"; value <=> root.v-ubatch; edited(t) => { root.set-key("ubatch", t); } } } }
+                        Card { VerticalLayout { padding-top: 8px; padding-bottom: 8px; padding-left: 16px; padding-right: 16px;
+                            Text { text: "Attention and memory"; font-size: 13.5px; font-weight: 600; color: #e8edf6; }
+                            HorizontalLayout { spacing: 16px; height: 50px;
+                                Text { width: 290px; text: "Flash attention"; font-size: 13px; color: #e8edf6; vertical-alignment: center; }
+                                ComboBox { width: 170px; y: 10px; model: ["auto", "on", "off"]; current-index <=> root.i-flash; selected(i) => { root.set-key("flash", i); } } }
+                            HorizontalLayout { spacing: 16px; height: 50px;
+                                Text { width: 290px; text: "KV key type"; font-size: 13px; color: #e8edf6; vertical-alignment: center; }
+                                ComboBox { width: 170px; y: 10px; model: ["f16", "q8_0", "q4_0"]; current-index <=> root.i-ck; selected(i) => { root.set-key("cache_k", i); } } }
+                            HorizontalLayout { spacing: 16px; height: 50px;
+                                Text { width: 290px; text: "KV value type"; font-size: 13px; color: #e8edf6; vertical-alignment: center; }
+                                ComboBox { width: 170px; y: 10px; model: ["f16", "q8_0", "q4_0"]; current-index <=> root.i-cv; selected(i) => { root.set-key("cache_v", i); } } } } }
+                        Card { VerticalLayout { padding-top: 8px; padding-bottom: 8px; padding-left: 16px; padding-right: 16px;
+                            Text { text: "Inference and sampling — applies to your next message"; font-size: 13.5px; font-weight: 600; color: #e8edf6; }
+                            SettingRow { label: "Temperature"; help: "0.0 focused … 2.0 varied"; value <=> root.v-temp; edited(t) => { root.set-key("temperature", t); } }
+                            SettingRow { label: "Response length"; help: "Max tokens"; value <=> root.v-maxtok; edited(t) => { root.set-key("max_tokens", t); } }
+                            SettingRow { label: "Top K"; help: "0 disables"; value <=> root.v-topk; edited(t) => { root.set-key("top_k", t); } }
+                            SettingRow { label: "Top P"; help: "Cumulative probability"; value <=> root.v-topp; edited(t) => { root.set-key("top_p", t); } }
+                            SettingRow { label: "Min P"; help: "Relative cutoff"; value <=> root.v-minp; edited(t) => { root.set-key("min_p", t); } }
+                            SettingRow { label: "Repeat penalty"; help: "1 disables"; value <=> root.v-rep; edited(t) => { root.set-key("repeat_penalty", t); } }
+                            HorizontalLayout { spacing: 16px; height: 46px;
+                                Text { width: 290px; text: "Enable thinking"; font-size: 13px; color: #e8edf6; vertical-alignment: center; }
+                                CheckBox { text: "Show the model's thought process"; checked <=> root.b-think; toggled => { root.set-key("thinking", root.b-think ? "1" : "0"); } } }
+                            VerticalLayout { spacing: 3px; height: 62px;
+                                Text { text: "System prompt"; font-size: 13px; color: #e8edf6; }
+                                LineEdit { height: 34px; text <=> root.v-system; placeholder-text: "Instructions applied to this conversation."; edited(t) => { root.set-key("system", t); } } } } }
+                        Card { VerticalLayout { padding-top: 8px; padding-bottom: 8px; padding-left: 16px; padding-right: 16px;
+                            Text { text: "FreeToken expert caching (advanced)"; font-size: 13.5px; font-weight: 600; color: #a78bfa; }
+                            SettingRow { label: "GPU expert cache (MiB)"; help: "--moe-gpu-cache-mib; empty = disabled"; value <=> root.v-gpucache; edited(t) => { root.set-key("gpu_cache", t); } }
+                            SettingRow { label: "CPU expert cache (MiB)"; help: "Requires GPU layers 0"; value <=> root.v-cpucache; edited(t) => { root.set-key("cpu_cache", t); } }
+                            SettingRow { label: "GPU reserve (MiB)"; help: "Headroom for backend scratch"; value <=> root.v-reserve; edited(t) => { root.set-key("reserve", t); } } } }
+                    }
+                    Card { width: 330px;
+                        VerticalLayout { padding-top: 14px; padding-bottom: 14px; padding-left: 16px; padding-right: 16px; spacing: 8px;
+                            Text { text: "Launch summary"; font-size: 13.5px; font-weight: 600; color: #e8edf6; }
+                            for b in root.budget : HorizontalLayout { spacing: 8px;
+                                Rectangle { width: 9px; height: 9px; y: 5px; border-radius: 3px;
+                                    background: b.kind == 0 ? #4c8dff : b.kind == 1 ? #a78bfa : b.kind == 2 ? #4dd6c1 : #5f6a7e; }
+                                Text { horizontal-stretch: 1; text: b.label; font-size: 12px; color: #e8edf6; overflow: elide; }
+                                Text { text: b.value; font-size: 11px; color: #8f9bb0; } }
+                            for w in root.warning-list : HorizontalLayout { spacing: 7px;
+                                Text { text: "!"; font-size: 12px; font-weight: 800; color: #f5b04d; width: 10px; }
+                                Text { text: w; font-size: 11.5px; color: #f5b04d; wrap: word-wrap; horizontal-stretch: 1; } }
+                            Rectangle { height: 1px; background: #232b3a; }
+                            Button { text: AppState.pending-reload ? "Reload model" : "Load model"; primary: true; clicked => { root.load-engine(); } }
+                            Button { text: "Unload"; enabled: AppState.engine-state == 1 || AppState.engine-state == 2; clicked => { root.unload-engine(); } }
+                            Text { text: AppState.engine-state == 2 ? "Running with the current plan." : "Load starts the engine with this plan."; font-size: 11px; color: #8f9bb0; wrap: word-wrap; } } }
+                }
+                // ============ MONITOR ============
+                if AppState.page == 3 : VerticalLayout {
+                    padding-top: 16px; padding-bottom: 16px; padding-left: 28px; padding-right: 28px; spacing: 12px;
+                    VerticalLayout { spacing: 0px;
+                        Text { text: "Monitor"; font-size: 19px; font-weight: 700; color: #e8edf6; }
+                        Text { text: "Everything happening inside your engine, right now."; font-size: 12px; color: #8f9bb0; } }
+                    Card {
+                        VerticalLayout { padding-top: 14px; padding-bottom: 14px; padding-left: 18px; padding-right: 18px; spacing: 10px;
+                            HorizontalLayout { spacing: 12px;
+                                Rectangle { width: 38px; height: 38px; border-radius: 11px; background: #294a86;
+                                    Text { text: "k"; font-size: 16px; font-weight: 800; color: #cfe0ff; vertical-alignment: center; horizontal-alignment: center; } }
+                                VerticalLayout { horizontal-stretch: 1; spacing: 0px;
+                                    Text { text: AppState.active-model == "" ? "No model loaded" : AppState.active-model; font-size: 14.5px; font-weight: 700; color: #e8edf6; }
+                                    Text { text: AppState.engine-state == 2 ? "Running · " + AppState.uptime-text : AppState.engine-state == 1 ? "Loading" : AppState.engine-state == 3 ? "Error — check the log below" : "Stopped"; font-size: 12px; color: #8f9bb0; } }
+                                Button { text: "Stop"; enabled: AppState.engine-state == 1 || AppState.engine-state == 2; clicked => { root.unload-engine(); } } }
+                            HorizontalLayout { spacing: 30px;
+                                StatTile { label: "TOKENS/S"; value: AppState.tok-sec-text; unit: "t/s"; }
+                                StatTile { label: "TTFT"; value: AppState.ttft-text; unit: ""; }
+                                StatTile { label: "REQUESTS"; value: "" + AppState.requests; unit: ""; }
+                                StatTile { label: "CONTEXT"; value: AppState.ctx-text; unit: ""; } } }
+                    }
+                    HorizontalLayout { spacing: 12px;
+                        Card { width: 300px;
+                            VerticalLayout { padding-top: 14px; padding-bottom: 14px; padding-left: 18px; padding-right: 18px; spacing: 8px;
+                                Text { text: "VRAM"; font-size: 10.5px; color: #5f6a7e; }
+                                Rectangle { height: 8px; border-radius: 4px; background: #171c27;
+                                    Rectangle { x: 0; height: 8px; border-radius: 4px; background: @linear-gradient(90deg, #4c8dff, #4dd6c1);
+                                        width: parent.width * Math.min(100, Math.max(0, AppState.vram-pct)) / 100; } }
+                                Text { text: AppState.chip-vram; font-size: 11.5px; color: #8f9bb0; }
+                                Text { text: "SYSTEM RAM"; font-size: 10.5px; color: #5f6a7e; }
+                                Rectangle { height: 8px; border-radius: 4px; background: #171c27;
+                                    Rectangle { x: 0; height: 8px; border-radius: 4px; background: @linear-gradient(90deg, #4c8dff, #4dd6c1);
+                                        width: parent.width * Math.min(100, Math.max(0, AppState.ram-pct)) / 100; } }
+                                Text { text: AppState.chip-ram; font-size: 11.5px; color: #8f9bb0; } }
+                        Card { horizontal-stretch: 1;
+                            VerticalLayout { padding-top: 14px; padding-bottom: 14px; padding-left: 18px; padding-right: 18px; spacing: 8px;
+                                Text { text: "Connection"; font-size: 10.5px; color: #5f6a7e; }
+                                Text { text: "Endpoint: " + root.endpoint; font-size: 12px; color: #8f9bb0; wrap: word-wrap; }
+                                Text { text: "llama-server: " + root.server-path; font-size: 11px; color: #5f6a7e; wrap: word-wrap; } } } }
+                    Card { vertical-stretch: 1;
+                        VerticalLayout { padding-top: 12px; padding-bottom: 12px; padding-left: 14px; padding-right: 14px; spacing: 8px;
+                            Text { text: "Server log (live)"; font-size: 13px; font-weight: 600; color: #e8edf6; }
+                            Rectangle { vertical-stretch: 1; border-radius: 10px; background: #0b0f16; border-width: 1px; border-color: #232b3a;
+                                ListView {
+                                    x: 6px; width: parent.width - 12px; y: 6px; height: parent.height - 12px;
+                                    for l in root.logs : Text {
+                                        height: 17px; text: l.text; font-size: 11px;
+                                        font-family: "Consolas";
+                                        color: l.level == 2 ? #ff6b6b : l.level == 1 ? #f5b04d : #a9b4c6;
+                                        vertical-alignment: center; overflow: elide; } } } } }
+                }
+            }
+            }
+            // ---------------- status bar ----------------
+            Rectangle {
+                height: 34px; background: #0d1117;
+                HorizontalLayout {
+                    padding-left: 16px; padding-right: 16px; spacing: 14px;
+                    Rectangle { width: 7px; height: 7px; y: 14px; border-radius: 4px;
+                        background: AppState.status-level == 1 ? #3ddc97 : AppState.status-level == 2 ? #4c8dff : AppState.status-level == 4 ? #ff6b6b : AppState.status-level == 3 ? #f5b04d : #5f6a7e; }
+                    Text { text: AppState.status-text; font-size: 12px; color: #8f9bb0; vertical-alignment: center; }
+                    if AppState.generating : Text { text: AppState.tok-sec-text != "" ? AppState.tok-sec-text + " tok/s" : "generating…"; font-size: 12px; font-weight: 600; color: #3ddc97; vertical-alignment: center; }
+                    Rectangle { horizontal-stretch: 1; background: transparent; }
+                    Text { text: AppState.active-model; font-size: 12px; color: #8f9bb0; vertical-alignment: center; }
+                    Text { text: "VRAM " + AppState.chip-vram; font-size: 12px; color: #8f9bb0; vertical-alignment: center; }
+                    Text { text: "RAM " + AppState.chip-ram; font-size: 12px; color: #8f9bb0; vertical-alignment: center; }
+                    Text { text: AppState.model-count + " models"; font-size: 12px; color: #8f9bb0; vertical-alignment: center; }
+                }
+            }
+        }
+    }
+}

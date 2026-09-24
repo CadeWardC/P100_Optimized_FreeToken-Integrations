@@ -1,0 +1,17 @@
+[
+  {
+    "role": "user",
+    "content": "Reply with exactly: Hi."
+  },
+  {
+    "role": "assistant",
+    "content": "Native stream verified.",
+    "stats": {
+      "genTokens": 0,
+      "promptTokens": 0,
+      "ttftMs": 23,
+      "tokSec": 25.0,
+      "stopReason": "eos"
+    }
+  }
+]

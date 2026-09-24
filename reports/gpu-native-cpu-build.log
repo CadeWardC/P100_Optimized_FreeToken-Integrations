@@ -1,0 +1,459 @@
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  ggml-quants.c
+  ggml-moe-cache.cpp
+  ggml.c
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  amx.cpp
+  vec.cpp
+  ggml-cpu.c
+  ggml-cpu.cpp
+  ops.cpp
+  repack.cpp
+  repack.cpp
+  quants.c
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml-backend-reg.cpp
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\ggml\src\ggml-backend-reg.cpp(96,5): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\ggml.vcxproj]
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama-cparams.cpp
+  llama-impl.cpp
+  llama-kv-cache-msa.cpp
+  llama-hparams.cpp
+  llama-grammar.cpp
+  llama-kv-cache-dsv4.cpp
+  llama-kv-cache-iswa.cpp
+  llama-kv-cache.cpp
+  llama-adapter.cpp
+  llama.cpp
+  llama-chat.cpp
+  llama-kv-cache-dsa.cpp
+  llama-batch.cpp
+  llama-memory.cpp
+  llama-graph.cpp
+  llama-context.cpp
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama.cpp(74,5): warning C4297: 'llama_load_mode_from_str': function assumed not to throw an exception but does [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+      C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama.cpp(74,5):
+      __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
+  
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\memory(3594,56): warning C4244: 'argument': conversion from 'const int64_t' to 'uint32_t', possible loss of data [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+  (compiling source file '../../../llama.cpp/src/llama-graph.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\memory(3594,56):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-graph.cpp(2433,21):
+          see reference to function template instantiation 'std::unique_ptr<llm_graph_input_out_ids,std::default_delete<llm_graph_input_out_ids>> std::make_unique<llm_graph_input_out_ids,const llama_hparams&,const llama_cparams&,const int64_t&,0>(const llama_hparams &,const llama_cparams &,const int64_t &)' being compiled
+  
+  llama-memory-hybrid.cpp
+  afmoe.cpp
+  llama-memory-recurrent.cpp
+  llama-quant.cpp
+  arcee.cpp
+  llama-model-loader.cpp
+  llama-memory-hybrid-iswa.cpp
+  llama-model.cpp
+  apertus.cpp
+  arctic.cpp
+  llama-model-saver.cpp
+  llama-vocab.cpp
+  baichuan.cpp
+  bailingmoe.cpp
+  llama-sampler.cpp
+  arwkv7.cpp
+  bailingmoe2.cpp
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-sampler.cpp(1165,13): warning C4834: discarding return value of function with [[nodiscard]] attribute [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-sampler.cpp(1380,9): warning C4834: discarding return value of function with [[nodiscard]] attribute [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+  bert.cpp
+  bailingmoe3.cpp
+  bitnet.cpp
+  bloom.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\type_traits(1706,98): warning C4244: 'argument': conversion from 'unsigned __int64' to 'int', possible loss of data [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+  (compiling source file '../../../llama.cpp/src/llama-quant.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\type_traits(1706,98):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-quant.cpp(277,17):
+          see reference to function template instantiation 'std::thread &std::vector<std::thread,std::allocator<std::thread>>::emplace_back<llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728>&,ggml_type&,uint8_t*,float*,size_t&>(llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728> &,ggml_type &,uint8_t *&&,float *&&,size_t &)' being compiled
+              C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-quant.cpp(277,29):
+              see the first reference to 'std::vector<std::thread,std::allocator<std::thread>>::emplace_back' in 'llama_tensor_dequantize_impl'
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\vector(909,24):
+          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_one_at_back<llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728>&,ggml_type&,unsigned char*,float*,size_t&>(llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728> &,ggml_type &,unsigned char *&&,float *&&,size_t &)' being compiled
+          with
+          [
+              _Ty=std::thread
+          ]
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\vector(830,20):
+          see reference to function template instantiation '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728>&,ggml_type&,unsigned char*,float*,size_t&>(llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728> &,ggml_type &,unsigned char *&&,float *&&,size_t &)' being compiled
+          with
+          [
+              _Ty=std::thread
+          ]
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\vector(848,27):
+          see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728>&,ggml_type&,unsigned char*,float*,size_t&>(_Alloc &,_Objty *const ,llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728> &,ggml_type &,unsigned char *&&,float *&&,size_t &)' being compiled
+          with
+          [
+              _Alloc=std::allocator<std::thread>,
+              _Ty=std::thread,
+              _Objty=std::thread
+          ]
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\xmemory(732,82):
+          see reference to function template instantiation 'std::thread::thread<llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728>&,ggml_type&,_T,float*,size_t&,0>(_Fn,ggml_type &,_T &&,float *&&,size_t &)' being compiled
+          with
+          [
+              _T=uint8_t *,
+              _Fn=llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728> &
+          ]
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\thread(93,9):
+          see reference to function template instantiation 'void std::thread::_Start<llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728>&,ggml_type&,_Ty,float*,size_t&>(_Fn,ggml_type &,_Ty &&,float *&&,size_t &)' being compiled
+          with
+          [
+              _Ty=uint8_t *,
+              _Fn=llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728> &
+          ]
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\thread(76,40):
+          see reference to function template instantiation 'unsigned int (__cdecl *std::thread::_Get_invoke<std::thread::_Start::_Tuple,0,1,2,3,4>(std::integer_sequence<size_t,0,1,2,3,4>) noexcept)(void *) noexcept' being compiled
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\thread(67,17):
+          see reference to function template instantiation 'unsigned int std::thread::_Invoke<_Tuple,0,1,2,3,4>(void *) noexcept' being compiled
+          with
+          [
+              _Tuple=std::thread::_Start::_Tuple
+          ]
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\thread(60,14):
+          see reference to function template instantiation 'void std::invoke<llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728>,ggml_type,uint8_t*,_Ty*,unsigned __int64>(_Callable &&,_Ty1 &&,uint8_t *&&,_Ty *&&,unsigned __int64 &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=float,
+              _Callable=llama_tensor_dequantize_impl::<lambda_99809f70a3686e6322ff64c5ea2ca728>,
+              _Ty1=ggml_type
+          ]
+  
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         with [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         [ [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:             _Ty=int64_t [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         ] [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         and [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         [ [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:             _Ty2=uint32_t [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         ] [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+  (compiling source file '../../../llama.cpp/src/llama-model.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-model.cpp(560,29):
+          see reference to function template instantiation 'std::pair<int64_t,uint32_t>::pair<const int64_t&,int64_t,0>(_Other1,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=const int64_t &,
+              _Other2=int64_t
+          ]
+              C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-model.cpp(560,21):
+              see the first reference to 'std::pair<int64_t,uint32_t>::pair' in 'llama_meta_device_get_split_state::<lambda_77bdb941902e7407db1af561622ed1d9>::operator ()'
+  
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244: 'initializing': conversion from 'const int64_t' to '_Ty2', possible loss of data [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         with [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         [ [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:             _Ty2=uint32_t [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         ] [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+  (compiling source file '../../../llama.cpp/src/llama-model.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-model.cpp(563,29):
+          see reference to function template instantiation 'std::pair<int64_t,uint32_t>::pair<const int64_t&,const int64_t&,0>(_Other1,_Other2) noexcept' being compiled
+          with
+          [
+              _Other1=const int64_t &,
+              _Other2=const int64_t &
+          ]
+              C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-model.cpp(563,21):
+              see the first reference to 'std::pair<int64_t,uint32_t>::pair' in 'llama_meta_device_get_split_state::<lambda_77bdb941902e7407db1af561622ed1d9>::operator ()'
+  
+  chatglm.cpp
+  clip.cpp
+  codeshell.cpp
+  chameleon.cpp
+  cogvlm.cpp
+  cohere2.cpp
+  command-r.cpp
+  deepseek.cpp
+  cohere2moe.cpp
+  deci.cpp
+  deepseek2.cpp
+  deepseek2ocr.cpp
+  deepseek32.cpp
+  dbrx.cpp
+  deepseek4.cpp
+  dots1.cpp
+  delta-net-base.cpp
+  dflash.cpp
+  ernie4-5-moe.cpp
+  eagle3.cpp
+  dream.cpp
+  ernie4-5.cpp
+  eurobert.cpp
+  exaone-moe.cpp
+  exaone.cpp
+  exaone4.cpp
+  falcon.cpp
+  falcon-h1.cpp
+  gemma.cpp
+  gemma-embedding.cpp
+  gemma2.cpp
+  gemma3.cpp
+  gemma4-assistant.cpp
+  glm-dsa.cpp
+  gemma4.cpp
+  gemma3n.cpp
+  glm4-moe.cpp
+  glm4.cpp
+  gptneox.cpp
+  gpt2.cpp
+  granite-hybrid.cpp
+  granite-swa.cpp
+  granite-moe.cpp
+  grok.cpp
+  granite-switch.cpp
+  granite.cpp
+  hunyuan-dense.cpp
+  hunyuan-vl.cpp
+  hy-v3.cpp
+  jais.cpp
+  internlm2.cpp
+  jais2.cpp
+  hunyuan-moe.cpp
+  jina-bert-v2.cpp
+  jamba.cpp
+  grovemoe.cpp
+  jina-bert-v3.cpp
+  kimi-k3.cpp
+  lfm2.cpp
+  laguna.cpp
+  kimi-linear.cpp
+  lfm2moe.cpp
+  llada-moe.cpp
+  llama-embed.cpp
+  llama.cpp
+  llada.cpp
+  maincoder.cpp
+  mamba.cpp
+  mellum.cpp
+  llama4.cpp
+  mamba2.cpp
+  mamba-base.cpp
+  mimo2.cpp
+  minicpm.cpp
+  minicpm3.cpp
+  minimax-m2.cpp
+  minimax-01.cpp
+  minimax-m3.cpp
+  mistral3.cpp
+  mistral4.cpp
+  mpt.cpp
+  modern-bert.cpp
+  nemotron-h-moe.cpp
+  muse-glimmer.cpp
+  nanbeige.cpp
+  neo-bert.cpp
+  nomic-bert-moe.cpp
+  nemotron.cpp
+  nemotron-h.cpp
+  nomic-bert.cpp
+  olmo.cpp
+  olmo2.cpp
+  olmoe.cpp
+  orion.cpp
+  paddleocr.cpp
+  openai-moe.cpp
+  pangu-embed.cpp
+  openelm.cpp
+  phi2.cpp
+  phi3.cpp
+  phimoe.cpp
+  plamo.cpp
+  plamo2.cpp
+  plamo3.cpp
+  qwen.cpp
+  pockettts.cpp
+  plm.cpp
+  qwen2.cpp
+  qwen2moe.cpp
+  qwen3.cpp
+  qwen2vl.cpp
+  qwen35.cpp
+  qwen35moe.cpp
+  qwen3moe.cpp
+  qwen3vl.cpp
+  qwen3tts.cpp
+  refact.cpp
+  qwen3vlmoe.cpp
+  qwen3next.cpp
+  rnd1.cpp
+  rwkv7-base.cpp
+  rwkv6qwen2.cpp
+  rwkv6-base.cpp
+  rwkv6.cpp
+  seed-oss.cpp
+  rwkv7.cpp
+  starcoder.cpp
+  stablelm.cpp
+  smollm3.cpp
+  step35.cpp
+  smallthinker.cpp
+  t5.cpp
+  starcoder2.cpp
+  t5encoder.cpp
+  talkie.cpp
+  wavtokenizer-dec.cpp
+  xverse.cpp
+  llama-moe-offload.cpp
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  log.cpp
+  llguidance.cpp
+  chat-auto-parser-generator.cpp
+  imatrix-loader.cpp
+  chat-diff-analyzer.cpp
+  chat-peg-parser.cpp
+  fit.cpp
+  json-schema-to-grammar.cpp
+  hf-cache.cpp
+  download.cpp
+  arg.cpp
+  chat-auto-parser-helpers.cpp
+  chat.cpp
+  console.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\istream(579,13): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/imatrix-loader.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\istream(579,13):
+      the template instantiation context (the oldest one first) is
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\istream(736,75):
+          see reference to class template instantiation 'std::basic_istream<char,std::char_traits<char>>' being compiled
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\istream(570,33):
+          while compiling class template member function 'int std::basic_istream<char,std::char_traits<char>>::peek(void)'
+              C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\imatrix-loader.cpp(58,5):
+              see the first reference to 'std::basic_istream<char,std::char_traits<char>>::peek' in 'common_imatrix_load_legacy'
+  
+  common.cpp
+  debug.cpp
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\fit.cpp(802,5): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\ppltasks.h(1580,21): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/download.cpp')
+  
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\json-schema-to-grammar.cpp(388,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\chat-auto-parser-helpers.cpp(327,5): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\debug.cpp(24,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(781,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/chat-peg-parser.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(781,9):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\jinja\utils.h(46,16):
+          see reference to function template instantiation 'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)' being compiled
+  
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\string(35,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/console.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\string(35,9):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\console.cpp(1049,19):
+          see reference to function template instantiation 'std::basic_istream<wchar_t,std::char_traits<wchar_t>> &std::getline<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>(std::basic_istream<wchar_t,std::char_traits<wchar_t>> &,std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>> &)' being compiled
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\string(85,17):
+          see reference to function template instantiation 'std::basic_istream<wchar_t,std::char_traits<wchar_t>> &std::getline<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>>(std::basic_istream<wchar_t,std::char_traits<wchar_t>> &&,std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>> &,const _Elem)' being compiled
+          with
+          [
+              _Elem=wchar_t
+          ]
+  
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\common.cpp(1137,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\chat.cpp(49,5): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\arg.cpp(732,5): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(781,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/chat-auto-parser-generator.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(781,9):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\jinja\utils.h(46,16):
+          see reference to function template instantiation 'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)' being compiled
+  
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\hf-cache.cpp(219,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(781,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/chat-diff-analyzer.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(781,9):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\jinja\utils.h(46,16):
+          see reference to function template instantiation 'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)' being compiled
+  
+  ngram-cache.cpp
+  peg-parser.cpp
+  reasoning-budget.cpp
+  preset.cpp
+  ngram-map.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\istream(537,13): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/ngram-cache.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\istream(537,13):
+      the template instantiation context (the oldest one first) is
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\istream(736,75):
+          see reference to class template instantiation 'std::basic_istream<char,std::char_traits<char>>' being compiled
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\istream(531,39):
+          while compiling class template member function 'std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::read(_Elem *,std::streamsize)'
+          with
+          [
+              _Elem=char
+          ]
+              C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\ngram-cache.cpp(238,5):
+              see the first reference to 'std::basic_istream<char,std::char_traits<char>>::read' in 'common_ngram_cache_load'
+  
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(292,13): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/ngram-map.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(292,13):
+      the template instantiation context (the oldest one first) is
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(678,75):
+          see reference to class template instantiation 'std::basic_ostream<char,std::char_traits<char>>' being compiled
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(277,39):
+          while compiling class template member function 'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)'
+              C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\ngram-map.cpp(30,13):
+              see the first reference to 'std::basic_ostream<char,std::char_traits<char>>::operator <<' in 'common_tokens_to_str'
+  
+  speculative.cpp
+  sampling.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(781,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/preset.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(781,9):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\preset.cpp(84,8):
+          see reference to function template instantiation 'std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)' being compiled
+  
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\speculative.cpp(2035,13): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\sampling.cpp(457,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(383,13): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  (compiling source file '../../../llama.cpp/common/peg-parser.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(383,13):
+      the template instantiation context (the oldest one first) is
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(678,75):
+          see reference to class template instantiation 'std::basic_ostream<char,std::char_traits<char>>' being compiled
+          C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\__msvc_ostream.hpp(376,39):
+          while compiling class template member function 'std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)'
+              C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\peg-parser.cpp(819,20):
+              see the first reference to 'std::basic_ostream<char,std::char_traits<char>>::operator <<' in 'bfs_node'
+  
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-moe-integration.cpp
+  test-moe-integration.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-moe-integration.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-moe-offload.cpp
+  llama-moe-offload.cpp
+  test-moe-offload.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-moe-offload.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-moe-cache.cpp
+  test-moe-cache.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-moe-cache.exe

@@ -1,0 +1,28 @@
+Microsoft (R) COFF/PE Dumper Version 14.43.34808.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file build\desktop\freetoken-native.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    COMCTL32.dll
+    WS2_32.dll
+    gdiplus.dll
+    KERNEL32.dll
+    USER32.dll
+    GDI32.dll
+    SHELL32.dll
+    ole32.dll
+    COMDLG32.dll
+
+  Summary
+
+       11000 .data
+        D000 .pdata
+       43000 .rdata
+        3000 .reloc
+        1000 .rsrc
+      116000 .text

@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "engine": "freetoken",
+      "decode_median_tps": 24.42241852419511,
+      "decode_min_tps": 23.8134076629171,
+      "decode_max_tps": 25.82976744168871,
+      "median_first_text_seconds": 1.8076952000001256,
+      "median_wall_seconds": 7.100777000000107,
+      "median_end_to_end_tps": 17.885366629595335,
+      "reported_completion_tokens": [
+        127,
+        127,
+        127
+      ]
+    },
+    {
+      "engine": "project",
+      "decode_median_tps": 10.856536908511245,
+      "decode_min_tps": 10.726117623450481,
+      "decode_max_tps": 11.218323539736808,
+      "median_first_text_seconds": 3.3677869000000555,
+      "median_wall_seconds": 15.066103999999996,
+      "median_end_to_end_tps": 8.49589250147218,
+      "reported_completion_tokens": [
+        128,
+        128,
+        128
+      ]
+    }
+  ],
+  "freetoken_decode_speed_ratio": 2.249558835382263,
+  "method": "Same streaming client, same 19-token chat prompt count, thinking disabled, requested 128 tokens, warmup excluded, three repetitions; engine output text and cached prefix lengths differ.",
+  "health": {
+    "status": "ok",
+    "model": "gemma-4-26B_q4_0-it.gguf",
+    "instance_id": "9750d39e-67ea-44c2-9675-e7557d18a2c8",
+    "uptime_s": 65,
+    "maintenance": "serving",
+    "version": "0.1.2+g141c31a8d"
+  },
+  "server_url": "http://127.0.0.1:1920"
+}

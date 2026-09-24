@@ -1,0 +1,12 @@
+Test project C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cuda-dev
+    Start 2: test-moe-integration
+1/2 Test #2: test-moe-integration .............   Passed    7.35 sec
+    Start 3: test-moe-offload
+2/2 Test #3: test-moe-offload .................   Passed    0.19 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Label Time Summary:
+main    =   7.54 sec*proc (2 tests)
+
+Total Test time (real) =   7.62 sec

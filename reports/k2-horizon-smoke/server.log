@@ -1,0 +1,27 @@
+0.00.610.636 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.663.531 W srv  llama_server: -----------------
+0.00.663.540 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.663.540 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.663.541 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.663.541 W srv  llama_server: -----------------
+0.00.675.632 I srv    load_model: loading model 'C:\Users\cadel\Documents\Coding_Projects\models\K2 7B\K2-Horizon-7B-Q4_K_M.gguf'
+0.01.754.001 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.07.227.352 I cmn          init: llama threadpool init, n_threads = 8
+0.07.578.142 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 2048, kv_unified = 'false'
+0.07.752.773 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.07.752.801 I srv  llama_server: model loaded
+0.07.752.804 I srv  llama_server: listening on http://127.0.0.1:58540
+0.07.999.173 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.07.999.297 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.08.868.954 I slot print_timing: id  0 | task 0 | prompt eval time =      50.47 ms /     6 tokens (    8.41 ms per token,   118.89 tokens per second)
+0.08.868.964 I slot print_timing: id  0 | task 0 |        eval time =     819.15 ms /    32 tokens (   26.42 ms per token,    37.84 tokens per second)
+0.08.868.966 I slot print_timing: id  0 | task 0 |       total time =     869.62 ms /    38 tokens
+0.08.868.967 I slot print_timing: id  0 | task 0 |    graphs reused =         31
+0.08.868.992 I slot      release: id  0 | task 0 | stop processing: n_tokens = 37, truncated = 0
+0.09.037.151 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 8261234
+0.09.518.971 I slot launch_slot_: id  0 | task 33 | processing task, is_child = 0
+0.09.735.866 I slot print_timing: id  0 | task 33 | prompt eval time =     165.49 ms /    25 tokens (    6.62 ms per token,   151.06 tokens per second)
+0.09.735.876 I slot print_timing: id  0 | task 33 |        eval time =      51.36 ms /     3 tokens (   25.68 ms per token,    38.94 tokens per second)
+0.09.735.877 I slot print_timing: id  0 | task 33 |       total time =     216.86 ms /    28 tokens
+0.09.735.878 I slot print_timing: id  0 | task 33 |    graphs reused =         33
+0.09.735.922 I slot      release: id  0 | task 33 | stop processing: n_tokens = 28, truncated = 0

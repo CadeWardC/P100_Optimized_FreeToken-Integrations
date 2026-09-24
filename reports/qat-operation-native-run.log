@@ -1,0 +1,8 @@
+off request 1: {'cache_n': 0, 'prompt_n': 6, 'prompt_ms': 2918.28, 'prompt_per_token_ms': 486.38000000000005, 'prompt_per_second': 2.056005592335211, 'predicted_n': 64, 'predicted_ms': 22835.393, 'predicted_per_token_ms': 362.46655555555554, 'predicted_per_second': 2.758875224963284}
+off request 2: {'cache_n': 0, 'prompt_n': 6, 'prompt_ms': 1603.584, 'prompt_per_token_ms': 267.264, 'prompt_per_second': 3.7416187739463598, 'predicted_n': 64, 'predicted_ms': 21901.574, 'predicted_per_token_ms': 347.64403174603177, 'predicted_per_second': 2.8765055881371815}
+Traceback (most recent call last):
+  File "C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\scripts\validate_operation.py", line 219, in <module>
+    main()
+  File "C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\scripts\validate_operation.py", line 162, in main
+    raise RuntimeError(f"{name} CLI failed: {code}")
+RuntimeError: gpu CLI failed: 1

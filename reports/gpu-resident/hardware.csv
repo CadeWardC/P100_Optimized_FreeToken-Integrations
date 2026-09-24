@@ -1,0 +1,2 @@
+name, driver_version, pstate, temperature.gpu, power.draw [W], clocks.current.sm [MHz]
+NVIDIA GeForce RTX 4060 Laptop GPU, 610.62, P0, 49, 15.25 W, 2010 MHz

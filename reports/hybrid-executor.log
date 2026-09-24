@@ -1,0 +1,39 @@
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 8187 MiB):
+  Device 0: NVIDIA GeForce RTX 4060 Laptop GPU, compute capability 8.9, VMM: yes, VRAM: 8187 MiB
+PASS resident GeGLU: all half inputs and rounding midpoints, signed zero, infinities, NaNs and threshold neighbors
+RUN f32 fused=0 capacity=1
+RUN f32 fused=0 capacity=2
+RUN f32 fused=0 capacity=7
+PASS device CUDA0 f32: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN f32 fused=1 capacity=1
+RUN f32 fused=1 capacity=2
+RUN f32 fused=1 capacity=7
+PASS device CUDA0 f32: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN f16 fused=0 capacity=1
+RUN f16 fused=0 capacity=2
+RUN f16 fused=0 capacity=7
+PASS device CUDA0 f16: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN f16 fused=1 capacity=1
+RUN f16 fused=1 capacity=2
+RUN f16 fused=1 capacity=7
+PASS device CUDA0 f16: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN q4_0 fused=0 capacity=1
+RUN q4_0 fused=0 capacity=2
+RUN q4_0 fused=0 capacity=7
+PASS device CUDA0 q4_0: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN q4_0 fused=1 capacity=1
+RUN q4_0 fused=1 capacity=2
+RUN q4_0 fused=1 capacity=7
+PASS device CUDA0 q4_0: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN q8_0 fused=0 capacity=1
+RUN q8_0 fused=0 capacity=2
+RUN q8_0 fused=0 capacity=7
+PASS device CUDA0 q8_0: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+RUN q8_0 fused=1 capacity=1
+RUN q8_0 fused=1 capacity=2
+RUN q8_0 fused=1 capacity=7
+PASS device CUDA0 q8_0: capacities 1/2/7, decode/prefill, SiLU/GELU, scales, warm reuse, cancellation
+PASS device partial-transfer cancellation/retry, compute budget rejection and cancellation-heavy numerical fixture
+PASS Q4 zero-point cancellation across cache capacities and decode/prefill
+hybrid timing: cpu=3796 gpu=8538 total=8677 overlap-lower-bound=3781 us
+PASS hybrid fixed/adaptive splits, duplicate routes, warm reuse and eviction

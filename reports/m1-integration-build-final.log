@@ -1,0 +1,109 @@
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  common.cpp
+C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\common\common.cpp(1137,9): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\llama-common.vcxproj]
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-moe-integration.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-moe-integration.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-moe-offload.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-moe-offload.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  vendor-hash.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\hash\Release\vendor-hash.lib
+  llama-ui-embed.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\ui\Release\llama-ui-embed.exe
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  1>Provisioning UI assets
+  -- UI: downloading from b1: https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b1/dist.tar.gz
+  -- UI: download dist.tar.gz from b1 failed: "HTTP response code said error"
+  -- UI: downloading from latest: https://huggingface.co/buckets/ggml-org/llama-ui/resolve/latest/dist.tar.gz
+  -- UI: archive verified and extracted
+  -- UI: HF download succeeded, stamp updated (latest)
+  CMake Warning at C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/llama.cpp/scripts/ui-assets.cmake:260 (message):
+    UI: LLAMA_UI_GZIP requested but gzip not found, embedding uncompressed
+  Call Stack (most recent call first):
+    C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/llama.cpp/scripts/ui-assets.cmake:367 (emit_files)
+  
+  
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama-ui.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\ui\Release\llama-ui.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  mtmd.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\mtmd\Release\mtmd.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  server-context.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\server\Release\server-context.lib
+  llama-server-impl.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\server\Release\llama-server-impl.lib
+  llama-cli-impl.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\cli\Release\llama-cli-impl.lib
+  llama-cli.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\llama-cli.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  vendor-hash.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\hash\Release\vendor-hash.lib
+  llama-ui-embed.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\ui\Release\llama-ui-embed.exe
+  1>Provisioning UI assets
+  -- UI: downloading from b1: https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b1/dist.tar.gz
+  -- UI: download dist.tar.gz from b1 failed: "HTTP response code said error"
+  -- UI: downloading from latest: https://huggingface.co/buckets/ggml-org/llama-ui/resolve/latest/dist.tar.gz
+  -- UI: archive verified and extracted
+  -- UI: HF download succeeded, stamp updated (latest)
+  CMake Warning at C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/llama.cpp/scripts/ui-assets.cmake:260 (message):
+    UI: LLAMA_UI_GZIP requested but gzip not found, embedding uncompressed
+  Call Stack (most recent call first):
+    C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/llama.cpp/scripts/ui-assets.cmake:367 (emit_files)
+  
+  
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  llama-ui.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\ui\Release\llama-ui.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  mtmd.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\mtmd\Release\mtmd.lib
+  server-context.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\server\Release\server-context.lib
+  llama-server-impl.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\server\Release\llama-server-impl.lib
+  llama-server.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\llama-server.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-sampling.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-sampling.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-grammar-parser.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-grammar-parser.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-quantize-fns.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-quantize-fns.exe

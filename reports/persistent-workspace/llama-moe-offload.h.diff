@@ -1,0 +1,11 @@
+--- before/llama-moe-offload.h
++++ after/llama-moe-offload.h
+@@ -82,6 +82,8 @@
+     size_t staging = 0;
+     size_t activation_table = 0;
+     double cpu_bytes_per_us = 0, transfer_bytes_per_us = 0;
++    size_t retained_compute_bytes = 0;
++    uint64_t workspace_builds = 0, workspace_reuses = 0;
+ };
+ 
+ struct llama_moe_executor_options {

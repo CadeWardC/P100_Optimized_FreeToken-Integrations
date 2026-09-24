@@ -1,0 +1,38 @@
+export const options: Record<string, string[]> = {
+  flash:['auto','on','off'], fit:['off','on'], split_mode:['layer','row','none'],
+  cache_k:['f16','bf16','f32','q8_0','q5_1','q5_0','q4_1','q4_0','iq4_nl'],
+  cache_v:['f16','bf16','f32','q8_0','q5_1','q5_0','q4_1','q4_0','iq4_nl'],
+  reasoning_format:['deepseek','none','deepseek-legacy'], graphs:['auto','off'],
+};
+export const expertKeys = ['expert_enabled','gpu_cache','cpu_cache','cpu_tile','reserve','staging','compute','miss','device','pipeline','fast','semantic','checkpoint'];
+export const textKeys = ['tensor_split','device','draft_model','chat_template'];
+export const inference: any[] = [
+  {key:'system',label:'System prompt',initial:'You are a helpful assistant.',multiline:true,help:'Instructions included at the start of each request.'},
+  {key:'temperature',label:'Temperature',initial:'0.7',min:0,max:10,step:0.05},
+  {key:'seed',label:'Random seed',initial:'-1',min:-1,max:4294967295,step:1,help:'-1 chooses a random seed.'},
+  {key:'top_k',label:'Top K',initial:'20',min:0,max:10000,step:1,help:'0 disables Top K.'},
+  {key:'top_p',label:'Top P',initial:'0.95',min:0,max:1,step:0.01},
+  {key:'min_p',label:'Min P',initial:'0.05',min:0,max:1,step:0.01},
+  {key:'repeat_penalty',label:'Repeat penalty',initial:'1',min:0,max:10,step:0.05},
+  {key:'repeat_last_n',label:'Repeat penalty window',initial:'64',min:-1,step:1,help:'-1 uses the context; 0 disables the window.'},
+  {key:'frequency_penalty',label:'Frequency penalty',initial:'0',min:-2,max:2,step:0.05},
+  {key:'presence_penalty',label:'Presence penalty',initial:'0',min:-2,max:2,step:0.05},
+  {key:'typical_p',label:'Locally typical sampling',initial:'1',min:0,max:1,step:0.01},
+  {key:'xtc_probability',label:'XTC probability',initial:'0',min:0,max:1,step:0.01},
+  {key:'xtc_threshold',label:'XTC threshold',initial:'0.1',min:0,max:1,step:0.01},
+  {key:'mirostat',label:'Mirostat',initial:'0',options:[{value:'0',label:'Off'},{value:'1',label:'Version 1'},{value:'2',label:'Version 2'}]},
+  {key:'mirostat_tau',label:'Mirostat target entropy',initial:'5',min:0,max:100},
+  {key:'mirostat_eta',label:'Mirostat learning rate',initial:'0.1',min:0,max:100},
+  {key:'dynatemp_range',label:'Dynamic temperature range',initial:'0',min:0,max:100},
+  {key:'dynatemp_exponent',label:'Dynamic temperature exponent',initial:'1',min:0,max:100},
+  {key:'dry_multiplier',label:'DRY repetition multiplier',initial:'0',min:0,max:100,help:'0 disables sequence repetition suppression.'},
+  {key:'dry_base',label:'DRY base',initial:'1.75',min:0,max:100},
+  {key:'dry_allowed_length',label:'DRY allowed repetition length',initial:'2',min:0,step:1},
+  {key:'dry_penalty_last_n',label:'DRY penalty window',initial:'-1',min:-1,step:1},
+  {key:'thinking',label:'Enable thinking',initial:'0',toggle:true,help:'Applies to models whose chat template supports thinking.'},
+  {key:'reasoning_budget',label:'Reasoning token budget',initial:'-1',min:-1,step:1,help:'-1 is unrestricted; 0 skips thinking. Counts within the response limit.'},
+  {key:'reasoning_message',label:'Reasoning budget message',initial:'',multiline:true,help:'Optional text inserted when the thinking budget is exhausted.'},
+  {key:'stop_strings',label:'Stop strings',initial:'',multiline:true,help:'One exact stop string per line. Generation ends when one is reached.'},
+  {key:'json_schema',label:'Structured output: JSON schema',initial:'',multiline:true,help:'Enter a JSON schema object, or leave empty for normal text. Use either a schema or grammar.'},
+  {key:'grammar',label:'Structured output: GBNF grammar',initial:'',multiline:true,help:'Optional grammar understood by llama.cpp.'},
+];

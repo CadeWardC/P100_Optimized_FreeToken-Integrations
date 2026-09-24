@@ -1,0 +1,38 @@
+{
+  "status": "failed",
+  "scope": "CUDA0 cache pretrained parity; not P100 acceptance",
+  "model": {
+    "id": "gemma26b-qat-q4",
+    "repository": "google/gemma-4-26B-A4B-it-qat-q4_0-gguf",
+    "revision": "d1c082be9cf3c8a514acf63b8761f4b41935842e",
+    "filename": "gemma-4-26B_q4_0-it.gguf",
+    "size_bytes": 14439363584,
+    "publisher_sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+    "architecture": "gemma4",
+    "expert_type": "Q4_0",
+    "expert_layout": "fused gate/up plus down, 30 layers",
+    "header_report": "reports/gemma-qat-pretrained-header.json",
+    "local_verification": {
+      "path": "models/gemma-4-26B_q4_0-it.gguf",
+      "sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+      "size_bytes": 14439363584,
+      "cpu_report": "reports/gemma-qat-cpu-pretrained.json",
+      "gpu_status": "failed numerical acceptance; experimental integration",
+      "gpu_report": "reports/gemma-qat-gpu-native-final.json",
+      "operation_report": "reports/qat-operation/results.json"
+    }
+  },
+  "local_sha256": "3eca3b8f6d7baf218a7dd6bba5fb59a56ee25fe2d567b6f5f589b4f697eca51d",
+  "executable_sha256": "dbab1cc6dcece7b222d67e2b2645857f66e7c158b2a3febd061ac7037120fc62",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "command": [
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\test-moe-integration.exe",
+    "--device",
+    "CUDA0",
+    "--model",
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf"
+  ],
+  "returncode": 1,
+  "elapsed_seconds": 105.45407557487488,
+  "log": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\reports\\gemma-qat-fix-v3.log"
+}

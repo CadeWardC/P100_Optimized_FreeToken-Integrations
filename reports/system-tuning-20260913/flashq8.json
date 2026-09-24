@@ -1,0 +1,14 @@
+{
+  "label": "flashq8",
+  "settings": {
+    "gpu_cache": "3712",
+    "ubatch": "128",
+    "batch": "512",
+    "flash": "on",
+    "cache_k": "q8_0",
+    "cache_v": "q8_0",
+    "miss": "0",
+    "auto_settings": "0"
+  },
+  "error": "[WinError 10054] An existing connection was forcibly closed by the remote host"
+}

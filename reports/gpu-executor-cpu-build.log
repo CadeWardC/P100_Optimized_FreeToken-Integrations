@@ -1,0 +1,133 @@
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama-context.cpp
+  llama-graph.cpp
+  llama-moe-offload.cpp
+  llama-model.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\memory(3594,56): warning C4244: 'argument': conversion from 'const int64_t' to 'uint32_t', possible loss of data [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+  (compiling source file '../../../llama.cpp/src/llama-graph.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\memory(3594,56):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-graph.cpp(2433,21):
+          see reference to function template instantiation 'std::unique_ptr<llm_graph_input_out_ids,std::default_delete<llm_graph_input_out_ids>> std::make_unique<llm_graph_input_out_ids,const llama_hparams&,const llama_cparams&,const int64_t&,0>(const llama_hparams &,const llama_cparams &,const int64_t &)' being compiled
+  
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         with [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         [ [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:             _Ty=int64_t [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         ] [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         and [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         [ [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:             _Ty2=uint32_t [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         ] [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+  (compiling source file '../../../llama.cpp/src/llama-model.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-model.cpp(560,29):
+          see reference to function template instantiation 'std::pair<int64_t,uint32_t>::pair<const int64_t&,int64_t,0>(_Other1,_Other2 &&) noexcept' being compiled
+          with
+          [
+              _Other1=const int64_t &,
+              _Other2=int64_t
+          ]
+              C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-model.cpp(560,21):
+              see the first reference to 'std::pair<int64_t,uint32_t>::pair' in 'llama_meta_device_get_split_state::<lambda_77bdb941902e7407db1af561622ed1d9>::operator ()'
+  
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244: 'initializing': conversion from 'const int64_t' to '_Ty2', possible loss of data [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         with [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         [ [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:             _Ty2=uint32_t [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54): warning C4244:         ] [C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\llama.vcxproj]
+  (compiling source file '../../../llama.cpp/src/llama-model.cpp')
+      C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\include\utility(274,54):
+      the template instantiation context (the oldest one first) is
+          C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-model.cpp(563,29):
+          see reference to function template instantiation 'std::pair<int64_t,uint32_t>::pair<const int64_t&,const int64_t&,0>(_Other1,_Other2) noexcept' being compiled
+          with
+          [
+              _Other1=const int64_t &,
+              _Other2=const int64_t &
+          ]
+              C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\llama.cpp\src\llama-model.cpp(563,21):
+              see the first reference to 'std::pair<int64_t,uint32_t>::pair' in 'llama_meta_device_get_split_state::<lambda_77bdb941902e7407db1af561622ed1d9>::operator ()'
+  
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-moe-offload.cpp
+  llama-moe-offload.cpp
+  test-moe-offload.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-moe-offload.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  test-moe-integration.cpp
+  test-moe-integration.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\test-moe-integration.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  vendor-hash.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\hash\Release\vendor-hash.lib
+  llama-ui-embed.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\ui\Release\llama-ui-embed.exe
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  1>Provisioning UI assets
+  -- UI: downloading from b1: https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b1/dist.tar.gz
+  -- UI: download dist.tar.gz from b1 failed: "HTTP response code said error"
+  -- UI: downloading from latest: https://huggingface.co/buckets/ggml-org/llama-ui/resolve/latest/dist.tar.gz
+  -- UI: archive verified and extracted
+  -- UI: HF download succeeded, stamp updated (latest)
+  CMake Warning at C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/llama.cpp/scripts/ui-assets.cmake:260 (message):
+    UI: LLAMA_UI_GZIP requested but gzip not found, embedding uncompressed
+  Call Stack (most recent call first):
+    C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/llama.cpp/scripts/ui-assets.cmake:367 (emit_files)
+  
+  
+  embed: write output file C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/build/ft-windows-cpu/tools/ui/ui.cpp
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  ui.cpp
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  mtmd.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\mtmd\Release\mtmd.lib
+  server-context.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\server\Release\server-context.lib
+  llama-ui.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\ui\Release\llama-ui.lib
+  llama-server-impl.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\server\Release\llama-server-impl.lib
+  llama-cli-impl.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\cli\Release\llama-cli-impl.lib
+  llama-cli.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\llama-cli.exe
+MSBuild version 17.13.9+e0f243f1e for .NET Framework
+
+  ggml-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-base.lib
+  llama-common-base.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common-base.lib
+  cpp-httplib.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\cpp-httplib\Release\cpp-httplib.lib
+  vendor-hash.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\vendor\hash\Release\vendor-hash.lib
+  llama-ui-embed.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\ui\Release\llama-ui-embed.exe
+  1>Provisioning UI assets
+  -- UI: downloading from b1: https://huggingface.co/buckets/ggml-org/llama-ui/resolve/b1/dist.tar.gz
+  -- UI: download dist.tar.gz from b1 failed: "HTTP response code said error"
+  -- UI: downloading from latest: https://huggingface.co/buckets/ggml-org/llama-ui/resolve/latest/dist.tar.gz
+  -- UI: archive verified and extracted
+  -- UI: HF download succeeded, stamp updated (latest)
+  CMake Warning at C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/llama.cpp/scripts/ui-assets.cmake:260 (message):
+    UI: LLAMA_UI_GZIP requested but gzip not found, embedding uncompressed
+  Call Stack (most recent call first):
+    C:/Users/cadel/Documents/Coding_Projects/p100 FreeToken/llama.cpp/scripts/ui-assets.cmake:367 (emit_files)
+  
+  
+  ggml-cpu.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml-cpu.lib
+  llama-ui.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\ui\Release\llama-ui.lib
+  ggml.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\ggml\src\Release\ggml.lib
+  llama.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\src\Release\llama.lib
+  llama-common.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\common\Release\llama-common.lib
+  mtmd.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\mtmd\Release\mtmd.lib
+  server-context.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\server\Release\server-context.lib
+  llama-server-impl.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\tools\server\Release\llama-server-impl.lib
+  llama-server.vcxproj -> C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\build\ft-windows-cpu\bin\Release\llama-server.exe

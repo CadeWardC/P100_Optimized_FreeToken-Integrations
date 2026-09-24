@@ -1,0 +1,9 @@
+main: using seed 42
+|     Model arch.|                                         Device|Config|   NMSE vs. CPU|Roundtrip|
+|----------------|-----------------------------------------------|------|---------------|---------|
+|           llama|             NVIDIA GeForce RTX 4060 Laptop GPU| Dense|  [1;32mOK[0m (7.93e-08)|       [1;32mOK[0m|
+|           llama|AMD Ryzen 7 7840HS w/ Radeon 780M Graphics     | Dense|  [1;32mOK[0m (0.00e+00)|       [1;32mOK[0m|
+|           llama|                                           Meta| Dense|  [1;32mOK[0m (7.93e-08)|     [1;33mSKIP[0m|
+|           llama|             NVIDIA GeForce RTX 4060 Laptop GPU|   MoE|  [1;32mOK[0m (7.96e-08)|       [1;32mOK[0m|
+|           llama|AMD Ryzen 7 7840HS w/ Radeon 780M Graphics     |   MoE|  [1;32mOK[0m (0.00e+00)|       [1;32mOK[0m|
+|           llama|                                           Meta|   MoE|  [1;32mOK[0m (7.96e-08)|     [1;33mSKIP[0m|

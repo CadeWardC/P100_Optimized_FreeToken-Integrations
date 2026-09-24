@@ -1,0 +1,12 @@
+0.00.697.505 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.821.121 W srv  llama_server: -----------------
+0.00.821.130 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.821.131 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.821.131 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.821.131 W srv  llama_server: -----------------
+0.00.836.392 I srv    load_model: loading model 'C:\Users\cadel\Documents\Coding_Projects\models\MiniCPM5-2B\MiniCPM5-2B-F16.gguf'
+0.12.676.466 I cmn          init: llama threadpool init, n_threads = 8
+0.14.182.955 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 2048, kv_unified = 'false'
+0.14.234.896 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.14.235.069 I srv  llama_server: model loaded
+0.14.235.078 I srv  llama_server: listening on http://127.0.0.1:65004

@@ -1,0 +1,197 @@
+{
+  "prepared_date": "2026-09-08",
+  "baseline": {
+    "directory": "llama.cpp",
+    "remote": "https://github.com/ggml-org/llama.cpp.git",
+    "tag": "v0.2.0",
+    "commit": "bb4caa7540188872173c44d161602d9271386413",
+    "branch": "freetoken-p100",
+    "patch_state": "31 patches applied as uncommitted working-tree changes",
+    "shallow": true
+  },
+  "patch_source": {
+    "directory": "p100-patches",
+    "remote": "https://github.com/shinbunbun/llama-cpp-p100-patches.git",
+    "commit": "7c4cb31ca7bc47b25f3cb5b35d5b436d56bedcc8",
+    "order_file": "nix/patches.nix",
+    "patches": [
+      {
+        "file": "p100-patches/patches/01-vmad-dp4a-sm60.patch",
+        "sha256": "e33d909115111b550ea7fc81f48af34478893514c7f68a33b69f51af0054cd9d",
+        "sha256_lf": "2cdc54feabaf2e620ab62d2e15387c7130b9a2a4066936e8e3555401b8eac05b"
+      },
+      {
+        "file": "p100-patches/patches/02-mmvq-rows-per-block-sm60.patch",
+        "sha256": "51aae70e8e5d3c770195403da4b72c4e91d57248e07dadfac166c66193c3c0fc",
+        "sha256_lf": "df8d19cd3484e9a03870001fdaf106a13a7e37a9e9489a94fc5b98d327f5e7b6"
+      },
+      {
+        "file": "p100-patches/patches/03-topk-moe-multirow.patch",
+        "sha256": "713d3312fda561b4a6c293a4fcace3f4fa16777784aec6502acdc20fff602352",
+        "sha256_lf": "4f4028ab755be02168d351be5b3678a671ecccac5d677f5c3e0880ea2be4d5f9"
+      },
+      {
+        "file": "p100-patches/patches/04-concat-non-cont-flat.patch",
+        "sha256": "9819d150e93cd687107eeaaf73238d505f46da111ebd4cd15663a1a3eab4e62c",
+        "sha256_lf": "4e3bb4cb658fc591e1dfdef95c5016648aa1ddfefbf2931707043dfe15f121a9"
+      },
+      {
+        "file": "p100-patches/patches/05-mmvf-f32-pascal.patch",
+        "sha256": "54780d937ab9331c3a4addccb536eed726853aae674676904b79998e076fc638",
+        "sha256_lf": "7daf8259767424470a32cae4082eb93940ab622500653ec5acba068bff475d9e"
+      },
+      {
+        "file": "p100-patches/patches/06-mmq-mul-mat-id-sm60.patch",
+        "sha256": "129dc9b6b3be32da668d9cf89b400f21569d0e55974017e2dc9575de7b930c19",
+        "sha256_lf": "54516819c99964b0434644e2bc90adac809a1b1992d8bb82e5446af6ba9d931e"
+      },
+      {
+        "file": "p100-patches/patches/07-mmvq-moe-rows-sm60.patch",
+        "sha256": "0696ab569737698b086ca5f81625db0fde543e0246b9cb376d52384ca9d84508",
+        "sha256_lf": "8089622bfabe4751515d4931d26bfe47ec195d7ae31255337c1dc1093db41b25"
+      },
+      {
+        "file": "p100-patches/patches/08-mmvq-mmid-batch-sm60.patch",
+        "sha256": "95d664f7f0ee5a706366612f0f00aa7075583fa135560f12bb6f1c7b2bf01b34",
+        "sha256_lf": "5d8b4b1e7f4f84ac0b4c0a2e72645f00c9e3f4450a5d3a0389c5fb906f310c7b"
+      },
+      {
+        "file": "p100-patches/patches/09-mmvq-nwarps-small-k-sm60.patch",
+        "sha256": "788a3c795ab449ffcac5ee129a321d97247e5e35bcad0ac5b540bd6f16a95907",
+        "sha256_lf": "1d68ca8b911bf4d117b5fe050e401b30bd8b48b613f82f118dd53a39b15ea8d4"
+      },
+      {
+        "file": "p100-patches/patches/10-mmvq-q8-1-activation-cache.patch",
+        "sha256": "4eb1eb14fbaea263f102481e5dcf0400ef7637e97d5343093e2bdf09229799a3",
+        "sha256_lf": "a5876ce34f3f6e263bbe175140d535b362839eca3df2c6446e61e8a678a2da56"
+      },
+      {
+        "file": "p100-patches/patches/11-penalties-direct.patch",
+        "sha256": "9b5f7c164e166adabeeef981d8de1537d63f03ded85b0b64bcc990488dd1f60c",
+        "sha256_lf": "46898e6a8beef00e5a02269bc243149ecc7a0830172bac14120a0371dcffc754"
+      },
+      {
+        "file": "p100-patches/patches/12-mmvq-f16-sm60.patch",
+        "sha256": "74fc674c0a87e757eeecb489c389f7a3e4c2d3715d18befc89827d36ddd20748",
+        "sha256_lf": "d3a55758b190497a55c07513321d8c70d2e57c7b77b2a1076dc5cd55152cea26"
+      },
+      {
+        "file": "p100-patches/patches/13-sampler-prefilter.patch",
+        "sha256": "8be5c5c7ca6d9c89005fae894d7b2994bdd50788c593cc6f9abc56d84db5e3f9",
+        "sha256_lf": "146282094a3037f577e5288e5bdf6a3a82359a735919b785a4e05c9f5a352d86"
+      },
+      {
+        "file": "p100-patches/patches/14-getrows-narrow-rows.patch",
+        "sha256": "27d1d82efecc4ff09854b06da2992a18c51051e72aa5c94a21a0739fe214cebd",
+        "sha256_lf": "e401725d83d766cd6ff9058d0c815c7d7447f025b10484e12ee832fb2c43c7ca"
+      },
+      {
+        "file": "p100-patches/patches/15-mtp-draft-vocab.patch",
+        "sha256": "bda3a97f3622be333d714553c67b051be0680cb8126e8f5f413f0d27c1bffe05",
+        "sha256_lf": "d94440c1f2679b2d5ad77ef69a349b9052a74fdf837384d42f0e22a53f4c07f7"
+      },
+      {
+        "file": "p100-patches/patches/16-cpy-fastdiv.patch",
+        "sha256": "1b21c3648cc7a107988f0058a23d8f572c829d2160c67151e27e44d22d793cec",
+        "sha256_lf": "e961412595a11507efe5b5b587bae8f4db8fe6610504f42587bf1bdf0816805a"
+      },
+      {
+        "file": "p100-patches/patches/17-norm-register-cache.patch",
+        "sha256": "434945f48f6451dbf7f00367f492f2ea88015843054c5dbe4643761e98c9fbff",
+        "sha256_lf": "f36493e1db28750f9913e5f07ae7c27770f5e6b294c020b4cc482a6b96e04c6d"
+      },
+      {
+        "file": "p100-patches/patches/18-fuse-sibling-nodes.patch",
+        "sha256": "d9ecfe5f7483b60d803e3892e666b0709ce67cfbd64b0ab426c2b82e51943160",
+        "sha256_lf": "4dd8131ea54d5ec1d9678baacf9e41598fcd651a5b374c77ea72dd6e29dd70fb"
+      },
+      {
+        "file": "p100-patches/patches/19-fuse-pre-add-rms-norm.patch",
+        "sha256": "4188d0710579ac2af74ef890d38c2499907564475a1c1d290a52c27a70e1f78a",
+        "sha256_lf": "39213fdc3d6b7fe03374083de3bc8904172c4f07a79ab4d1d8c3ef10babf4d95"
+      },
+      {
+        "file": "p100-patches/patches/20-fuse-add-unary-mul.patch",
+        "sha256": "5416baa0587791502beb2838caba8e396229203364b61a2a1e6f271e634d84d1",
+        "sha256_lf": "91739e798f3cfe6a43b21b15a7d467619279092deea55ca0a40e3ceb40bd4930"
+      },
+      {
+        "file": "p100-patches/patches/21-sched-reset-lazy.patch",
+        "sha256": "0296e01f969a02ce7f7d67584028eaf134d674390f79ce424994d0dfdd45183d",
+        "sha256_lf": "311698a6e9d2399e180e09671522a5520edf3d89c13463b81787e2ff32e67e23"
+      },
+      {
+        "file": "p100-patches/patches/22-decode-sched-slots.patch",
+        "sha256": "6a89d54fd35b866e4e609f4623cbd5d30e88810c84884532e2fbe3cfe142f963",
+        "sha256_lf": "8781fb311223c79752cb89de77814aa6761d8b55a7fdaeddffe9215aea775ecc"
+      },
+      {
+        "file": "p100-patches/patches/23-fuse-gdn-beta-sigmoid.patch",
+        "sha256": "4eba0a3998dfb499a20ae755c2131c66bd46ab14ce8ec12bf02520f1fe4db147",
+        "sha256_lf": "42718819ccf5731cb4de1557d41bf7c9b89d0055f1ff3789eb5629e3b2d98706"
+      },
+      {
+        "file": "p100-patches/patches/24-fuse-gdn-state-gather.patch",
+        "sha256": "f43ab6b7fb46e96c7ae81e2e502277c6010c8335976dd2ae50e58c5513e3e6e9",
+        "sha256_lf": "e55dd2c65d0b62d55956aee6919b90fd06c88776e523716a039814801d89d18f"
+      },
+      {
+        "file": "p100-patches/patches/25-gdn-gather-single-snapshot.patch",
+        "sha256": "5b4bbaaff95c27148e89f9c9998914f15cb3ea5ed7cbe6569a1199ec00a98c97",
+        "sha256_lf": "73ae55ba8a03feaa56991b00734c19179de8af45d533ce3d5e560971fdd7e65a"
+      },
+      {
+        "file": "p100-patches/patches/26-cpy-fused-rows.patch",
+        "sha256": "62a4e88d917e3fd9012a630af57c43ac5793093fd3a4562f6960f8e814091393",
+        "sha256_lf": "d0206ec001339c159c58273b52667e65384083c7cdb30c9f7254d34ff65260fe"
+      },
+      {
+        "file": "p100-patches/patches/27-fuse-concat-gather.patch",
+        "sha256": "ea41f0dcb5513712a37226f13b789153d8ff196a64ae81c069ecfe897192eec5",
+        "sha256_lf": "2c2cedf9d02b7ac5f79bf4c14dcc39ac85e1c44cb0eb2a17fd82e6261d00ebc1"
+      },
+      {
+        "file": "p100-patches/patches/28-top-k-partial.patch",
+        "sha256": "e8fa23bd3e319042cf7cb7b87b3d0eb86396652317dbbba4d105b07f3826fcff",
+        "sha256_lf": "b6eee3b664efeeeee5b5fd7cb9cac1332c3bd54de84642213cf103842bd3ff7f"
+      },
+      {
+        "file": "p100-patches/patches/29-mmvq-iq3xxs-grid-smem.patch",
+        "sha256": "351195e7a1260a4e05c8f7919c442c2d4fb96d19229c756dc9044f3195ad237c",
+        "sha256_lf": "d86e93451955b223f27e880d93771d2943cdde5b8302b641426f73dcf373e77c"
+      },
+      {
+        "file": "p100-patches/patches/30-mmvq-ksigns-smem.patch",
+        "sha256": "dd95be9c83e01d08fb90cddab7def9f7d3e059b86b68ec4fc7cb5c55fc2ff54d",
+        "sha256_lf": "eeabf2703d1909cef38c824900f6222d74f8505a17420e0b10e85aaf1d85dc01"
+      },
+      {
+        "file": "p100-patches/patches/31-fattn-f16-kv-chunk.patch",
+        "sha256": "9699a72bf7d9947767218a01bcea9b9ee643702ba8bf7d84694bcbf3035c97d6",
+        "sha256_lf": "bafa66aa5cd0693bb71ea8459066ed9cd4e04d8c6a925f02ace49cec88360704"
+      }
+    ]
+  },
+  "strategy_reference": {
+    "directory": "FreeToken-reference",
+    "remote": "https://github.com/FlashML-org/FreeToken.git",
+    "commit": "af71ba43206e124f5ff6419b47ee36c6e9981078"
+  },
+  "verification": {
+    "patches_applied": 31,
+    "patch_offset_or_fuzz_reported": false,
+    "git_diff_check_passed": true,
+    "compiled": false,
+    "p100_runtime_tested": false,
+    "freetoken_strategies_implemented": false,
+    "independent_replay_matches_source": true,
+    "patched_tree_git_oid": "fcf65d4ef2aeb4c87d8f1c801412ba57c85d905c",
+    "changed_or_added_files": 33
+  },
+  "combined_patch": {
+    "file": "P100_BASELINE.patch",
+    "sha256": "7326bbd6cfebe1f9632cc79b367d5124456cceb64a9b180f271ce917479d95b4",
+    "reverse_apply_check_passed": true,
+    "includes_patch_added_files": true
+  }
+}

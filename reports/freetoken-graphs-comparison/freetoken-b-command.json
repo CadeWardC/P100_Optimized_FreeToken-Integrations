@@ -1,0 +1,16 @@
+[
+  "C:\\Users\\cadel\\AppData\\Local\\FreeToken\\venv\\Scripts\\ft.exe",
+  "serve",
+  "--model-path",
+  "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "1920",
+  "--moe-cache-size",
+  "959",
+  "--num-tokens",
+  "8232",
+  "--max-running-requests",
+  "1"
+]

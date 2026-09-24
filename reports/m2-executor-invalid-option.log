@@ -1,0 +1,8 @@
+error while handling argument "--moe-cpu-cache-mib": invalid CPU MoE cache budget
+
+usage:
+--moe-cpu-cache-mib N                   experimental persistent CPU expert cache budget in MiB, shared across
+                                        layers (requires -ngl 0 --no-op-offload --no-kv-offload -np 1)
+
+
+to show complete usage, run with -h

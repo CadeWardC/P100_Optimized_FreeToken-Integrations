@@ -1,0 +1,18 @@
+0.00.296.794 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.354.791 W srv  llama_server: -----------------
+0.00.354.798 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.354.798 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.354.799 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.354.799 W srv  llama_server: -----------------
+0.00.371.763 I srv    load_model: loading model 'C:\Users\cadel\Documents\Coding_Projects\p100 FreeToken\models\gemma-4-26B_q4_0-it.gguf'
+0.00.955.332 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.00.955.753 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.01.000.334 W load: special_eog_ids contains '<|tool_response>', removing '</s>' token from EOG list
+0.04.922.081 W load_tensors: experimental host-bank MoE enabled, tile weights <= 3208642560 bytes; this is not a total memory limit
+0.05.018.727 W llama_kv_cache: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to 2048
+0.05.020.503 W llama_kv_cache: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to 2048
+0.05.034.696 I cmn          init: llama threadpool init, n_threads = 8
+0.06.266.266 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 512, kv_unified = 'false'
+0.06.279.615 I srv  llama_server: model loaded
+0.06.279.622 I srv  llama_server: listening on http://127.0.0.1:51858
+0.06.591.067 W srv   operator (): got exception: {"error":{"code":400,"message":"All non-assistant messages must contain 'content'","type":"invalid_request_error"}}

@@ -1,0 +1,32 @@
+{
+  "recorded_utc": "2026-09-09T23:48:41.318778+00:00",
+  "source_sha256": {
+    "llama.cpp/src/llama-moe-offload.cpp": "85e7f4c98114c98b9a7755860033d3531e2d7047a417c3b2971a1095180b68de",
+    "llama.cpp/src/llama-moe-offload.h": "d7cd1025957a30fa517373580a9d368300c926231e9d06eb86bef7679ce533fc",
+    "llama.cpp/src/llama-context.cpp": "b7f62f3ce9b5b469fa0982ef99025217d869380b016d8748e4256e24c389aa4f",
+    "llama.cpp/include/llama.h": "b31ce6746ecb07947ae584209fba1777f1623b144dddfcc43d3d4de6514e5222",
+    "llama.cpp/ggml/src/ggml-cuda/ggml-cuda.cu": "2e0ad3856b763a6e7277b9192fb6ae47192f85db248fa5f4761f66eeb4a3ffaf",
+    "llama.cpp/ggml/src/ggml-cuda/common.cuh": "7f39ac35bcd08aed79197f7775c3f3a52a76261fb4c7d435473ad2014681e214",
+    "llama.cpp/tests/test-moe-offload.cpp": "b15381c2915dd66a32edb46a70c9b3aaf10755602e1f2a7aad4427a4863ae0ae",
+    "llama.cpp/tests/test-moe-integration.cpp": "5e156c2f2157f6b14ff06ed8938e36df18b27bf4b9181b950e14129430dc893c",
+    "scripts/build-cuda-dev.cmd": "7cbd1cadbe3ec2ce9c2e65524774975fc34d9534bfc23bf7d99c1665e4ebc86d",
+    "scripts/build-cuda-graphs.cmd": "7e7712f1936e1b594be12b573f85de966047284c397ed9604b057cd24e730323"
+  },
+  "server_sha256": "034f6c2e3886fcf91d4327fb537b4ba04c9141668835978f914d612f6a3caf8c",
+  "graph_build_enabled": true,
+  "pretrained": {
+    "native": {
+      "maximum_logit_difference": 0.0,
+      "logit_rows": 38,
+      "passed": true
+    },
+    "compatibility": {
+      "maximum_logit_difference": 0.0,
+      "logit_rows": 38,
+      "passed": true
+    }
+  },
+  "memcheck_errors": 0,
+  "synthetic_comparisons_per_mode": 135,
+  "source_scope": "Source hashes include pre-existing local modifications; no commit or publish performed."
+}

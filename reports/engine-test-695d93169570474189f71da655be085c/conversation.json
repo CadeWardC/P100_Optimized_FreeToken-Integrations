@@ -1,0 +1,17 @@
+[
+  {
+    "role": "user",
+    "content": "Say hello briefly."
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! 😊",
+    "reasoning": "Hmm, the user just said \"Say hello briefly.\" That's a very simple request. They want a short greeting. \n\nI should keep it friendly and concise since they asked for brevity. No need for extra details or explanations. \n\nJust a straightforward hello response would work here.\n",
+    "stats": {
+      "genTokens": 65,
+      "promptTokens": 26,
+      "ttftMs": 1568,
+      "stopReason": "eos"
+    }
+  }
+]

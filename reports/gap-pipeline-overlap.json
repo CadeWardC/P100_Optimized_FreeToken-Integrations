@@ -1,0 +1,8 @@
+{
+  "trace": "reports\\gap-pipeline-trace.sqlite",
+  "staging_chunk_bytes": 4093,
+  "weight_h2d_chunks": 84603,
+  "chunks_overlapping_kernels": 77,
+  "overlap_union_us": 117.54,
+  "scope": "Full-size weight chunks on a different stream, same device and CUDA context; excludes tail chunks."
+}

@@ -1,0 +1,168 @@
+{
+  "command": [
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\llama-server.exe",
+    "-m",
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+    "-ngl",
+    "0",
+    "--no-op-offload",
+    "--no-kv-offload",
+    "-np",
+    "1",
+    "-c",
+    "512",
+    "-b",
+    "128",
+    "-ub",
+    "8",
+    "-t",
+    "8",
+    "-tb",
+    "8",
+    "--no-warmup",
+    "--no-repack",
+    "--fit",
+    "off",
+    "--moe-gpu-cache-mib",
+    "256",
+    "--moe-pipeline",
+    "--semantic-checkpoints",
+    "--checkpoint-min-step",
+    "0",
+    "--semantic-checkpoint-mib",
+    "128",
+    "--slots",
+    "--cache-ram",
+    "0",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "62278"
+  ],
+  "requests": [
+    {
+      "label": "warm",
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Name two primary colors. Answer briefly."
+          },
+          {
+            "role": "assistant",
+            "content": "Red and blue."
+          },
+          {
+            "role": "user",
+            "content": "Now name two more colors, briefly."
+          }
+        ],
+        "temperature": 0,
+        "seed": 1234,
+        "max_tokens": 4,
+        "cache_prompt": true,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The"
+            }
+          }
+        ],
+        "created": 1788988302,
+        "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "system_fingerprint": "b1-bb4caa7",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 4,
+          "prompt_tokens": 44,
+          "total_tokens": 48,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-rJ5hNuenknGKcSduUXQn6LAMXRMgy4NZ",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 44,
+          "prompt_ms": 25302.265,
+          "prompt_per_token_ms": 575.0514772727273,
+          "prompt_per_second": 1.7389747518651,
+          "predicted_n": 4,
+          "predicted_ms": 2226.75,
+          "predicted_per_token_ms": 742.25,
+          "predicted_per_second": 1.3472549680026946
+        }
+      }
+    },
+    {
+      "label": "edited",
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Name two primary colors. Answer briefly."
+          },
+          {
+            "role": "assistant",
+            "content": "Red and blue."
+          },
+          {
+            "role": "user",
+            "content": "Now name two more colors, briefly."
+          }
+        ],
+        "temperature": 0,
+        "seed": 1234,
+        "max_tokens": 4,
+        "cache_prompt": true,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "*"
+            }
+          }
+        ],
+        "created": 1788988308,
+        "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\models\\gemma-4-26B_q4_0-it.gguf",
+        "system_fingerprint": "b1-bb4caa7",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 4,
+          "prompt_tokens": 46,
+          "total_tokens": 50,
+          "prompt_tokens_details": {
+            "cached_tokens": 32
+          }
+        },
+        "id": "chatcmpl-nEt5KdtCUkuxyAP4a4Dmdak5RSmZMDZv",
+        "timings": {
+          "cache_n": 32,
+          "prompt_n": 14,
+          "prompt_ms": 4145.683,
+          "prompt_per_token_ms": 296.12021428571427,
+          "prompt_per_second": 3.377006876792075,
+          "predicted_n": 4,
+          "predicted_ms": 1215.665,
+          "predicted_per_token_ms": 405.22166666666664,
+          "predicted_per_second": 2.467785121723501
+        }
+      }
+    }
+  ],
+  "status": "failed",
+  "error": "HTTP Error 501: Not Implemented"
+}

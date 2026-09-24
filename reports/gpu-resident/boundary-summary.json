@@ -1,0 +1,41 @@
+{
+  "phase": "boundary",
+  "rows": [
+    {
+      "engine": "before",
+      "requests": 6,
+      "median_decode_tps": 18.727386045977987,
+      "decode_range": [
+        16.913197833049644,
+        19.620416016158472
+      ],
+      "median_first_text_seconds": 2.3506813000003604,
+      "median_wall_seconds": 9.236481999999796
+    },
+    {
+      "engine": "eager",
+      "requests": 6,
+      "median_decode_tps": 17.905923233956216,
+      "decode_range": [
+        15.824220077769118,
+        18.05502332332151
+      ],
+      "median_first_text_seconds": 2.4128215499999897,
+      "median_wall_seconds": 9.5322799999999
+    }
+  ],
+  "speed_ratio": 0.9561357463340062,
+  "matching_texts": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "method": "AB/BA, one excluded warmup and three measured requests per session. No concurrent build or GPU test.",
+  "executables": {
+    "before": "32ed15a2c5e6dc42dd22fb62f726a85cdfe81c08d50991ac1073eab9f37bd303",
+    "eager": "35fd93039324ceb031ad7bd74c50ec3f3d81b991610cd71d5bfed4d494c24e8c"
+  }
+}

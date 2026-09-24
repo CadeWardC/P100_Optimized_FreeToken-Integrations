@@ -1,0 +1,49 @@
+--- before/test-moe-offload.cpp
++++ after/test-moe-offload.cpp
+@@ -510,10 +510,46 @@
+     std::puts("PASS resident GeGLU: all half inputs and rounding midpoints, signed zero, infinities, NaNs and threshold neighbors");
+ }
+ 
++static void test_persistent_workspace(ggml_backend_dev_t device) {
++    auto owner = std::make_shared<fixture>(GGML_TYPE_Q4_0, 7, false, 256, 256, true, true, true);
++    auto bank = std::make_shared<llama_moe_host_bank>(owner, owner->tensors[0], nullptr, owner->tensors[2], owner->scales);
++    llama_moe_executor_options options;
++    options.device = device;
++    const size_t budget = llama_moe_min_tile_bytes(*bank, ggml_backend_dev_buffer_type(device));
++    llama_moe_cached_executor executor({bank, bank}, budget, options);
++    for (int step = 0; step < 12; ++step) {
++        std::vector<float> input(256);
++        for (size_t d = 0; d < input.size(); ++d) { input[d] = 0.1f * std::cos(float(d + step)); }
++        const std::vector<int32_t> ids{step % 7};
++        const std::vector<float> weights{0.3f + step * 0.01f};
++        device_close(executor.execute(step % 2, input, 1, 1, ids, weights, 2, llama_moe_activation::gelu).output,
++                ordinary(*bank, input, 1, 1, ids, weights, true).output);
++    }
++    const auto warm = executor.metrics();
++    check(warm.workspace_builds == 1 && warm.workspace_reuses == 11, "decode rebuilt persistent workspace");
++    check(warm.retained_compute_bytes > 0 && warm.retained_compute_bytes + warm.activation_table <= options.compute_bytes,
++            "persistent compute accounting");
++    rejects([&] { executor.resize(1); });
++    check(executor.metrics().retained_compute_bytes == warm.retained_compute_bytes, "failed resize discarded workspace");
++    const std::vector<float> input(3 * 256, 0.1f);
++    for (auto activation : {llama_moe_activation::silu, llama_moe_activation::gelu}) {
++        device_close(executor.execute(0, input, 3, 1, {2, 2, 2}, {0.2f, 0.3f, 0.4f}, 2, activation).output,
++                ordinary(*bank, input, 3, 1, {2, 2, 2}, {0.2f, 0.3f, 0.4f}, activation == llama_moe_activation::gelu).output);
++    }
++    check(executor.metrics().workspace_builds == 3, "shape/activation workspace invalidation");
++    executor.resize(2 * budget);
++    check(executor.metrics().retained_compute_bytes == 0, "resize retained stale cache pointers");
++    device_close(executor.execute(1, input, 3, 1, {2, 2, 2}, {0.2f, 0.3f, 0.4f}, 2, llama_moe_activation::gelu).output,
++            ordinary(*bank, input, 3, 1, {2, 2, 2}, {0.2f, 0.3f, 0.4f}, true).output);
++    check(executor.metrics().workspace_builds == 4, "resize did not rebuild workspace");
++    std::puts("PASS persistent workspace: changing inputs/routes/layers, eviction, shape/activation changes and resize");
++}
++
+ static void test_device_executor(const char * device_name) {
+     ggml_backend_load_all();
+     const auto device = ggml_backend_dev_by_name(device_name);
+     check(device && ggml_backend_dev_type(device) == GGML_BACKEND_DEVICE_TYPE_GPU, "requested GPU unavailable");
++    test_persistent_workspace(device);
+     test_resident_geglu(device);
+     for (auto type : {GGML_TYPE_F32, GGML_TYPE_F16, GGML_TYPE_Q4_0, GGML_TYPE_Q8_0}) {
+       for (bool fused : {false, true}) {

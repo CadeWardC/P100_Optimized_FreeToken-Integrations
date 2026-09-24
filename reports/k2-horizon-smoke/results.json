@@ -1,0 +1,160 @@
+{
+  "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\models\\K2 7B\\K2-Horizon-7B-Q4_K_M.gguf",
+  "command": [
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\p100 FreeToken\\build\\ft-windows-cuda-dev\\bin\\llama-server.exe",
+    "-m",
+    "C:\\Users\\cadel\\Documents\\Coding_Projects\\models\\K2 7B\\K2-Horizon-7B-Q4_K_M.gguf",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "58540",
+    "-ngl",
+    "99",
+    "-c",
+    "2048",
+    "-b",
+    "128",
+    "-ub",
+    "128",
+    "-np",
+    "1",
+    "-fa",
+    "off",
+    "--jinja",
+    "--reasoning-budget",
+    "0"
+  ],
+  "health": {
+    "status": "ok"
+  },
+  "completion": {
+    "index": 0,
+    "content": " Paris. The capital of Germany is Berlin. The capital of Italy is Rome. The capital of Spain is Madrid. The capital of Portugal is Lisbon. The capital",
+    "tokens": [],
+    "id_slot": 0,
+    "stop": true,
+    "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\models\\K2 7B\\K2-Horizon-7B-Q4_K_M.gguf",
+    "tokens_predicted": 32,
+    "tokens_evaluated": 6,
+    "generation_settings": {
+      "seed": 42,
+      "temperature": 0.0,
+      "dynatemp_range": 0.0,
+      "dynatemp_exponent": 1.0,
+      "top_k": 40,
+      "top_p": 0.949999988079071,
+      "min_p": 0.05000000074505806,
+      "top_n_sigma": -1.0,
+      "xtc_probability": 0.0,
+      "xtc_threshold": 0.10000000149011612,
+      "typical_p": 1.0,
+      "repeat_last_n": 64,
+      "repeat_penalty": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "dry_multiplier": 0.0,
+      "dry_base": 1.75,
+      "dry_allowed_length": 2,
+      "dry_penalty_last_n": 64,
+      "dry_sequence_breakers": [
+        "\n",
+        ":",
+        "\"",
+        "*"
+      ],
+      "mirostat": 0,
+      "mirostat_tau": 5.0,
+      "mirostat_eta": 0.10000000149011612,
+      "adaptive_target": -1.0,
+      "adaptive_decay": 0.8999999761581421,
+      "stop": [],
+      "max_tokens": 32,
+      "n_predict": 32,
+      "n_keep": 0,
+      "n_discard": 0,
+      "ignore_eos": false,
+      "stream": false,
+      "logit_bias": [],
+      "n_probs": 0,
+      "min_keep": 0,
+      "grammar": "",
+      "grammar_lazy": false,
+      "grammar_triggers": [],
+      "preserved_tokens": [],
+      "chat_format": "Content-only",
+      "reasoning_format": "deepseek",
+      "reasoning_in_content": false,
+      "generation_prompt": "",
+      "samplers": [
+        "penalties",
+        "dry",
+        "top_n_sigma",
+        "top_k",
+        "typ_p",
+        "top_p",
+        "min_p",
+        "xtc",
+        "temperature"
+      ],
+      "speculative.types": "none",
+      "timings_per_token": false,
+      "post_sampling_probs": false,
+      "backend_sampling": false,
+      "lora": []
+    },
+    "prompt": "<|ifm|begin_of_text|>The capital of France is",
+    "has_new_line": false,
+    "truncated": false,
+    "stop_type": "limit",
+    "stopping_word": "",
+    "tokens_cached": 37,
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 6,
+      "prompt_ms": 50.466,
+      "prompt_per_token_ms": 8.411,
+      "prompt_per_second": 118.89192723814051,
+      "predicted_n": 32,
+      "predicted_ms": 819.155,
+      "predicted_per_token_ms": 26.424354838709675,
+      "predicted_per_second": 37.843875701179876
+    }
+  },
+  "chat": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "4"
+        }
+      }
+    ],
+    "created": 1789413704,
+    "model": "C:\\Users\\cadel\\Documents\\Coding_Projects\\models\\K2 7B\\K2-Horizon-7B-Q4_K_M.gguf",
+    "system_fingerprint": "b1-bb4caa7",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 3,
+      "prompt_tokens": 26,
+      "total_tokens": 29,
+      "prompt_tokens_details": {
+        "cached_tokens": 1
+      }
+    },
+    "id": "chatcmpl-3ZpmPMUE2MF13wBhGRTsDINBRM4g0gZo",
+    "timings": {
+      "cache_n": 1,
+      "prompt_n": 25,
+      "prompt_ms": 165.493,
+      "prompt_per_token_ms": 6.61972,
+      "prompt_per_second": 151.06379121775544,
+      "predicted_n": 3,
+      "predicted_ms": 51.364,
+      "predicted_per_token_ms": 25.682,
+      "predicted_per_second": 38.9377774316642
+    }
+  },
+  "passed": true
+}

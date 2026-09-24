@@ -1,0 +1,22 @@
+0.00.606.382 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.672.477 W srv  llama_server: -----------------
+0.00.672.484 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.672.485 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.672.485 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.672.486 W srv  llama_server: -----------------
+0.00.687.772 I srv    load_model: loading model 'C:\Users\cadel\Documents\Coding_Projects\models\Gemma-4-26B-A4B-IT-QAT-Q4_0\gemma-4-26B_q4_0-it.gguf'
+0.01.421.159 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.01.421.964 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.01.492.242 W load: special_eog_ids contains '<|tool_response>', removing '</s>' token from EOG list
+0.07.768.592 W load_tensors: experimental host-bank MoE enabled, tile weights <= 4160749568 bytes; this is not a total memory limit
+0.07.916.069 I cmn          init: llama threadpool init, n_threads = 8
+0.13.236.412 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 1024, kv_unified = 'false'
+0.13.253.888 I srv  llama_server: model loaded
+0.13.253.899 I srv  llama_server: listening on http://127.0.0.1:53230
+0.14.384.597 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.14.385.112 I slot launch_slot_: id  0 | task 1 | processing task, is_child = 0
+0.25.415.768 I slot print_timing: id  0 | task 1 | prompt eval time =   10023.73 ms /    28 tokens (  357.99 ms per token,     2.79 tokens per second)
+0.25.415.773 I slot print_timing: id  0 | task 1 |        eval time =    1006.89 ms /     6 tokens (  201.38 ms per token,     4.97 tokens per second)
+0.25.415.774 I slot print_timing: id  0 | task 1 |       total time =   11030.62 ms /    34 tokens
+0.25.415.775 I slot print_timing: id  0 | task 1 |    graphs reused =          5
+0.25.415.802 I slot      release: id  0 | task 1 | stop processing: n_tokens = 33, truncated = 0

@@ -1,0 +1,23 @@
+0.00.720.202 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.807.968 W srv  llama_server: -----------------
+0.00.807.979 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.807.980 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.807.980 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.807.981 W srv  llama_server: -----------------
+0.00.811.816 I srv    load_model: loading model 'C:\Users\cadel\Documents\Coding_Projects\models\Gemma-4-26B-A4B-IT-QAT-Q4_0\gemma-4-26B_q4_0-it.gguf'
+0.01.912.878 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.01.913.554 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.01.991.139 W load: special_eog_ids contains '<|tool_response>', removing '</s>' token from EOG list
+0.04.702.768 W load_tensors: experimental host-bank MoE enabled, tile weights <= 2780823552 bytes; this is not a total memory limit
+0.05.079.247 I cmn          init: llama threadpool init, n_threads = 8
+0.13.784.793 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 2048, kv_unified = 'false'
+0.13.814.831 I srv  llama_server: model loaded
+0.13.814.849 I srv  llama_server: listening on http://127.0.0.1:57068
+0.15.826.758 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.15.826.983 I slot launch_slot_: id  0 | task 2 | processing task, is_child = 0
+0.34.546.400 I slot print_timing: id  0 | task 2 | prompt processing, n_tokens =     14, progress = 0.54, t =  18.72 s / 0.75 tokens per second
+0.34.553.396 I slot create_check: id  0 | task 2 | semantic checkpoint saved at token 14 (3155016 bytes)
+0.42.788.942 I slot print_timing: id  0 | task 2 | prompt processing, n_tokens =     22, progress = 0.85, t =  26.96 s / 0.82 tokens per second
+0.42.798.586 I slot create_check: id  0 | task 2 | semantic checkpoint saved at token 22 (4957448 bytes)
+0.43.895.980 I slot print_timing: id  0 | task 2 | prompt processing, n_tokens =     23, progress = 0.88, t =  28.07 s / 0.82 tokens per second
+0.43.900.302 I slot create_check: id  0 | task 2 | semantic checkpoint saved at token 23 (5182752 bytes)

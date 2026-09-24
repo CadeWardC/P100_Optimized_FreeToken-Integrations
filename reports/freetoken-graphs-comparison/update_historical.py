@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('FREETOKEN_REAL_COMPARISON.md');s=p.read_text(encoding='utf-8');first=s.index('\n\n');s=s[:first]+'\n\nHistorical comparison of the earlier build. See [the fresh graph-enabled comparison](FREETOKEN_CUDA_GRAPH_COMPARISON.md) for current measurements; the implementation discussion and results below describe the earlier state.'+s[first:];p.write_text(s,encoding='utf-8')

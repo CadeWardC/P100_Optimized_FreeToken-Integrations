@@ -1,0 +1,6 @@
+main: using seed 42
+|     Model arch.|                                         Device|Config|   NMSE vs. CPU|Roundtrip|
+|----------------|-----------------------------------------------|------|---------------|---------|
+|      k2-horizon|             NVIDIA GeForce RTX 4060 Laptop GPU| Dense|  [1;32mOK[0m (8.45e-08)|     [1;33mSKIP[0m|
+|      k2-horizon|AMD Ryzen 7 7840HS w/ Radeon 780M Graphics     | Dense|  [1;32mOK[0m (0.00e+00)|     [1;33mSKIP[0m|
+|      k2-horizon|                                           Meta| Dense|[1;33mSKIP[0m           |     [1;33mSKIP[0m|

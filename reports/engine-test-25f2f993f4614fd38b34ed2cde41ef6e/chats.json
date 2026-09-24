@@ -1,0 +1,31 @@
+{
+  "active": "initial",
+  "chats": [
+    {
+      "id": "initial",
+      "title": "Reply with exactly: Hi.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Reply with exactly: Hi."
+        },
+        {
+          "role": "assistant",
+          "content": "Native stream verified.",
+          "stats": {
+            "genTokens": 0,
+            "promptTokens": 0,
+            "ttftMs": 23,
+            "tokSec": 25.0,
+            "stopReason": "eos"
+          }
+        }
+      ]
+    },
+    {
+      "id": "17893399112252352",
+      "title": "New chat",
+      "messages": []
+    }
+  ]
+}
