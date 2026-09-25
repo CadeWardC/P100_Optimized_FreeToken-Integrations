@@ -1,0 +1,71 @@
+{
+  "version": 4,
+  "configurePresets": [
+    {
+      "name": "ft-baseline",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/../build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BUILD_SHARED_LIBS": "OFF",
+        "GGML_NATIVE": "OFF",
+        "GGML_SSE42": "ON",
+        "GGML_AVX": "OFF",
+        "GGML_AVX2": "OFF",
+        "GGML_BMI2": "OFF",
+        "GGML_FMA": "OFF",
+        "GGML_F16C": "OFF",
+        "GGML_CUDA": "OFF",
+        "GGML_CUDA_GRAPHS": "OFF",
+        "LLAMA_BUILD_TESTS": "ON",
+        "LLAMA_BUILD_SERVER": "ON",
+        "LLAMA_BUILD_UI": "OFF",
+        "LLAMA_BUILD_EXAMPLES": "OFF",
+        "LLAMA_OPENSSL": "OFF"
+      }
+    },
+    {
+      "name": "ft-windows-cpu",
+      "inherits": "ft-baseline",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64",
+      "condition": {"type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows"}
+    },
+    {
+      "name": "ft-linux-cpu",
+      "inherits": "ft-baseline",
+      "generator": "Ninja",
+      "condition": {"type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux"}
+    },
+    {
+      "name": "ft-cuda12",
+      "hidden": true,
+      "inherits": "ft-baseline",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "GGML_CUDA": "ON",
+        "CMAKE_CUDA_ARCHITECTURES": "60",
+        "CUDAToolkit_ROOT": "$env{FT_CUDA_ROOT}",
+        "CMAKE_PROJECT_TOP_LEVEL_INCLUDES": "${sourceDir}/../cmake/require-cuda12.cmake"
+      }
+    },
+    {
+      "name": "ft-windows-p100",
+      "inherits": "ft-cuda12",
+      "cacheVariables": {"CMAKE_CUDA_COMPILER": "$env{FT_CUDA_ROOT}/bin/nvcc.exe"},
+      "condition": {"type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows"}
+    },
+    {
+      "name": "ft-linux-p100",
+      "inherits": "ft-cuda12",
+      "cacheVariables": {"CMAKE_CUDA_COMPILER": "$env{FT_CUDA_ROOT}/bin/nvcc"},
+      "condition": {"type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux"}
+    }
+  ],
+  "buildPresets": [
+    {"name": "ft-windows-cpu", "configurePreset": "ft-windows-cpu", "configuration": "Release", "jobs": 4},
+    {"name": "ft-linux-cpu", "configurePreset": "ft-linux-cpu", "jobs": 4},
+    {"name": "ft-windows-p100", "configurePreset": "ft-windows-p100", "jobs": 4},
+    {"name": "ft-linux-p100", "configurePreset": "ft-linux-p100", "jobs": 4}
+  ]
+}
